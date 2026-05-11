@@ -229,7 +229,7 @@ Lista explícita de escenarios que quedan sin prueba y por qué.
 
 ---
 
-## 10. Herramientas por lenguaje (versiones vigentes a ago 2025)
+## 10. Herramientas por lenguaje (versiones vigentes a enero 2026)
 
 | Lenguaje | Unitarias | Integración | Cobertura | Mocking |
 |----------|-----------|-------------|-----------|---------|

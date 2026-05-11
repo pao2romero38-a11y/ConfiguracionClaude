@@ -1,6 +1,6 @@
 # Skills de Claude Code — Índice completo
 
-Este directorio contiene los **20 skills** que extienden el comportamiento definido
+Este directorio contiene los **21 skills** que extienden el comportamiento definido
 en `CLAUDE.md`. Cada skill activa comportamientos especializados para su dominio.
 
 ## Cómo activar un skill
