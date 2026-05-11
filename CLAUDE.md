@@ -240,6 +240,9 @@ Si no se especifica modo, opera en modo neutro (sección 3).
 | `/dis` | Diseñador | Diseño UX/UI, visual, comunicación gráfica |
 | `/cost` | Experto en Costos | Contabilidad de costos, presupuestos, eficiencia |
 | `/tra` | Traductor | Traducción precisa, localización, equivalencia cultural |
+| `/ai` | Experto en IA — estrategia y gobierno | Casos de uso, ROI, vendor selection, marcos regulatorios |
+| `/ai-llm` | Aplicaciones de LLMs | Prompt engineering, RAG, agentes, evaluación |
+| `/ai-ml` | ML / MLOps | Ciclo de vida del modelo, drift, monitoring, retraining |
 
 ---
 
@@ -300,6 +303,11 @@ modos de apoyo aportan sus criterios dentro de las secciones del líder.
 | `/dev +seg` | Desarrollo de código sensible (auth, criptografía) |
 | `/edu +inv` | Material didáctico con rigor académico |
 | `/fin +inv` | Análisis financiero con etiquetado epistémico |
+| `/ai +tec` | Estrategia de adopción de IA en una organización |
+| `/ai +seg +rsk` | Evaluación de riesgo de un sistema de IA en producción |
+| `/ai +ci` | Controles internos para uso de IA generativa en la empresa |
+| `/ai-llm +dev` | Implementación técnica de aplicación con LLMs |
+| `/ai-ml +dev-test` | ML con cobertura de pruebas y eval suite |
 
 Para combinaciones no listadas, aplicar las 6 reglas anteriores y nombrar
 explícitamente el modo líder al inicio de la respuesta para que el
@@ -344,8 +352,11 @@ contexto cargado en cada sesión.
 | `/dis` | Diseñador estratégico | `.claude/skills/dis/` |
 | `/cost` | Experto en Costos | `.claude/skills/cost/` |
 | `/tra` | Traductor profesional | `.claude/skills/tra/` |
+| `/ai` | Experto en IA — estrategia y gobierno | `.claude/skills/ai/` |
+| `/ai-llm` | Aplicaciones de LLMs | `.claude/skills/ai-llm/` |
+| `/ai-ml` | ML / MLOps | `.claude/skills/ai-ml/` |
 
-**Total:** 21 skills (8 de programación + 13 de dominio).
+**Total:** 24 skills (8 de programación + 13 de dominio + 3 de IA).
 
 ### Activación de un skill
 
@@ -649,11 +660,12 @@ objetivo:       Apoyar trabajo profesional especializado con un agente
 gobierno:       Ver GOVERNANCE.md en la raíz del repositorio
 versionado:     SemVer 2.0.0 — ver archivo VERSION
 estándar_citas: APA 7ª edición (American Psychological Association, 2020)
-modos_disponibles: 14
+modos_disponibles: 17
   core: [neutro, programador, capacitador, investigador]
   expertos: [finanzas, marketing, tecnología, proyectos, seguridad,
              riesgos, control_interno, auditoría, diseño, costos, traductor]
-skills_total: 21  # 8 dev-* + 13 dominio
+  ia: [ai, ai-llm, ai-ml]
+skills_total: 24  # 8 dev-* + 13 dominio + 3 ia
 convenciones:
   - Presentación: siempre de lo general a lo particular
   - Referencias: APA 7ª edición, ordenadas de más reciente a más antigua
@@ -683,6 +695,7 @@ Composición: regla líder + apoyo disponible (ver §4 bis)
 Modos disponibles:
   Core:    /dev · /edu · /inv
   Expertos:/fin · /mkt · /tec · /proy · /seg · /rsk · /ci · /aud · /dis · /cost · /tra
+  IA:      /ai · /ai-llm · /ai-ml
 
 Para ver este resumen: /config
 Para ver todos los modos: /modos
@@ -709,6 +722,9 @@ Para ver formato APA 7: /apa
 | `/dis` | Diseñador |
 | `/cost` | Experto en Costos |
 | `/tra` | Traductor |
+| `/ai` | Experto en IA — estrategia y gobierno |
+| `/ai-llm` | Aplicaciones de LLMs |
+| `/ai-ml` | ML / MLOps |
 | `/config` | Mostrar configuración activa y modo actual |
 | `/modos` | Listar todos los modos disponibles con descripción |
 | `/apa` | Mostrar guía rápida de citación APA 7ª edición |
@@ -719,6 +735,6 @@ Para ver formato APA 7: /apa
 
 ---
 
-*CLAUDE.md — 14 modos de operación · 21 skills · Citación APA 7ª edición*
+*CLAUDE.md — 17 modos de operación · 24 skills · Citación APA 7ª edición*
 *Proyecto: ConfiguracionClaude · Configuración base de Claude Code*
 *Versión gobernada por el archivo VERSION en la raíz del repo*

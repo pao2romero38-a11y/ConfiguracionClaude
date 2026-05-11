@@ -11,15 +11,16 @@ predecible en su dominio de experticia.
 
 ## ¿Para quién es?
 
-Para profesionales que trabajan con Claude Code en alguno de estos 14 dominios:
+Para profesionales que trabajan con Claude Code en alguno de estos 17 dominios:
 
 | Familia | Modos disponibles |
 |---|---|
 | **Programación** | `/dev` `/dev-api` `/dev-clean` `/dev-db` `/dev-docker` `/dev-git` `/dev-modes` `/dev-test` |
 | **Análisis y dominio** | `/edu` `/inv` `/fin` `/mkt` `/tec` `/proy` `/seg` `/rsk` `/ci` `/aud` `/dis` `/cost` `/tra` |
+| **Inteligencia Artificial** | `/ai` `/ai-llm` `/ai-ml` |
 
-Total: **21 skills** (8 de programación + 13 de dominio). Cada uno carga un
-comportamiento experto verificable.
+Total: **24 skills** (8 de programación + 13 de dominio + 3 de IA). Cada uno
+carga un comportamiento experto verificable.
 
 > **Fuera de alcance:** consultas triviales o de cultura general. Para eso
 > se recomienda usar Claude sin esta configuración. Aquí cada respuesta
@@ -102,7 +103,7 @@ ConfiguracionClaude/
 ├── VERSION             ← versión vigente (formato SemVer)
 ├── CLAUDE.md           ← instrucciones de comportamiento globales
 └── .claude/
-    └── skills/         ← 21 skills especializados
+    └── skills/         ← 24 skills especializados
         ├── README.md   ← índice de skills
         └── <modo>/SKILL.md ...
 ```
