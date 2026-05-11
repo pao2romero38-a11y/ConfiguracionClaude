@@ -1,6 +1,6 @@
 # Skills de Claude Code — Índice completo
 
-Este directorio contiene los **21 skills** que extienden el comportamiento definido
+Este directorio contiene los **24 skills** que extienden el comportamiento definido
 en `CLAUDE.md`. Cada skill activa comportamientos especializados para su dominio.
 
 ## Cómo activar un skill
@@ -52,6 +52,14 @@ Lee .claude/skills/fin/SKILL.md y analiza este estado de resultados.
 | `/cost` | `skills/cost/` | Experto en Costos |
 | `/tra` | `skills/tra/` | Traductor profesional |
 
+### Skills de IA (3)
+
+| Comando | Carpeta | Dominio |
+|---------|---------|---------|
+| `/ai` | `skills/ai/` | Experto en IA — estrategia y gobierno (NIST AI RMF, EU AI Act, ISO/IEC 42001) |
+| `/ai-llm` | `skills/ai-llm/` | Aplicaciones de LLMs — prompt engineering, RAG, agentes, evals |
+| `/ai-ml` | `skills/ai-ml/` | ML / MLOps — ciclo de vida del modelo, drift, monitoring, retraining |
+
 ---
 
 ## Estructura de cada SKILL.md
@@ -85,6 +93,6 @@ Heredados del `CLAUDE.md` — no se repiten en cada skill pero siempre aplican:
 
 ---
 
-*Skills v3.0 — 21 skills (8 de programación + 13 de dominio)*
-*Proyecto: Curso Claude Code · Aprendizaje Significativo*
-*Mayo 2026*
+*Skills — 24 skills (8 de programación + 13 de dominio + 3 de IA)*
+*Proyecto: ConfiguracionClaude · Configuración base de Claude Code*
+*Versión vigente en VERSION en la raíz del repo*
