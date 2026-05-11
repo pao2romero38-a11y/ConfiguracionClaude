@@ -15,7 +15,7 @@ y **cómo se versiona** cada aprobación.
 - Tiene última palabra sobre cambios al `CLAUDE.md` raíz.
 
 ### Contribuidor
-- Especialista en al menos uno de los 14 dominios cubiertos.
+- Especialista en al menos uno de los 17 dominios cubiertos.
 - Propone mejoras al `SKILL.md` de su área via PR.
 - Documenta justificación profesional y fuentes APA 7.
 - No autoriza merges propios.
