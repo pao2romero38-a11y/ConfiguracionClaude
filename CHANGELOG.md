@@ -13,6 +13,54 @@ Cambios en preparación que aún no se han publicado en una versión.
 
 ---
 
+## [2.3.0] — 2026-05-12
+
+Nueva **meta-skill** `/prompt` para refinar prompts crudos del usuario antes
+de ejecutarlos, con rúbrica visible de 10 dimensiones y menú interactivo
+de ejecución. Bump MENOR (funcionalidad nueva compatible con v2.2.1).
+
+Diseñada como v1 modo entrenamiento. Plan documentado en el propio `SKILL.md`
+para migrarla a v2 apoyo transversal (`+prompt` componible con cualquier
+modo líder) cuando el patrón de refinamiento sea predecible (>70 % de
+ejecuciones "tal cual" sin alternativas).
+
+### Added
+
+- **Skill `/prompt`** (`.claude/skills/prompt/SKILL.md`) — refinador de
+  prompts modo-aware. Detecta el modo apropiado entre los 17 modos de
+  operación a partir de señales en el prompt crudo, propone composición
+  líder + apoyo cuando aplica, refina el prompt añadiendo las dimensiones
+  ausentes y expone una **rúbrica de 10 dimensiones** (modo, contexto,
+  alcance, restricciones técnicas, estándares, entregable, fase, convenciones,
+  riesgos, datos bloqueantes) con tres estados (✓ / ⚠ / ✗).
+  Tras mostrar el refinado, ofrece un menú interactivo (`AskUserQuestion`)
+  con tres ramas (sin alternativas) o cuatro (con alternativas):
+  ejecutar tal cual, ejecutar variante A/B, empezar de nuevo, o cerrar.
+  La rama *empezar de nuevo* incluye pista derivada de la rúbrica anterior
+  para acelerar la convergencia.
+
+- **CLAUDE.md §5 — Índice de skills**: nueva entrada `/prompt`, sub-grupo
+  *Meta-skills*. Total de skills: 39 → 40.
+
+- **CLAUDE.md §11 — Banner de inicio**: línea adicional `Meta-skills:` con
+  `/prompt`.
+
+- **CLAUDE.md §12 — Comandos rápidos**: nueva categoría *Meta-skills* con
+  `/prompt`.
+
+### Cambios en numeración
+
+- `VERSION`: `2.2.1` → `2.3.0`.
+- Footer de `CLAUDE.md`: 39 → 40 skills.
+
+### Compatibilidad
+
+- 100 % backward-compatible con v2.2.1. La skill solo se activa cuando el
+  usuario invoca explícitamente `/prompt`. Ningún cambio en modos
+  existentes, agentes, templates ni en el método de desarrollo (§4 ter).
+
+---
+
 ## [2.2.1] — 2026-05-12
 
 Bump PATCH (corrección cosmética sin cambio funcional).
