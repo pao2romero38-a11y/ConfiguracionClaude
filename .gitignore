@@ -10,8 +10,11 @@
 *.swo
 *~
 
-# Claude Code local
+# Claude Code local — settings.local.json is per-developer
 .claude/settings.local.json
+# Exception: the template under templates/ ships with the repo so that
+# /init-proyecto can copy it to a new project's .claude/settings.local.json
+!templates/.claude/settings.local.json
 
 # Logs and temp
 *.log

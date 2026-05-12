@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "_comment": "Permisos auto-aprobados recomendados para proyectos del método v2.2.0. Este archivo se gitignorea por defecto (es local del desarrollador). Copiarlo a .claude/settings.local.json del proyecto al hacer /init-proyecto. Para uso global a TODOS los proyectos, mover a ~/.claude/settings.local.json.",
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(npm run test)",
+      "Bash(npm run test:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run lint:*)",
+      "Bash(npm run build)",
+      "Bash(npm run build:*)",
+      "Bash(npm run dev)",
+      "Bash(npm run typecheck)",
+      "Bash(npm run preflight)",
+      "Bash(npm run meta:types)",
+      "Bash(npm run meta:openapi)",
+      "Bash(npm run meta:msw)",
+      "Bash(npm run msw:gen)",
+      "Bash(node scripts/migrate.js:*)",
+      "Bash(node scripts/message-bus-validate.js:*)",
+      "Bash(node templates/codegen/*.js)",
+      "Bash(git status)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git branch:*)",
+      "Bash(git show:*)",
+      "Read(./**)"
+    ]
+  }
+}
