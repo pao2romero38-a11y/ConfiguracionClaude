@@ -32,7 +32,7 @@ ceremonia desproporcionada. En ese caso:
 ```
 
 Esto preserva la utilidad de la configuración para su propósito real:
-análisis especializado en cualquiera de los 14 dominios cubiertos, no
+análisis especializado en cualquiera de los 17 dominios cubiertos, no
 preguntas casuales que se resuelven mejor con un agente sin configurar.
 
 ---
@@ -855,7 +855,7 @@ Declaración obligatoria en la respuesta:
 
 ```yaml
 proyecto:       ConfiguracionClaude — Configuración base de Claude Code
-audiencia:      Profesionales en cualquiera de los 14 dominios cubiertos
+audiencia:      Profesionales en cualquiera de los 17 dominios cubiertos
 nivel_previo:   Experticia profesional en el dominio del modo activado
 objetivo:       Apoyar trabajo profesional especializado con un agente
                 Claude de comportamiento riguroso, verificable y predecible
