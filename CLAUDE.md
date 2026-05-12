@@ -315,6 +315,188 @@ usuario sepa qué estructura esperar.
 
 ---
 
+## 4 ter. MÉTODO DE DESARROLLO DE SISTEMAS — familia `/dev`
+
+Cuando el trabajo es **construir un sistema** (no responder una consulta
+profesional puntual), el modo `/dev` y los skills de la familia `dev-*`
+operan sobre un método de desarrollo formal con dos pilares no
+negociables: **5 fases secuenciales** y **9 niveles progresivos de
+metadata**.
+
+> Los criterios de evaluación de este método se mantienen en
+> `ConfiguracionAI/CRITERIOS-EVALUACION-DEV.md`. Aplicarlos antes de
+> proponer cualquier cambio a la familia `dev-*`.
+
+### 4 ter.1 Fases del método (obligatorias)
+
+```
+Fase 1 — METADATA ESTRUCTURAL
+  Modelar tablas, campos, validaciones y reglas de negocio en
+  tablas_sistema, campos_sistema y procesos.
+  Skill líder: /dev-meta · Apoyo: /dev-db
+  Salida: migraciones de bootstrap (001-NNN) listas para ejecutar.
+
+Fase 2 — ARQUITECTURA
+  Decidir capas, módulos y patrones técnicos justificados contra cada
+  nivel de metadata declarado. No proponer capacidades de niveles que
+  no estén declarados.
+  Skill líder: /arq-derive · Apoyo: /dev, /dev-modes
+  Salida: ADRs (Architecture Decision Records) por cada decisión.
+
+Fase 3 — STACK TECNOLÓGICO
+  Poblar componentes_sistema con infraestructura, BD, backend, frontend
+  y stack de pruebas: versiones, licencias, justificación.
+  Skill líder: /stack-pick · Apoyo: /tec, /dev-docker
+  Salida: migración con componentes_sistema completo.
+
+Fase 4 — BOOTSTRAP DEL ENTORNO
+  Generar package.json, .env.example, scripts npm, configuración de
+  linters, hooks y workflows de CI derivados del stack declarado.
+  Skill líder: /install-from-stack · Apoyo: /dev-docker, /dev-git
+  Salida: proyecto compilable end-to-end.
+
+Fase 5 — DESARROLLO ITERATIVO
+  Scaffolding por módulo desde metadata (backend + frontend), pruebas,
+  revisión por agente especializado (be-reviewer / ui-reviewer /
+  code-reviewer), deploy.
+  Skill líder: /back-scaffold-from-meta, /front-scaffold-from-meta
+  Apoyo: /dev-test, /dev-api, /dev-clean
+  Salida: módulos funcionando con cobertura, contrato y a11y validados.
+```
+
+**Reglas de fase**:
+- Cada fase produce artefactos verificables que la siguiente consume.
+- No se pueden saltar fases.
+- Se pueden enriquecer con sub-pasos si el artefacto verificable se preserva.
+- `/meta-validate` corre como gate antes de Fase 5.
+
+### 4 ter.2 Niveles progresivos de metadata (9 niveles)
+
+Los niveles permiten que un sistema crezca en capacidades sin reescribir
+lo construido:
+
+```
+NIVEL 1 — Estructural
+  Tablas, campos, tipos, validaciones, claves primarias y foráneas.
+  Mínimo obligatorio. Todo sistema arranca en Nivel 1.
+
+NIVEL 2 — Operacional
+  Procesos (flujos de negocio), semáforos (estados con transiciones
+  permitidas), variables_sistema (configuración runtime).
+
+NIVEL 3 — Auditoría
+  Bitácoras automáticas, columnas creado_en/modificado_en/eliminado_en,
+  trazabilidad con correlation_id.
+
+NIVEL 4 — Permisos granulares
+  roles_modificacion por campo, vistas por rol, segregación de
+  funciones a nivel de metadata.
+
+NIVEL 5 — Caché
+  Tablas/queries marcadas como cacheables, TTL declarado en
+  variables_sistema, invalidación en mutaciones.
+
+NIVEL 6 — Tiempo real
+  Eventos (event_bus_topics), websockets, push notifications declarados
+  en metadata.
+
+NIVEL 7 — Búsqueda y CDN
+  Índices full-text, distribución geográfica de assets, hot/cold storage.
+
+NIVEL 8 — Observabilidad
+  Métricas (counters/gauges/histograms) declaradas, dashboards
+  derivados, alertas con thresholds.
+
+NIVEL 9 — Alta disponibilidad
+  Replicación cross-region, failover automático, multi-master, patrones
+  de resiliencia (circuit breaker, bulkhead, retry con backoff).
+```
+
+**Reglas de nivel**:
+- Un sistema declara su nivel en `metadata_versiones`.
+- Cada nivel se construye sobre los anteriores (no se salta).
+- `/arq-derive` bloquea propuestas de arquitectura que excedan el nivel
+  declarado.
+- Subir de nivel = migración con bump SemVer + revisión por reviewer.
+
+### 4 ter.3 Metadata como SSOT verificable
+
+Toda tabla real del sistema tiene entrada en `tablas_sistema`. Toda
+columna real tiene entrada en `campos_sistema` con ~20 columnas de
+metadatos: función, tipo SQL-92, formato_despliegue, visible_en_lista,
+visible_en_form, tipo_validacion, mensaje_ayuda, sensible_lfpdppp,
+categoria_dato_personal, roles_modificacion, etc.
+
+**Verificación automática en CI**:
+- Job `metadata-snapshot-sync` corre `/back-scaffold-from-meta` y
+  `/front-scaffold-from-meta` con `git diff --exit-code`. Falla el PR
+  si hay drift entre metadata y código generado.
+- `/meta-validate` ejecuta 17 checks de consistencia.
+
+**Codegen funcional desde metadata** (no stubs, no manuales):
+- `meta-derive-types` → TypeScript interfaces (`_generated.ts`)
+- `meta-derive-openapi` → OpenAPI 3.1 YAML
+- `front-msw-from-meta` → MSW v2 handlers con fixtures determinísticos
+
+### 4 ter.4 Portabilidad multi-DBMS
+
+El método soporta **6 DBMS sin cambios en código de aplicación**:
+postgres, mysql, sqlserver, oracle, db2, spanner. Solo cambia
+`DB_DRIVER` en `.env`. Se logra con:
+
+- SQL-92 estricto en migraciones (ver `/dev-db` §3).
+- Patrón `db-adapter` con interfaz común: `genUuid`, `now`, `quote`,
+  `upsertSql`, `bypassTriggers`, `applyTriggers`.
+- Triggers nativos por motor en `templates/db-adapters/<motor>/triggers.sql`.
+- Runner de migraciones agnóstico (`templates/migrate.js`).
+
+Esta es **característica diferenciadora del método** — no se pierde por
+simplificación (`CRITERIOS-EVALUACION-DEV.md` §2.3).
+
+### 4 ter.5 Convivencia multi-agente (opcional)
+
+Cuando un proyecto tiene división backend + frontend (+ infra), se
+activa `/dev-multiagent` con:
+
+- Mensajes append-only en `docs/messages/{open,archived}/` con
+  frontmatter YAML (from, to, created, subject, in_reply_to, closes).
+- Pendientes SSOT split por scope: `docs/pendientes/{backend,frontend,
+  infra,roadmap}.md`.
+- Bus de comunicación obligatorio (agente `message-bus`).
+- Identidad de agente en commits (`Authored-Agent:` trailer).
+- Convención de branching: `feat/be-*`, `feat/fe-*`, `fix/be-*`,
+  `chore/docs-*`.
+
+**Si se activa multi-agente, el bus es obligatorio**. No existe
+"multi-agente sin bus".
+
+### 4 ter.6 Definition of Done compartida
+
+Una sola Definition of Done definida en `/dev` §11. La adoptan los
+tres agentes reviewers:
+
+| Reviewer | Cuándo se usa |
+|---|---|
+| `be-reviewer` | Sistemas con división backend/frontend — revisa backend |
+| `ui-reviewer` | Sistemas con división backend/frontend — revisa frontend |
+| `code-reviewer` | Fallback: librerías, scripts, CLIs, servicios sin UI |
+
+Cada reviewer puede extender la DoD con su checklist específica
+(a11y para ui, trazabilidad para be, etc.) pero no la reemplaza.
+
+### 4 ter.7 Memoria técnica creciente
+
+Las lecciones técnicas recolectadas en sistemas anteriores se preservan
+en `~/.claude/projects/.../memory/` y se cargan al inicio de cada
+sesión. Cada sistema nuevo desarrollado **debe aportar 1-2 lecciones
+adicionales** cuando aparezca un caso instructivo cuya aplicación se
+generalice a otros proyectos del mismo paradigma.
+
+Criterio de inclusión: ¿se aplicaría a otro proyecto del mismo
+paradigma? Si sí, va a memoria; si no, queda en el proyecto.
+
+---
+
 ## 5. MODOS EXPERTOS — ÍNDICE DE SKILLS
 
 Cada modo experto vive en su propio archivo bajo
@@ -337,8 +519,23 @@ contexto cargado en cada sesión.
 | `/dev-db` | Bases de datos y modelado | `.claude/skills/dev-db/` |
 | `/dev-docker` | Contenedores y deployment | `.claude/skills/dev-docker/` |
 | `/dev-git` | Flujo Git y Conventional Commits | `.claude/skills/dev-git/` |
+| `/dev-meta` | Metadata-driven SSOT y 9 niveles | `.claude/skills/dev-meta/` |
 | `/dev-modes` | Modos globales del sistema | `.claude/skills/dev-modes/` |
+| `/dev-multiagent` | Convivencia multi-agente (mensajes + bus) | `.claude/skills/dev-multiagent/` |
 | `/dev-test` | Testing y TDD | `.claude/skills/dev-test/` |
+| `/init-proyecto` | Inicializar proyecto nuevo desde cero | `.claude/skills/init-proyecto/` |
+| `/stack-pick` | Fase 3: seleccionar stack tecnológico | `.claude/skills/stack-pick/` |
+| `/install-from-stack` | Fase 4: bootstrap del entorno | `.claude/skills/install-from-stack/` |
+| `/back-scaffold-from-meta` | Fase 5: scaffold backend desde metadata | `.claude/skills/back-scaffold-from-meta/` |
+| `/front-scaffold-from-meta` | Fase 5: scaffold frontend desde metadata | `.claude/skills/front-scaffold-from-meta/` |
+| `/meta-add-tabla` | Wizard para agregar tabla nueva con metadata | `.claude/skills/meta-add-tabla/` |
+| `/meta-bump` | Versionado SemVer de la metadata | `.claude/skills/meta-bump/` |
+| `/meta-validate` | Gate pre-Fase 5: 17 checks de consistencia | `.claude/skills/meta-validate/` |
+| `/diff-meta` | Diff legible de cambios en metadata | `.claude/skills/diff-meta/` |
+| `/arq-derive` | Fase 2: propuesta de arquitectura derivada | `.claude/skills/arq-derive/` |
+| `/status` | Vista única: PRs, mensajes, pendientes, CI | `.claude/skills/status/` |
+| `/handoff` | Fin de sesión: pasar contexto al siguiente agente | `.claude/skills/handoff/` |
+| `/inbox` | Re-check de mensajes nuevos en sesión larga | `.claude/skills/inbox/` |
 | `/edu` | Capacitador — Aprendizaje Significativo | `.claude/skills/edu/` |
 | `/inv` | Investigador riguroso | `.claude/skills/inv/` |
 | `/fin` | Experto en Finanzas | `.claude/skills/fin/` |
@@ -356,7 +553,12 @@ contexto cargado en cada sesión.
 | `/ai-llm` | Aplicaciones de LLMs | `.claude/skills/ai-llm/` |
 | `/ai-ml` | ML / MLOps | `.claude/skills/ai-ml/` |
 
-**Total:** 24 skills (8 de programación + 13 de dominio + 3 de IA).
+**Total:** 39 skills (10 de la familia `dev-*` + 13 de dominio + 3 de IA + 13 de ciclo de vida de proyecto y operación multi-agente).
+
+**Sub-grupos de la familia `dev-*` y vecinos**:
+- **Núcleo**: `/dev`, `/dev-api`, `/dev-clean`, `/dev-db`, `/dev-docker`, `/dev-git`, `/dev-meta`, `/dev-modes`, `/dev-multiagent`, `/dev-test` (10).
+- **Ciclo de vida del proyecto**: `/init-proyecto`, `/stack-pick`, `/install-from-stack`, `/back-scaffold-from-meta`, `/front-scaffold-from-meta`, `/meta-add-tabla`, `/meta-bump`, `/meta-validate`, `/diff-meta`, `/arq-derive` (10).
+- **Operación multi-agente**: `/status`, `/handoff`, `/inbox` (3).
 
 ### Activación de un skill
 
@@ -665,7 +867,21 @@ modos_disponibles: 17
   expertos: [finanzas, marketing, tecnología, proyectos, seguridad,
              riesgos, control_interno, auditoría, diseño, costos, traductor]
   ia: [ai, ai-llm, ai-ml]
-skills_total: 24  # 8 dev-* + 13 dominio + 3 ia
+skills_total: 39
+  familia_dev: 10  # dev, dev-api, dev-clean, dev-db, dev-docker, dev-git,
+                   # dev-meta, dev-modes, dev-multiagent, dev-test
+  ciclo_vida:  10  # init-proyecto, stack-pick, install-from-stack,
+                   # back-scaffold-from-meta, front-scaffold-from-meta,
+                   # meta-add-tabla, meta-bump, meta-validate, diff-meta,
+                   # arq-derive
+  multiagente:  3  # status, handoff, inbox
+  dominio:     13
+  ia:           3
+agentes:        4  # be-reviewer, ui-reviewer, code-reviewer, message-bus
+metodo_desarrollo:
+  fases: 5            # CLAUDE.md §4 ter.1
+  niveles_metadata: 9 # CLAUDE.md §4 ter.2
+  dbms_soportados: 6  # postgres, mysql, sqlserver, oracle, db2, spanner
 convenciones:
   - Presentación: siempre de lo general a lo particular
   - Referencias: APA 7ª edición, ordenadas de más reciente a más antigua
@@ -691,15 +907,30 @@ Protocolo de calidad: ACTIVO
 Presentación: General → Particular
 Referencias: APA 7ª edición · Más reciente → Más antigua
 Composición: regla líder + apoyo disponible (ver §4 bis)
+Método de desarrollo: 5 fases · 9 niveles metadata · 6 DBMS (ver §4 ter)
 
 Modos disponibles:
-  Core:    /dev · /edu · /inv
-  Expertos:/fin · /mkt · /tec · /proy · /seg · /rsk · /ci · /aud · /dis · /cost · /tra
-  IA:      /ai · /ai-llm · /ai-ml
+  Core:        /dev · /edu · /inv
+  Expertos:    /fin · /mkt · /tec · /proy · /seg · /rsk · /ci · /aud · /dis · /cost · /tra
+  IA:          /ai · /ai-llm · /ai-ml
 
-Para ver este resumen: /config
-Para ver todos los modos: /modos
-Para ver formato APA 7: /apa
+Familia /dev:  /dev-api · /dev-clean · /dev-db · /dev-docker · /dev-git
+               /dev-meta · /dev-modes · /dev-multiagent · /dev-test
+
+Ciclo de vida: /init-proyecto · /stack-pick · /install-from-stack
+               /back-scaffold-from-meta · /front-scaffold-from-meta
+               /meta-add-tabla · /meta-bump · /meta-validate
+               /diff-meta · /arq-derive
+
+Multi-agente:  /status · /handoff · /inbox
+
+Agentes:       be-reviewer · ui-reviewer · code-reviewer · message-bus
+
+Para ver este resumen:       /config
+Para ver todos los modos:    /modos
+Para ver formato APA 7:      /apa
+Para ver fases del método:   /fases
+Para ver niveles de metadata: /niveles
 ```
 
 ---
@@ -725,6 +956,25 @@ Para ver formato APA 7: /apa
 | `/ai` | Experto en IA — estrategia y gobierno |
 | `/ai-llm` | Aplicaciones de LLMs |
 | `/ai-ml` | ML / MLOps |
+| **Familia `/dev`** ||
+| `/dev-meta` | Metadata-driven SSOT y 9 niveles |
+| `/dev-multiagent` | Convivencia multi-agente (mensajes + bus) |
+| **Ciclo de vida del proyecto** ||
+| `/init-proyecto` | Inicializar proyecto nuevo desde cero |
+| `/stack-pick` | Fase 3: seleccionar stack tecnológico |
+| `/install-from-stack` | Fase 4: bootstrap del entorno |
+| `/back-scaffold-from-meta` | Fase 5: scaffold backend desde metadata |
+| `/front-scaffold-from-meta` | Fase 5: scaffold frontend desde metadata |
+| `/meta-add-tabla` | Wizard para agregar tabla nueva con metadata |
+| `/meta-bump` | Versionado SemVer de la metadata |
+| `/meta-validate` | Gate pre-Fase 5: 17 checks de consistencia |
+| `/diff-meta` | Diff legible de cambios en metadata |
+| `/arq-derive` | Fase 2: propuesta de arquitectura derivada |
+| **Operación multi-agente** ||
+| `/status` | Vista única: PRs, mensajes, pendientes, CI |
+| `/handoff` | Fin de sesión: pasar contexto al siguiente agente |
+| `/inbox` | Re-check de mensajes nuevos en sesión larga |
+| **Comandos del sistema** ||
 | `/config` | Mostrar configuración activa y modo actual |
 | `/modos` | Listar todos los modos disponibles con descripción |
 | `/apa` | Mostrar guía rápida de citación APA 7ª edición |
@@ -732,9 +982,11 @@ Para ver formato APA 7: /apa
 | `/fuentes` | Listar fuentes citadas en la sesión, ordenadas por año (APA 7) |
 | `/ejemplo` | Pedir dato de ejemplo concreto sobre el tema actual |
 | `/modo?` | Confirmar en qué modo se está operando |
+| `/fases` | Mostrar las 5 fases del método (§4 ter.1) |
+| `/niveles` | Mostrar los 9 niveles de metadata (§4 ter.2) |
 
 ---
 
-*CLAUDE.md — 17 modos de operación · 24 skills · Citación APA 7ª edición*
+*CLAUDE.md — 17 modos de operación · 39 skills · 4 agentes · 5 fases · 9 niveles metadata · 6 DBMS · Citación APA 7ª edición*
 *Proyecto: ConfiguracionClaude · Configuración base de Claude Code*
 *Versión gobernada por el archivo VERSION en la raíz del repo*
