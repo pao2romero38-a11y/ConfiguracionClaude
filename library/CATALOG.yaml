@@ -1,0 +1,316 @@
+# ===============================================================
+# CATÁLOGO CENTRAL DE FUENTES — ConfiguracionClaude/library
+# ===============================================================
+# Schema en library/README.md §"Schema del catálogo".
+#
+# Ordenar entradas alfabéticamente por id dentro de cada dominio.
+# Mantener APA 7 como estándar de citación al describir cada entrada.
+# ===============================================================
+
+version: "1.0"
+last_updated: "2026-05-12"
+maintainer: "ConfiguracionClaude maintainers"
+
+# ============================================================
+# DOMINIO: pedagogia
+# ============================================================
+pedagogia:
+
+  - id: anderson-krathwohl-2001
+    titulo: A Taxonomy for Learning, Teaching, and Assessing — A Revision of Bloom's Educational Objectives
+    autores: ["Anderson, L. W.", "Krathwohl, D. R."]
+    año: 2001
+    edicion_vigente: "1st ed. (2001) — vigente"
+    categoria: libro
+    dominios: [pedagogia]
+    skills: [/edu]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.pearson.com/store/p/a-taxonomy-for-learning-teaching-and-assessing/P100000814937"
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "Una taxonomía para la enseñanza, el aprendizaje y la evaluación"
+      editor_es: "Pearson Educación (traducciones diversas; verificar edición)"
+    confianza: alta
+    notas: |
+      Supera al Bloom 1956 original en uso académico contemporáneo. Reorganiza
+      las 6 categorías cognitivas en verbos (Recordar, Comprender, Aplicar,
+      Analizar, Evaluar, Crear) y añade la dimensión del tipo de conocimiento
+      (factual, conceptual, procedimental, metacognitivo).
+
+  - id: ausubel-1963
+    titulo: The Psychology of Meaningful Verbal Learning
+    autores: ["Ausubel, D. P."]
+    año: 1963
+    edicion_vigente: "1st ed. (1963)"
+    categoria: libro
+    dominios: [pedagogia]
+    skills: [/edu]
+    license: copyright
+    status: vigente
+    url_oficial: "" # libro descatalogado en inglés; traducciones disponibles en MX
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "Psicología del aprendizaje verbal significativo"
+      editor_es: "Trillas (México)"
+    confianza: alta
+    notas: |
+      Obra fundacional del aprendizaje significativo. La teoría sigue siendo
+      base operativa en el skill /edu. Para una formulación posterior con
+      revisiones, ver Ausubel, Novak & Hanesian (1968, 1978, 1983).
+
+  - id: bloom-1956
+    titulo: Taxonomy of Educational Objectives — Handbook I, Cognitive Domain
+    autores: ["Bloom, B. S."]
+    año: 1956
+    edicion_vigente: "1956 — superseded por Anderson & Krathwohl 2001"
+    categoria: libro
+    dominios: [pedagogia]
+    skills: [/edu]
+    license: copyright
+    status: superseded_by:anderson-krathwohl-2001
+    url_oficial: "" # libro descatalogado en su versión original
+    idiomas: [en, es]
+    confianza: alta
+    notas: |
+      Clásico fundacional del diseño curricular por objetivos. Citar como
+      referencia histórica; para uso operativo en diseño instruccional
+      moderno preferir Anderson & Krathwohl (2001).
+
+  - id: booth-craft-research-2016
+    titulo: The Craft of Research
+    autores: ["Booth, W. C.", "Colomb, G. G.", "Williams, J. M.", "Bizup, J.", "FitzGerald, W. T."]
+    año: 2016
+    edicion_vigente: "4th ed. (2016)"
+    categoria: libro
+    dominios: [pedagogia, investigacion]
+    skills: [/edu, /inv]
+    license: copyright
+    status: vigente
+    url_oficial: "https://press.uchicago.edu/ucp/books/book/chicago/C/bo23533225.html"
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "El arte de la investigación"
+      editor_es: "Alianza Editorial / FCE — verificar edición disponible"
+    confianza: alta
+    notas: |
+      Manual estándar de metodología de investigación académica. Citado
+      transversalmente en los skills /edu y /inv.
+
+  - id: cast-udl-2.2-2018
+    titulo: Universal Design for Learning Guidelines (Version 2.2)
+    autores: ["CAST"]
+    año: 2018
+    edicion_vigente: "Version 2.2 (2018) — vigente; CAST publica revisiones periódicas"
+    categoria: guia
+    dominios: [pedagogia, accesibilidad]
+    skills: [/edu, /dis]
+    license: creative_commons
+    status: vigente
+    url_oficial: "https://udlguidelines.cast.org"
+    idiomas: [en, es]
+    confianza: alta
+    notas: |
+      Guía de acceso abierto. Particularmente útil cuando el diseño
+      instruccional debe considerar accesibilidad y diversidad cognitiva.
+
+  - id: gagne-conditions-1985
+    titulo: The Conditions of Learning and Theory of Instruction
+    autores: ["Gagné, R. M."]
+    año: 1985
+    edicion_vigente: "4th ed. (1985)"
+    categoria: libro
+    dominios: [pedagogia]
+    skills: [/edu]
+    license: copyright
+    status: vigente
+    url_oficial: ""
+    idiomas: [en, es]
+    confianza: alta
+    notas: |
+      Define los 9 eventos de instrucción de Gagné. Complementa Ausubel
+      con foco en la secuencia operativa de una clase.
+
+  - id: kirkpatrick-four-levels-2016
+    titulo: Kirkpatrick's Four Levels of Training Evaluation
+    autores: ["Kirkpatrick, J. D.", "Kirkpatrick, W. K."]
+    año: 2016
+    edicion_vigente: "1st ed. (2016)"
+    categoria: libro
+    dominios: [pedagogia, capacitacion-corporativa]
+    skills: [/edu]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.kirkpatrickpartners.com/the-new-world-kirkpatrick-model/"
+    idiomas: [en, es]
+    confianza: alta
+    notas: |
+      Revisión moderna del modelo Kirkpatrick (1959) por Donald.
+      Estándar industria para evaluar transferencia de capacitación
+      al puesto. Los 4 niveles (Reacción, Aprendizaje, Comportamiento,
+      Resultados) se citan en el skill /edu como rúbrica.
+
+  - id: merrill-first-principles-2002
+    titulo: First Principles of Instruction
+    autores: ["Merrill, M. D."]
+    año: 2002
+    edicion_vigente: "Educational Technology Research and Development, 50(3), 43–59 (2002)"
+    categoria: articulo
+    dominios: [pedagogia]
+    skills: [/edu]
+    license: copyright
+    status: vigente
+    doi: "10.1007/BF02505024"
+    url_oficial: "https://doi.org/10.1007/BF02505024"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Síntesis de 5 principios universales del diseño instruccional efectivo:
+      task-centered, activation, demonstration, application, integration.
+      Citado transversalmente en /edu como heurística operativa.
+
+# ============================================================
+# DOMINIO: regulacion-mx
+# ============================================================
+regulacion-mx:
+
+  - id: cpeum
+    titulo: Constitución Política de los Estados Unidos Mexicanos
+    autores: ["Congreso de la Unión (México)"]
+    año: 1917
+    edicion_vigente: "Texto vigente con reformas — versión más reciente publicada en DOF"
+    categoria: regulacion
+    dominios: [regulacion-mx]
+    skills: [/ci, /aud, /seg, /rsk]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Texto fundamental del orden jurídico mexicano. Reformas constantes;
+      verificar fecha de la última versión publicada en el sitio oficial
+      de la Cámara de Diputados antes de citar.
+
+  - id: cpf
+    titulo: Código Penal Federal (México)
+    autores: ["Congreso de la Unión (México)"]
+    año: 1931
+    edicion_vigente: "Texto vigente con reformas — versión más reciente en DOF"
+    categoria: regulacion
+    dominios: [regulacion-mx, penal]
+    skills: [/seg, /rsk]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPF.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Norma penal federal. Para casos específicos de seguridad informática
+      ver Título Noveno (Revelación de secretos y acceso ilícito a sistemas
+      y equipos de informática).
+
+  - id: dof
+    titulo: Diario Oficial de la Federación
+    autores: ["Gobierno de México"]
+    año: "varía por publicación"
+    edicion_vigente: "publicación diaria"
+    categoria: gaceta
+    dominios: [regulacion-mx]
+    skills: [/ci, /aud, /seg, /rsk, /fin]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.dof.gob.mx/"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Fuente primaria oficial de leyes, decretos, acuerdos y normas
+      mexicanas. Para citar una norma específica, referenciar la
+      publicación del DOF correspondiente (fecha + sección).
+
+  - id: inai-lineamientos-datos
+    titulo: Lineamientos Generales en materia de Protección de Datos Personales
+    autores: ["Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales (INAI)"]
+    año: 2017
+    edicion_vigente: "vigente con actualizaciones del INAI"
+    categoria: guia
+    dominios: [regulacion-mx, datos-personales]
+    skills: [/seg, /ci, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.inai.org.mx/"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Lineamientos publicados por INAI que operacionalizan la LFPDPPP y
+      la LGPDPPSO. Para procesos de gestión de datos personales, citar
+      junto con las leyes respectivas.
+
+  - id: lfpdppp-2010
+    titulo: Ley Federal de Protección de Datos Personales en Posesión de los Particulares
+    autores: ["Congreso de la Unión (México)"]
+    año: 2010
+    edicion_vigente: "DOF 5 de julio de 2010; última reforma 27 de enero de 2017"
+    categoria: regulacion
+    dominios: [regulacion-mx, datos-personales]
+    skills: [/seg, /ci, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Ley aplicable a particulares (empresas privadas). Para sujetos
+      obligados (entidades públicas) ver LGPDPPSO. Complementada por
+      su Reglamento (DOF 21 de diciembre de 2011).
+
+  - id: lgpdppso-2017
+    titulo: Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados
+    autores: ["Congreso de la Unión (México)"]
+    año: 2017
+    edicion_vigente: "DOF 26 de enero de 2017"
+    categoria: regulacion
+    dominios: [regulacion-mx, datos-personales]
+    skills: [/seg, /ci, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPDPPSO.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Ley aplicable a entidades públicas y privadas que reciben recursos
+      públicos. Complementa la LFPDPPP (que aplica al sector privado).
+
+  - id: lgpc-2012
+    titulo: Ley General de Protección Civil
+    autores: ["Congreso de la Unión (México)"]
+    año: 2012
+    edicion_vigente: "DOF 6 de junio de 2012 con reformas"
+    categoria: regulacion
+    dominios: [regulacion-mx, continuidad-operativa]
+    skills: [/rsk, /ci]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPC.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Marco federal de continuidad operativa y respuesta a desastres.
+      Relevante para evaluaciones de continuidad de negocio (BCP).
+
+  - id: reglamento-lfpdppp-2011
+    titulo: Reglamento de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares
+    autores: ["Ejecutivo Federal (México)"]
+    año: 2011
+    edicion_vigente: "DOF 21 de diciembre de 2011"
+    categoria: regulacion
+    dominios: [regulacion-mx, datos-personales]
+    skills: [/seg, /ci, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/regley/Reg_LFPDPPP.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Reglamento operativo de la LFPDPPP. Cita obligatoria junto con la
+      ley en cualquier evaluación de cumplimiento privado.

@@ -13,6 +13,92 @@ Cambios en preparación que aún no se han publicado en una versión.
 
 ---
 
+## [2.7.0] — 2026-05-12
+
+**Biblioteca de referencias confiables** — nueva sección `library/` del
+repo siguiendo el modelo B + E + D: catálogo central + índices por
+dominio + sincronización local. Bump MENOR.
+
+### Motivación
+
+Los skills citan normas, leyes, libros y estándares. Hasta ahora, cada
+SKILL.md tenía su propia sección "Referencias del dominio (APA 7)"
+inconsistentes entre sí, sin trazabilidad de versión vigente y sin
+forma de verificar si un usuario tiene acceso local a la fuente. Esta
+versión centraliza ese conocimiento.
+
+Tres piezas complementarias:
+
+- **B — Catálogo central YAML**: única fuente de verdad sobre qué
+  edición de cada fuente debe citarse, con metadatos (DOI, URL oficial,
+  license, status vigente/superseded, idiomas, traducciones).
+- **E — Índices por dominio**: documentos narrativos con panorama,
+  relaciones entre fuentes, advertencias de uso, orden recomendado de
+  lectura.
+- **D — Sincronización local**: script para mapear copias legalmente
+  adquiridas del usuario en `library/local/` (gitignored).
+
+### Added
+
+- **`library/README.md`** — explicación del modelo, schema del catálogo,
+  cómo contribuir entradas.
+
+- **`library/CATALOG.yaml`** — catálogo central machine-readable. 16
+  entradas iniciales en 2 dominios:
+  - **pedagogia** (8): Ausubel 1963, Bloom 1956 (superseded),
+    Anderson & Krathwohl 2001, Merrill 2002, Gagné 1985, CAST UDL 2.2,
+    Kirkpatrick 2016, Booth et al. 2016.
+  - **regulacion-mx** (8): CPEUM, CPF, DOF, LFPDPPP 2010, Reglamento
+    LFPDPPP 2011, LGPDPPSO 2017, LGPC 2012, INAI Lineamientos.
+
+- **`library/regulacion-mx/INDEX.md`** — panorama del cuerpo regulatorio
+  mexicano, jerarquía constitución→leyes→reglamentos→lineamientos,
+  diferencias LFPDPPP vs LGPDPPSO, cómo citar en evaluaciones de
+  cumplimiento, pendientes conocidos.
+
+- **`library/pedagogia/INDEX.md`** — mapa de la literatura pedagógica
+  consumida por `/edu`, trazabilidad sección-del-skill ↔ teoría,
+  reglas de actualidad (Bloom superseded por Anderson & Krathwohl),
+  orden de lectura recomendado, validación práctica con la serie de
+  capacitación.
+
+- **`.claude/scripts/biblioteca-sync.py`** — wrapper que verifica
+  cobertura local del usuario, genera symlinks de copias propias en
+  `library/local/`, y produce reportes detallados del catálogo.
+  Tres modos: `--check`, `--link`, `--report`.
+
+- **`library/local/.gitkeep`** — placeholder para que git preserve la
+  carpeta donde el usuario coloca sus copias legales (ignorada por
+  `.gitignore`).
+
+- **`CLAUDE.md` §9 — Comportamientos obligatorios**: nueva regla
+  *"Antes de citar una norma, ley, libro o estándar profesional,
+  consultar primero library/CATALOG.yaml o el INDEX.md del dominio
+  correspondiente para confirmar la versión vigente y la edición
+  canónica."*
+
+### Cambios en numeración
+
+- `VERSION`: `2.6.0` → `2.7.0`.
+
+### Compatibilidad
+
+- 100 % backward-compatible con v2.6.0. La biblioteca es de
+  consulta opcional; los skills siguen funcionando sin consultarla
+  pero pierden la garantía de actualidad de las citas.
+
+### Próximas iteraciones (no incluidas)
+
+- Más dominios: finanzas (NIF, IFRS, US GAAP), seguridad (ISO 27001,
+  NIST CSF, COSO, ITIL 4), auditoría (IIA Standards, ISA), IA (NIST
+  AI RMF, EU AI Act, ISO/IEC 42001).
+- Integración explícita en cada `SKILL.md`: añadir campo `library:`
+  apuntando al INDEX del dominio.
+- Receta `/capacidad` §9 bis.3 para descarga automatizada de
+  documentos en dominio público desde URL oficial.
+
+---
+
 ## [2.6.0] — 2026-05-12
 
 **Segunda receta estándar — render de slides + composición de video

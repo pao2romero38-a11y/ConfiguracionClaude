@@ -855,6 +855,10 @@ Declaración obligatoria en la respuesta:
 ✓  Invocar /capacidad antes de declarar imposibilidad por falta de
    herramienta — investigar primero opciones (Scripts → CLIs → MCP → APIs),
    proponer la menos costosa que cumpla y, si el usuario aprueba, implementarla
+✓  Antes de citar una norma, ley, libro o estándar profesional, consultar
+   primero library/CATALOG.yaml o el INDEX.md del dominio correspondiente
+   para confirmar la versión vigente y la edición canónica. Si la fuente
+   no está catalogada, proponer al usuario añadirla tras citarla
 ```
 
 ---
