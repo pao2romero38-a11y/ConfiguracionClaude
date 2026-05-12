@@ -475,6 +475,123 @@ CÓDIGO:
 
 ---
 
+## 11. Definition of Done — código listo para entregar
+
+**Una sola DoD. La adoptan los tres agentes reviewers** (`code-reviewer`,
+`be-reviewer`, `ui-reviewer`). Cada reviewer puede extender con su
+checklist específica pero no la reemplaza.
+
+Aplica cuando se entrega código de >30 líneas o cuando hay cambios a
+contratos (API, BD, formato de respuesta). Para snippets pequeños usar
+solo las secciones aplicables.
+
+```
+CÓDIGO:
+  □ Compila/ejecuta sin warnings (indicar comando exacto que lo verifica)
+  □ Manejo de errores en todos los puntos de fallo (no try/except vacíos)
+  □ Versión mínima de cada dependencia indicada
+  □ Variables en inglés, comentarios en español
+  □ Sin secrets hardcoded (verificar con grep)
+  □ Sin código muerto, sin imports no usados, sin TODOs no fechados
+
+CONCURRENCIA (si el código usa hilos / corrutinas / async):
+  □ Diagrama de sincronización presente (sección 2 de este skill)
+  □ Punto(s) de reunión explícito(s) (join / gather / WhenAll / Promise.all)
+  □ Timeout configurado para cada hilo que puede colgarse
+  □ Manejo de fallos parciales documentado (allSettled vs all)
+  □ Datos compartidos protegidos con Lock / Mutex / Semaphore
+
+DATOS Y BASE DE DATOS (si aplica):
+  □ Solo tipos SQL-92 (verificar contra /dev-db §3.2)
+  □ PK con CHAR(36) UUID o secuencia portable
+  □ Sin SELECT * en producción
+  □ Índices verificados con EXPLAIN ANALYZE
+  □ Migración con rollback documentado (.down.sql)
+  □ db-adapter usado para diferencias entre DBMS
+
+METADATA (si la tabla está en el sistema):
+  □ Entrada en tablas_sistema completa (función, descripción, nivel)
+  □ Entrada en campos_sistema para cada columna
+  □ Si visible_en_form=1: mensaje_ayuda definido
+  □ Si sensible_lfpdppp=1: categoria_dato_personal declarada
+  □ Si tipo_validacion=REGEX: regex_validacion no vacío
+  □ version_metadata bumpeada con SemVer en metadata_versiones
+  □ Codegen regenerado y commiteado (meta-derive-types, meta-derive-openapi,
+    front-msw-from-meta)
+
+API (si aplica — extensión: ver /dev-api §15):
+  □ Endpoints en matriz HTTP canónica (200/201/204/400/401/403/404/409/422/423/503)
+  □ Errores en Problem+JSON (RFC 9457)
+  □ Envelope { data, next_cursor } en listados
+  □ Idempotencia uniforme (sin_cambio: true cuando aplique)
+  □ Versionado aditivo (no breaking changes en major existente)
+  □ Serialización canónica (TIMESTAMP → ISO, BOOLEANO → 0|1, etc.)
+
+PRUEBAS (si aplica):
+  □ AAA y nomenclatura test_unidad_escenario_resultado (/dev-test §4)
+  □ Order-independence verificada
+  □ Mocks solo en la frontera del módulo
+  □ Performance/volumen con umbrales OK/ALERTA/FALLO si hay SLA (sección 5)
+  □ Cobertura: 100% caminos críticos, 80% líneas mínimo
+  □ Bypass triggers en cleanup (SET session_replication_role = replica)
+
+ROLES (si hay usuarios):
+  □ 5 roles base implementados (sección 6)
+  □ Pruebas de autorización por rol presentes
+
+MODOS GLOBALES:
+  □ Comportamiento correcto en DEBUG (logging + correlation_id)
+  □ Comportamiento correcto en PERFORMANCE (sin DEBUG, caché, pool)
+  □ Comportamiento correcto en MAINTENANCE (script generado, no escritura
+    directa a BD)
+  □ SYSTEM_MODE leído una sola vez al inicio (sección 7)
+
+EXTENSIONES POR REVIEWER:
+
+  be-reviewer (backend):
+    □ Trazabilidad: correlation_id propagado en cada llamada
+    □ Idempotencia uniforme con Idempotency-Key
+    □ Validaciones Zod / Joi / equivalente en la frontera
+    □ Authorize por roles_modificacion respetado por endpoint
+    □ Queries con paginación o streaming en colecciones
+
+  ui-reviewer (frontend):
+    □ State coverage: loading + error + empty + success por cada query
+    □ A11y semántica: button text, form labels, alt text en imágenes
+    □ Dark mode contrast verificado (WCAG AA mínimo)
+    □ Permissions: ProtectedRoute + roles en routes y nav
+    □ Cache invalidation: queryKey en invalidateQueries == queryKey en useQuery
+    □ Fixtures determinísticos (no Math.random en tests)
+
+  code-reviewer (fallback, sin división be/ui):
+    □ Aplicar DoD sin extensiones (las secciones aplicables solamente)
+```
+
+---
+
+## 12. Cómo invocar al reviewer
+
+Al terminar un cambio, antes de declarar "listo":
+
+```
+PATRÓN ESTÁNDAR (sistema con backend + frontend):
+  1. Detectar qué cambió: ¿solo backend? ¿solo frontend? ¿ambos?
+  2. Invocar:
+       - be-reviewer si hubo cambios en backend
+       - ui-reviewer si hubo cambios en frontend
+       - Ambos si hubo cambios en ambos
+  3. Resolver bloqueantes antes de commit
+
+PATRÓN FALLBACK (sistema sin división backend/frontend):
+  1. Invocar code-reviewer
+  2. Resolver bloqueantes antes de commit
+```
+
+Los reviewers **no commitean ni mergean** — solo reportan. La decisión
+de aceptar hallazgos y resolverlos es del programador o del usuario.
+
+---
+
 ## 10. Referencias del dominio (APA 7)
 
 Martin, R. C. (2017). *Clean architecture: A craftsman's guide to software

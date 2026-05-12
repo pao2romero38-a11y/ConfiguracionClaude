@@ -1,7 +1,15 @@
 # Skills de Claude Code — Índice completo
 
-Este directorio contiene los **24 skills** que extienden el comportamiento definido
+Este directorio contiene los **39 skills** que extienden el comportamiento definido
 en `CLAUDE.md`. Cada skill activa comportamientos especializados para su dominio.
+
+Distribución:
+- **Familia `dev-*`** (10): núcleo de programación.
+- **Ciclo de vida del proyecto** (10): de carpeta vacía a módulo CRUD funcional.
+- **Operación multi-agente** (3): `/status`, `/handoff`, `/inbox`.
+- **Dominio profesional** (13): finanzas, marketing, tec, proy, seg, rsk, ci,
+  aud, dis, cost, tra, edu, inv.
+- **Inteligencia Artificial** (3): `/ai`, `/ai-llm`, `/ai-ml`.
 
 ## Cómo activar un skill
 
@@ -21,18 +29,43 @@ Lee .claude/skills/fin/SKILL.md y analiza este estado de resultados.
 
 ## Directorio de skills
 
-### Skills de programación (8)
+### Familia `dev-*` — núcleo de programación (10)
 
 | Comando | Carpeta | Dominio |
 |---------|---------|---------|
-| `/dev` | `skills/dev/` | Programador / Diseñador de sistemas — arquitectura, concurrencia, performance |
-| `/dev-modes` | `skills/dev-modes/` | Modos globales — DEBUG, PERFORMANCE, MAINTENANCE (skill maestro) |
+| `/dev` | `skills/dev/` | Programador / Diseñador de sistemas — arquitectura, concurrencia, performance, DoD compartida (§11) |
+| `/dev-modes` | `skills/dev-modes/` | Modos globales — DEBUG, PERFORMANCE, MAINTENANCE |
 | `/dev-test` | `skills/dev-test/` | Pruebas unitarias e integración — pytest, Jest, JUnit, TDD, mocking |
-| `/dev-api` | `skills/dev-api/` | Diseño de APIs REST y GraphQL — OpenAPI, versionado, seguridad |
+| `/dev-api` | `skills/dev-api/` | Diseño de APIs REST y GraphQL — contrato canónico (§15) |
 | `/dev-db` | `skills/dev-db/` | Bases de datos — SQL-92, modelado, índices, N+1, transacciones |
 | `/dev-git` | `skills/dev-git/` | Flujo Git — branching, Conventional Commits, PR, hooks |
 | `/dev-docker` | `skills/dev-docker/` | Contenedores — Dockerfile, multi-stage, Compose, secrets |
 | `/dev-clean` | `skills/dev-clean/` | Código limpio — SOLID, code smells, refactorización, complejidad |
+| `/dev-meta` | `skills/dev-meta/` | Metadata-driven SSOT y 9 niveles progresivos |
+| `/dev-multiagent` | `skills/dev-multiagent/` | Convivencia multi-agente (opcional, con bus obligatorio si activo) |
+
+### Ciclo de vida del proyecto (10)
+
+| Comando | Carpeta | Dominio |
+|---------|---------|---------|
+| `/init-proyecto` | `skills/init-proyecto/` | Inicializar proyecto nuevo desde cero |
+| `/stack-pick` | `skills/stack-pick/` | Fase 3: seleccionar stack tecnológico |
+| `/install-from-stack` | `skills/install-from-stack/` | Fase 4: bootstrap del entorno desde el stack |
+| `/back-scaffold-from-meta` | `skills/back-scaffold-from-meta/` | Fase 5: scaffold backend desde metadata |
+| `/front-scaffold-from-meta` | `skills/front-scaffold-from-meta/` | Fase 5: scaffold frontend desde metadata |
+| `/meta-add-tabla` | `skills/meta-add-tabla/` | Wizard para agregar tabla nueva con metadata completa |
+| `/meta-bump` | `skills/meta-bump/` | Versionado SemVer de la metadata |
+| `/meta-validate` | `skills/meta-validate/` | Gate pre-Fase 5: 17 checks de consistencia |
+| `/diff-meta` | `skills/diff-meta/` | Diff legible de cambios en metadata desde último commit |
+| `/arq-derive` | `skills/arq-derive/` | Fase 2: propuesta de arquitectura derivada de la metadata |
+
+### Operación multi-agente (3)
+
+| Comando | Carpeta | Dominio |
+|---------|---------|---------|
+| `/status` | `skills/status/` | Vista única: PRs, mensajes, pendientes, CI |
+| `/handoff` | `skills/handoff/` | Fin de sesión: pasa contexto al siguiente agente |
+| `/inbox` | `skills/inbox/` | Re-check de mensajes nuevos durante sesión larga |
 
 ### Skills de dominio (13)
 
@@ -93,6 +126,7 @@ Heredados del `CLAUDE.md` — no se repiten en cada skill pero siempre aplican:
 
 ---
 
-*Skills — 24 skills (8 de programación + 13 de dominio + 3 de IA)*
+*Skills — 39 skills (10 familia dev-* + 10 ciclo de vida + 3 multi-agente + 13 dominio + 3 IA)*
+*Más 4 agentes especializados en `.claude/agents/`: be-reviewer, ui-reviewer, code-reviewer, message-bus*
 *Proyecto: ConfiguracionClaude · Configuración base de Claude Code*
 *Versión vigente en VERSION en la raíz del repo*

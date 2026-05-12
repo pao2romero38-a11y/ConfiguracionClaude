@@ -15,12 +15,21 @@ Para profesionales que trabajan con Claude Code en alguno de estos 17 dominios:
 
 | Familia | Modos disponibles |
 |---|---|
-| **Programación** | `/dev` `/dev-api` `/dev-clean` `/dev-db` `/dev-docker` `/dev-git` `/dev-modes` `/dev-test` |
+| **Familia `/dev`** | `/dev` `/dev-api` `/dev-clean` `/dev-db` `/dev-docker` `/dev-git` `/dev-meta` `/dev-modes` `/dev-multiagent` `/dev-test` |
+| **Ciclo de vida del proyecto** | `/init-proyecto` `/stack-pick` `/install-from-stack` `/back-scaffold-from-meta` `/front-scaffold-from-meta` `/meta-add-tabla` `/meta-bump` `/meta-validate` `/diff-meta` `/arq-derive` |
+| **Operación multi-agente** | `/status` `/handoff` `/inbox` |
 | **Análisis y dominio** | `/edu` `/inv` `/fin` `/mkt` `/tec` `/proy` `/seg` `/rsk` `/ci` `/aud` `/dis` `/cost` `/tra` |
 | **Inteligencia Artificial** | `/ai` `/ai-llm` `/ai-ml` |
 
-Total: **24 skills** (8 de programación + 13 de dominio + 3 de IA). Cada uno
-carga un comportamiento experto verificable.
+Total: **39 skills** (10 familia `/dev` + 10 ciclo de vida + 3 multi-agente +
+13 dominio + 3 IA). Más **4 agentes especializados** en `.claude/agents/`:
+`be-reviewer`, `ui-reviewer`, `code-reviewer`, `message-bus`. Cada skill carga
+un comportamiento experto verificable.
+
+El método de desarrollo de sistemas incluye **5 fases secuenciales obligatorias**,
+**9 niveles progresivos de metadata** y soporte **multi-DBMS para 6 motores**
+(PostgreSQL, MySQL, SQL Server, Oracle, DB2, Spanner). Ver `CLAUDE.md` §4 ter
+y `templates/` para los artefactos ejecutables del método.
 
 > **Fuera de alcance:** consultas triviales o de cultura general. Para eso
 > se recomienda usar Claude sin esta configuración. Aquí cada respuesta
@@ -102,10 +111,24 @@ ConfiguracionClaude/
 ├── CHANGELOG.md        ← bitácora versionada de cambios
 ├── VERSION             ← versión vigente (formato SemVer)
 ├── CLAUDE.md           ← instrucciones de comportamiento globales
-└── .claude/
-    └── skills/         ← 24 skills especializados
-        ├── README.md   ← índice de skills
-        └── <modo>/SKILL.md ...
+├── .claude/
+│   ├── skills/         ← 39 skills especializados
+│   │   ├── README.md   ← índice de skills
+│   │   └── <modo>/SKILL.md ...
+│   ├── agents/         ← 4 agentes especializados (be/ui/code reviewers + message-bus)
+│   ├── agents-config.json    ← identidad multi-agente (opcional)
+│   └── apply-agent-identity.js
+└── templates/          ← templates ejecutables del método (Fases 1-5)
+    ├── migrate.js              ← runner multi-DBMS
+    ├── bootstrap.sh
+    ├── migrations/             ← 11 migraciones bootstrap SQL-92
+    ├── db-adapters/            ← 6 motores (postgres/mysql/sqlserver/oracle/db2/spanner)
+    ├── codegen/                ← meta-derive-types / openapi, front-msw-from-meta
+    ├── backend/                ← health.js, logger.js
+    ├── eslint-rules/           ← reglas custom
+    ├── .husky/pre-commit       ← hook genérico (lint + orphan + secrets)
+    ├── scripts/                ← orphan-migration-check, message-bus-validate
+    └── .github/workflows/      ← ci-matrix, ci-matrix-opt, audit, release-please, ci
 ```
 
 ---
