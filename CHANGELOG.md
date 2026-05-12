@@ -13,6 +13,76 @@ Cambios en preparación que aún no se han publicado en una versión.
 
 ---
 
+## [2.4.0] — 2026-05-12
+
+Nueva **meta-skill** `/capacidad` para detectar, investigar e instalar
+herramientas que faltan cuando una petición las requiere. Bump MENOR
+(funcionalidad nueva compatible con v2.3.0).
+
+Esta versión también introduce dos reglas de comportamiento — una
+prohibida y una obligatoria — que formalizan en `CLAUDE.md` §8 y §9 la
+obligación de invocar `/capacidad` antes de declarar imposibilidad por
+falta de herramienta. Es la primera regla de comportamiento del proyecto
+con una skill operativa asociada.
+
+### Added
+
+- **Skill `/capacidad`** (`.claude/skills/capacidad/SKILL.md`) — gestor de
+  capacidades. Se auto-activa cuando se detecta una brecha real entre lo
+  que la petición requiere y los tools disponibles. También invocable
+  manualmente. El protocolo:
+  - **Diagnóstico de brecha**: capacidad requerida + tools relevantes
+    + confianza de que la brecha es real.
+  - **Investigación en 4 niveles ordenados por costo creciente**:
+    Nivel 1 Scripts helper · Nivel 2 CLIs locales · Nivel 3 MCP servers
+    · Nivel 4 APIs externas. Cada opción se evalúa contra 4 ejes
+    (costo · setup · calidad · latencia) usando `/inv` como apoyo
+    transversal para etiquetado epistémico.
+  - **Recomendación + plan B** con justificación.
+  - **Menú interactivo** (`AskUserQuestion`) para que el usuario apruebe
+    o cancele.
+  - **Implementación específica por nivel** con reglas duras (nunca
+    versionar API keys; nunca instalar sin aprobación; nunca omitir
+    validación post-instalación).
+  - **Smoke test** obligatorio: input mínimo conocido → output esperado.
+  - **Registro en `MEMORY.md`** como reference memory para evitar
+    re-investigar la misma capacidad en sesiones futuras.
+  - **Regreso a la tarea original** si la activación fue automática.
+
+- **CLAUDE.md §8 — Comportamientos prohibidos**: nueva regla
+  *"Declarar imposibilidad para cumplir una petición sin antes evaluar
+  si el bloqueo es por falta de herramienta y, si lo es, invocar
+  /capacidad."*
+
+- **CLAUDE.md §9 — Comportamientos obligatorios**: nueva regla
+  *"Invocar /capacidad antes de declarar imposibilidad por falta de
+  herramienta — investigar primero opciones (Scripts → CLIs → MCP →
+  APIs), proponer la menos costosa que cumpla y, si el usuario aprueba,
+  implementarla."*
+
+- **CLAUDE.md §5 — Índice de skills**: nueva entrada `/capacidad`.
+  Total de skills: 40 → 41. Sub-grupo *Meta-skills*: 1 → 2.
+
+- **CLAUDE.md §11 — Banner de inicio**: línea `Meta-skills:` actualizada
+  para incluir `/capacidad`.
+
+- **CLAUDE.md §12 — Comandos rápidos**: nueva entrada `/capacidad` en
+  la sección *Meta-skills*.
+
+### Cambios en numeración
+
+- `VERSION`: `2.3.0` → `2.4.0`.
+- Footer de `CLAUDE.md`: 40 → 41 skills.
+
+### Compatibilidad
+
+- 100 % backward-compatible con v2.3.0. La auto-activación solo dispara
+  cuando hay una brecha real entre la petición y los tools disponibles;
+  no afecta a modos existentes ni a peticiones que sí se pueden cumplir.
+  Ninguna instalación ocurre sin aprobación explícita del usuario.
+
+---
+
 ## [2.3.0] — 2026-05-12
 
 Nueva **meta-skill** `/prompt` para refinar prompts crudos del usuario antes

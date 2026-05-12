@@ -553,14 +553,15 @@ contexto cargado en cada sesión.
 | `/ai-llm` | Aplicaciones de LLMs | `.claude/skills/ai-llm/` |
 | `/ai-ml` | ML / MLOps | `.claude/skills/ai-ml/` |
 | `/prompt` | Refinador de prompts (meta-skill, modo entrenamiento) | `.claude/skills/prompt/` |
+| `/capacidad` | Gestor de capacidades — investiga, instala y registra herramientas faltantes | `.claude/skills/capacidad/` |
 
-**Total:** 40 skills (10 de la familia `dev-*` + 13 de dominio + 3 de IA + 13 de ciclo de vida de proyecto y operación multi-agente + 1 meta-skill).
+**Total:** 41 skills (10 de la familia `dev-*` + 13 de dominio + 3 de IA + 13 de ciclo de vida de proyecto y operación multi-agente + 2 meta-skills).
 
 **Sub-grupos de la familia `dev-*` y vecinos**:
 - **Núcleo**: `/dev`, `/dev-api`, `/dev-clean`, `/dev-db`, `/dev-docker`, `/dev-git`, `/dev-meta`, `/dev-modes`, `/dev-multiagent`, `/dev-test` (10).
 - **Ciclo de vida del proyecto**: `/init-proyecto`, `/stack-pick`, `/install-from-stack`, `/back-scaffold-from-meta`, `/front-scaffold-from-meta`, `/meta-add-tabla`, `/meta-bump`, `/meta-validate`, `/diff-meta`, `/arq-derive` (10).
 - **Operación multi-agente**: `/status`, `/handoff`, `/inbox` (3).
-- **Meta-skills**: `/prompt` (1). Operan sobre el prompt del usuario, no sobre un dominio. Ver §4 quater.
+- **Meta-skills**: `/prompt`, `/capacidad` (2). Operan sobre el prompt del usuario o sobre el conjunto de herramientas disponibles, no sobre un dominio.
 
 ### Activación de un skill
 
@@ -827,6 +828,8 @@ Declaración obligatoria en la respuesta:
 ✗  Traducir términos jurídicos o médicos sin la advertencia de revisión profesional
 ✗  Presentar resultados de lo particular a lo general (siempre general → particular)
 ✗  Hacer cita de cita sin declararlo explícitamente en el texto
+✗  Declarar imposibilidad para cumplir una petición sin antes evaluar si
+   el bloqueo es por falta de herramienta y, si lo es, invocar /capacidad
 ```
 
 ---
@@ -849,6 +852,9 @@ Declaración obligatoria en la respuesta:
 ✓  Usar (Autor et al., año) para tres o más autores desde la primera cita
 ✓  Vincular aprendizajes a desempeño observable (modo capacitador)
 ✓  Incluir advertencia de asesoría profesional en análisis financieros, legales y médicos
+✓  Invocar /capacidad antes de declarar imposibilidad por falta de
+   herramienta — investigar primero opciones (Scripts → CLIs → MCP → APIs),
+   proponer la menos costosa que cumpla y, si el usuario aprueba, implementarla
 ```
 
 ---
@@ -926,7 +932,8 @@ Ciclo de vida: /init-proyecto · /stack-pick · /install-from-stack
 
 Multi-agente:  /status · /handoff · /inbox
 
-Meta-skills:   /prompt  (refina prompts crudos antes de ejecutarlos)
+Meta-skills:   /prompt     (refina prompts crudos antes de ejecutarlos)
+               /capacidad  (investiga e instala herramientas faltantes)
 
 Agentes:       be-reviewer · ui-reviewer · code-reviewer · message-bus
 
@@ -980,6 +987,7 @@ Para ver niveles de metadata: /niveles
 | `/inbox` | Re-check de mensajes nuevos en sesión larga |
 | **Meta-skills** ||
 | `/prompt` | Refinador de prompts: muestra refinado + rúbrica visible y ofrece ejecutarlo |
+| `/capacidad` | Gestor de capacidades: investiga, instala y registra herramientas faltantes |
 | **Comandos del sistema** ||
 | `/config` | Mostrar configuración activa y modo actual |
 | `/modos` | Listar todos los modos disponibles con descripción |
@@ -993,6 +1001,6 @@ Para ver niveles de metadata: /niveles
 
 ---
 
-*CLAUDE.md — 17 modos de operación · 40 skills · 4 agentes · 5 fases · 9 niveles metadata · 6 DBMS · Citación APA 7ª edición*
+*CLAUDE.md — 17 modos de operación · 41 skills · 4 agentes · 5 fases · 9 niveles metadata · 6 DBMS · Citación APA 7ª edición*
 *Proyecto: ConfiguracionClaude · Configuración base de Claude Code*
 *Versión gobernada por el archivo VERSION en la raíz del repo*
