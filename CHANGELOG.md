@@ -13,6 +13,26 @@ Cambios en preparación que aún no se han publicado en una versión.
 
 ---
 
+## [2.2.1] — 2026-05-12
+
+Bump PATCH (corrección cosmética sin cambio funcional).
+
+### Fixed
+
+- **`CLAUDE.md` §1.1 y §10 yaml**: corregidas 2 ocurrencias residuales
+  de "14 dominios cubiertos" → "17 dominios cubiertos" que se quedaron
+  del estado pre-v2.1.0 (antes de añadir la familia `/ai`). El §5
+  total, el §10 yaml `modos_disponibles`/`skills_total`/`agentes` y el
+  footer ya estaban correctos; estos dos strings se habían omitido en
+  el pase de documentación de v2.1.0.
+
+### Compatibilidad
+
+- 100% backward-compatible con v2.2.0. Ningún cambio en skills, agentes,
+  templates ni comportamiento. Solo texto descriptivo.
+
+---
+
 ## [2.2.0] — 2026-05-11
 
 Adopción de la **maquinaria operativa del método de desarrollo de sistemas**.
