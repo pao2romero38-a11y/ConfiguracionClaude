@@ -17,6 +17,19 @@ explica cómo enviar tu propuesta.
   ISO actualizada, una guía clínica revisada).
 - Nuevos ejemplos concretos que mejoren la sección `[DATO DE EJEMPLO]`.
 - Combinaciones de modos típicas en tu disciplina que valga la pena documentar.
+- **Nuevas series de capacitación** bajo `training/` (ver `training/README.md`
+  para la propuesta general y el modelo de complementos del repo).
+- **Recetas estándar pre-validadas** para `/capacidad` cuando hayas instalado
+  con éxito una capacidad nueva y quieras facilitar el camino al siguiente
+  usuario (ver `.claude/skills/capacidad/SKILL.md` §9 bis).
+- **Wrappers reutilizables** en `.claude/scripts/` que orquesten herramientas
+  ya instaladas (ej. `narrar.py` para TTS local). Misma regla: deben haber
+  pasado smoke test en uso real antes del PR.
+- **Configuraciones derivadas** para otro propósito (consultoría legal,
+  investigación científica, salud, etc.) preservando las invariantes del
+  repo (APA 7, protocolo de calidad, presentación general → particular).
+  Cuando una configuración derivada madura, evaluamos si conviene
+  mantenerla como rama o como repo propio que herede de éste.
 
 ### ⚠ Requiere discusión previa antes de enviar PR
 

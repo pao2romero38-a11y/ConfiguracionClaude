@@ -310,6 +310,98 @@ esperar a que el usuario haga su próxima petición.
 
 ---
 
+## 9 bis. Recetas estándar pre-validadas
+
+Cuando la capacidad solicitada coincide con una **receta estándar**
+documentada en esta sección, **omitir los pasos 4 (investigación) y 5
+(análisis comparativo)** y ofrecer directamente la receta para
+aprobación del usuario. Se preserva la regla dura *"nunca instalar sin
+aprobación"* — solo se acelera el camino cuando la solución óptima ya
+está validada.
+
+Una receta solo entra a esta sección cuando:
+
+- Ha sido instalada al menos una vez con éxito
+- El smoke test pasó
+- El usuario expresó conformidad con el resultado
+- Los parámetros configurables fueron afinados en uso real
+
+### 9 bis.1 — TTS local en español mexicano (cero costo)
+
+**Disparador:** el usuario pide narración / síntesis de voz en español
+mexicano, con cero costo recurrente, calidad media-alta suficiente para
+capacitación interna o uso personal.
+
+**Receta validada (mayo 2026):**
+
+```
+Nivel:        2 — CLI local
+Motor:        piper-tts 1.4.2 (pip install --user piper-tts)
+Voz:          es_MX-claude-high (modelo neural, ~60 MB)
+Dependencias: ffmpeg (brew install ffmpeg)
+              espeak-ng (brew install espeak-ng)  ← requerido por piper
+Wrapper:      .claude/scripts/narrar.py (en este repo)
+
+Parámetros estándar:
+  LENGTH_SCALE        = 1.08    (ritmo pedagógico)
+  SENTENCE_SILENCE    = 0.35    (silencio entre frases, segundos)
+  INTER_BLOCK_SILENCE = 1.5     (silencio entre bloques narrativos)
+
+Diccionario de pronunciación inglesa incluido en narrar.py:
+  Claude → Clod · ROI → ar óu ai · WACC → uak · DCF → di si ef
+  IFRS → ai ef ar es · PMBOK → pimbok · GAAP → gap
+  retail · online · software · hardware · prompt · feedback · stack
+  Bloom · Kirkpatrick · Ausubel · Anderson · Krathwohl · Merrill
+```
+
+**Bug conocido a parchar durante install:**
+
+Algunos `.onnx.json` traen `phoneme_type: "PhonemeType.ESPEAK"` literal.
+piper-tts espera `"espeak"` (lowercase string). Parchar antes de invocar:
+
+```python
+import json
+p = '/Users/<user>/.local/share/piper/voices/<voz>.onnx.json'
+with open(p) as f: d = json.load(f)
+if d.get('phoneme_type', '').startswith('PhonemeType.'):
+    d['phoneme_type'] = 'espeak'
+    with open(p, 'w') as f: json.dump(d, f)
+```
+
+**Smoke test estándar:**
+
+```bash
+echo "Hoy aprendes una técnica nueva. Sin instalar nada, sin programar." | \
+  ~/Library/Python/3.9/bin/piper \
+  -m ~/.local/share/piper/voices/es_MX-claude-high.onnx \
+  --length-scale 1.08 --sentence-silence 0.35 \
+  -f /tmp/smoke.wav
+afplay /tmp/smoke.wav
+```
+
+**Cuándo aplica esta receta:**
+
+- ✓ macOS con Homebrew disponible
+- ✓ Usuario quiere español (México) o español-neutro
+- ✓ Calidad media-alta es suficiente
+- ✗ Linux/Windows → comandos cambian (investigar)
+- ✗ Idioma distinto al español → cambiar voz (investigar)
+- ✗ Calidad estado del arte requerida → ir a Nivel 4 (APIs comerciales)
+- ✗ Volumen muy alto (> 1 hora de audio por día) → reconsiderar costo de cómputo local
+
+**Validación de la receta:**
+
+Producida la serie "serie-mejora-continua" (7 episodios, ~38 min total,
+50 bloques individuales, ~97 MB de audio). Tiempo de setup completo:
+~25 min (incluye debug del bug del JSON y descarga del modelo).
+
+**Memoria asociada:**
+
+Tras instalar, registrar en `MEMORY.md` como `capacidad-tts-local-es`
+siguiendo la plantilla del §8 (Registro en memoria del usuario).
+
+---
+
 ## 10. Restricciones no negociables
 
 ```

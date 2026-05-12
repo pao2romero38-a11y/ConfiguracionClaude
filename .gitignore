@@ -19,3 +19,12 @@
 # Logs and temp
 *.log
 .tmp/
+
+# Training — material producido se regenera con .claude/scripts/narrar.py
+# y herramientas de render (pandoc, ffmpeg). No versionar binarios pesados.
+training/**/audio/
+training/**/*.wav
+training/**/*.mp3
+training/**/*.mp4
+training/**/slides-render/
+training/**/*.pdf

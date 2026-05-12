@@ -13,6 +13,74 @@ Cambios en preparación que aún no se han publicado en una versión.
 
 ---
 
+## [2.5.0] — 2026-05-12
+
+**Receta estándar de TTS + materiales de capacitación versionados.**
+Bump MENOR (funcionalidad nueva compatible con v2.4.0).
+
+Tres aportes complementarios al repo, derivados del trabajo real de
+producir la primera serie de capacitación:
+
+1. **Primera receta estándar pre-validada del protocolo `/capacidad`**:
+   TTS local en español mexicano vía piper-tts + es_MX-claude-high, con
+   parámetros, dependencias, bug conocido y diccionario de pronunciación
+   inglesa documentados. Las próximas invocaciones de `/capacidad` para
+   esta capacidad omiten los pasos de investigación y comparativa.
+2. **Wrapper reutilizable `narrar.py`** versionado en `.claude/scripts/`.
+   Lee scripts de capacitación en markdown, respeta marcadores
+   `[PAUSA Ns]`, aplica el diccionario de pronunciación, y produce un wav
+   por bloque + un wav concatenado por episodio.
+3. **Sección `training/`** establecida en el repo como ubicación oficial
+   de materiales de capacitación complementarios. Primera serie incluida
+   (`serie-mejora-continua`, 7 episodios, ~38 min) como referencia que
+   cualquier usuario del repo puede consumir, regenerar audio, modificar
+   o tomar como plantilla para crear sus propias series.
+
+### Added
+
+- **`.claude/skills/capacidad/SKILL.md` §9 bis — Recetas estándar
+  pre-validadas**: nueva sección con la primera receta documentada
+  (TTS español MX cero costo) y las reglas para añadir nuevas recetas
+  (solo entran tras smoke test exitoso + conformidad del usuario +
+  afinación en uso real).
+- **`.claude/scripts/narrar.py`** (~250 líneas): wrapper TTS para
+  scripts en markdown con secciones `# === SCRIPT DE NARRACIÓN ===`.
+- **`training/`** (sección nueva del repo):
+  - `README.md` que explica el propósito, las series disponibles, el
+    flujo de producción, el roadmap (slides + video composición con
+    requisito de sincronización slide↔audio) y el modelo de
+    contribución de series complementarias.
+  - `serie-mejora-continua/` — 1 archivo de diseño maestro + 7
+    archivos de episodio con script de narración, slides estructurados
+    y notas de producción.
+- **`CONTRIBUTING.md` §1**: ampliación del alcance esperado de
+  contribuciones para incluir series nuevas, recetas estándar
+  validadas, wrappers reutilizables y configuraciones derivadas.
+- **`.gitignore`**: patrones para excluir audio/video producido bajo
+  `training/**/` (se regenera con `narrar.py` o herramientas de render).
+
+### Cambios en numeración
+
+- `VERSION`: `2.4.0` → `2.5.0`.
+
+### Compatibilidad
+
+- 100 % backward-compatible con v2.4.0. La receta estándar es opcional —
+  el protocolo `/capacidad` sigue funcionando para capacidades no
+  documentadas. La serie en `training/` no afecta a ningún skill ni
+  ninguna regla del repo.
+
+### Próxima iteración (no incluida en esta versión)
+
+- Receta estándar de render de slides para complementar la serie de
+  capacitación. La descripción del problema y los 4 niveles candidatos
+  ya están en `training/README.md` — ejecutar el protocolo `/capacidad`
+  para evaluar y elegir cuando alguien lo necesite.
+- Script de composición video con sincronización slide ↔ audio
+  derivada del eje temporal del markdown.
+
+---
+
 ## [2.4.0] — 2026-05-12
 
 Nueva **meta-skill** `/capacidad` para detectar, investigar e instalar
