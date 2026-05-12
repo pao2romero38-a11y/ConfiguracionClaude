@@ -315,6 +315,315 @@ regulacion-mx:
       Reglamento operativo de la LFPDPPP. Cita obligatoria junto con la
       ley en cualquier evaluación de cumplimiento privado.
 
+  # === Sub-bloque FISCAL MX ===
+
+  - id: cff-1981
+    titulo: Código Fiscal de la Federación
+    autores: ["Congreso de la Unión (México)"]
+    año: 1981
+    edicion_vigente: "DOF 31 de diciembre de 1981 con reformas vigentes"
+    categoria: regulacion
+    dominios: [regulacion-mx, fiscal]
+    skills: [/fin, /aud, /ci]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/CFF.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Marco general de la relación tributaria en México. Define
+      derechos y obligaciones del contribuyente, infracciones,
+      facultades del SAT. Reforma fiscal anual publicada en DOF;
+      verificar última miscelánea fiscal vigente.
+
+  - id: lisr-2013
+    titulo: Ley del Impuesto Sobre la Renta
+    autores: ["Congreso de la Unión (México)"]
+    año: 2013
+    edicion_vigente: "DOF 11 de diciembre de 2013 con reformas vigentes"
+    categoria: regulacion
+    dominios: [regulacion-mx, fiscal]
+    skills: [/fin, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LISR.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Impuesto principal sobre ingresos de personas físicas y morales.
+      Tasa general personas morales: 30%. Reformada anualmente; verificar
+      versión vigente en cada cierre fiscal.
+
+  - id: liva-1978
+    titulo: Ley del Impuesto al Valor Agregado
+    autores: ["Congreso de la Unión (México)"]
+    año: 1978
+    edicion_vigente: "DOF 29 de diciembre de 1978 con reformas vigentes"
+    categoria: regulacion
+    dominios: [regulacion-mx, fiscal]
+    skills: [/fin, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LIVA.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      IVA en México: tasa general 16%, frontera 8%, alimentos y
+      medicinas 0%, ciertos servicios exentos. Citar junto con LISR
+      al evaluar cumplimiento fiscal integral.
+
+  - id: liepys-1980
+    titulo: Ley del Impuesto Especial sobre Producción y Servicios
+    autores: ["Congreso de la Unión (México)"]
+    año: 1980
+    edicion_vigente: "DOF 30 de diciembre de 1980 con reformas vigentes"
+    categoria: regulacion
+    dominios: [regulacion-mx, fiscal]
+    skills: [/fin, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LIEPS.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      IEPS aplica a bebidas alcohólicas, tabaco, hidrocarburos,
+      bebidas saborizadas, etc. Relevante en sectores específicos
+      (alimentos, automotriz con combustibles, etc.).
+
+  - id: rmf-anual
+    titulo: Resolución Miscelánea Fiscal (anual)
+    autores: ["Servicio de Administración Tributaria (SAT)"]
+    año: 2024
+    edicion_vigente: "RMF anual con modificaciones por anexos"
+    categoria: regulacion
+    dominios: [regulacion-mx, fiscal]
+    skills: [/fin, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.sat.gob.mx/normatividad/41995/resolucion-miscelanea-fiscal"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Reglas operativas anuales publicadas por SAT que detallan la
+      aplicación del CFF y leyes de impuestos. Cita obligatoria al
+      analizar operaciones específicas (facturación electrónica,
+      regímenes simplificados, etc.). [⚠ verificar última versión
+      publicada en SAT]
+
+  # === Sub-bloque MERCANTIL MX ===
+
+  - id: codigo-comercio-1889
+    titulo: Código de Comercio
+    autores: ["Congreso de la Unión (México)"]
+    año: 1889
+    edicion_vigente: "DOF 7 de octubre de 1889 con reformas vigentes"
+    categoria: regulacion
+    dominios: [regulacion-mx, mercantil]
+    skills: [/fin, /proy, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/CCom.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Marco mercantil mexicano. Regula actos de comercio, contratos
+      mercantiles, juicios mercantiles, títulos de crédito (junto con
+      LGTOC). Aún cita comerciante en términos del s. XIX; reformas
+      modernas integran comercio electrónico y firma electrónica.
+
+  - id: lgsm-1934
+    titulo: Ley General de Sociedades Mercantiles
+    autores: ["Congreso de la Unión (México)"]
+    año: 1934
+    edicion_vigente: "DOF 4 de agosto de 1934 con reformas vigentes"
+    categoria: regulacion
+    dominios: [regulacion-mx, mercantil, sociedades]
+    skills: [/fin, /proy]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGSM.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Regula las sociedades mercantiles en México: SA, S de RL, S en C
+      por A, S en NC, S en C Simple, Sociedad Cooperativa, S por
+      Acciones Simplificada (SAS). La SAS (introducida 2016) es
+      la opción más simple para startups.
+
+  - id: lgtoc-1932
+    titulo: Ley General de Títulos y Operaciones de Crédito
+    autores: ["Congreso de la Unión (México)"]
+    año: 1932
+    edicion_vigente: "DOF 27 de agosto de 1932 con reformas vigentes"
+    categoria: regulacion
+    dominios: [regulacion-mx, mercantil, financiero]
+    skills: [/fin]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTOC.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Regula títulos de crédito (letra de cambio, pagaré, cheque,
+      bonos), fideicomisos, prendas, operaciones bancarias.
+      Cita habitual en análisis de instrumentos financieros mexicanos.
+
+  # === Sub-bloque LABORAL MX ===
+
+  - id: lft-1970
+    titulo: Ley Federal del Trabajo
+    autores: ["Congreso de la Unión (México)"]
+    año: 1970
+    edicion_vigente: "DOF 1 de abril de 1970 con reformas vigentes (mayor reforma 2019)"
+    categoria: regulacion
+    dominios: [regulacion-mx, laboral]
+    skills: [/ci, /aud, /edu]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFT.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Marco laboral mexicano. La reforma de 2019 cambió radicalmente
+      el modelo de justicia laboral (tribunales en lugar de juntas) y
+      la dinámica colectiva (libertad sindical, voto secreto). Cita
+      obligatoria en cualquier evaluación de cumplimiento laboral.
+
+  - id: lss-1995
+    titulo: Ley del Seguro Social
+    autores: ["Congreso de la Unión (México)"]
+    año: 1995
+    edicion_vigente: "DOF 21 de diciembre de 1995 con reformas vigentes"
+    categoria: regulacion
+    dominios: [regulacion-mx, laboral, seguridad-social]
+    skills: [/ci, /aud, /fin]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LSS.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Régimen obligatorio del IMSS. Define obligaciones del patrón
+      (afiliación, cotización), prestaciones a trabajadores (enfermedad,
+      maternidad, riesgos de trabajo, invalidez, retiro). Reforma 2020
+      modificó significativamente el régimen de subcontratación.
+
+  - id: linfonavit-1972
+    titulo: Ley del Instituto del Fondo Nacional de la Vivienda para los Trabajadores
+    autores: ["Congreso de la Unión (México)"]
+    año: 1972
+    edicion_vigente: "DOF 24 de abril de 1972 con reformas vigentes"
+    categoria: regulacion
+    dominios: [regulacion-mx, laboral, vivienda]
+    skills: [/ci, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LInfonavit.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Aportaciones del patrón al INFONAVIT (5% sobre salario base de
+      cotización). Cita obligatoria en evaluación de carga social
+      sobre nómina.
+
+  - id: nom-035-stps-2018
+    titulo: NOM-035-STPS-2018 — Factores de riesgo psicosocial en el trabajo
+    autores: ["Secretaría del Trabajo y Previsión Social (México)"]
+    año: 2018
+    edicion_vigente: "DOF 23 de octubre de 2018"
+    categoria: norma
+    dominios: [regulacion-mx, laboral, salud-ocupacional]
+    skills: [/ci, /aud, /edu]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.dof.gob.mx/nota_detalle.php?codigo=5541828&fecha=23/10/2018"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Norma sobre identificación, análisis y prevención de factores
+      de riesgo psicosocial (estrés laboral, violencia, jornadas
+      excesivas). Cumplimiento obligatorio diferenciado por tamaño
+      de centro de trabajo.
+
+  # === Sub-bloque SALUD MX ===
+
+  - id: lgs-1984
+    titulo: Ley General de Salud
+    autores: ["Congreso de la Unión (México)"]
+    año: 1984
+    edicion_vigente: "DOF 7 de febrero de 1984 con reformas vigentes"
+    categoria: regulacion
+    dominios: [regulacion-mx, salud]
+    skills: [/ci, /aud, /seg]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGS.pdf"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Marco federal de salud en México. Define competencias entre
+      federación, estados y municipios; reglas para establecimientos
+      de salud; control sanitario; investigación clínica; expediente
+      clínico. Citar junto con NOMs específicas según el caso.
+
+  - id: nom-004-ssa3-2012
+    titulo: NOM-004-SSA3-2012 — Del expediente clínico
+    autores: ["Secretaría de Salud (México)"]
+    año: 2012
+    edicion_vigente: "DOF 15 de octubre de 2012"
+    categoria: norma
+    dominios: [regulacion-mx, salud, datos-personales]
+    skills: [/seg, /ci, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.dof.gob.mx/nota_detalle.php?codigo=5272787&fecha=15/10/2012"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Norma obligatoria para todo establecimiento de atención médica
+      en México. Define contenidos mínimos del expediente clínico,
+      criterios de integración, custodia, y privacidad. Pertinente al
+      diseñar sistemas EMR (Electronic Medical Records) en México.
+
+  - id: nom-024-ssa3-2012
+    titulo: NOM-024-SSA3-2012 — Sistemas de información de registro electrónico para la salud
+    autores: ["Secretaría de Salud (México)"]
+    año: 2012
+    edicion_vigente: "DOF 30 de noviembre de 2012"
+    categoria: norma
+    dominios: [regulacion-mx, salud, tecnologia-empresarial]
+    skills: [/tec, /seg, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.dof.gob.mx/nota_detalle.php?codigo=5280848&fecha=30/11/2012"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Norma técnica para Sistemas de Información de Registro
+      Electrónico para la Salud (SIRES). Define requisitos de
+      interoperabilidad, seguridad y arquitectura de los EMR
+      en México. Citar junto con NOM-004-SSA3 al diseñar sistemas
+      médicos.
+
+  - id: nom-035-ssa3-2012
+    titulo: NOM-035-SSA3-2012 — En materia de información en salud
+    autores: ["Secretaría de Salud (México)"]
+    año: 2012
+    edicion_vigente: "DOF 30 de noviembre de 2012"
+    categoria: norma
+    dominios: [regulacion-mx, salud, datos]
+    skills: [/seg, /ci, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.dof.gob.mx/nota_detalle.php?codigo=5240920&fecha=30/11/2012"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Norma sobre la integración y publicación del sistema de
+      información en salud. Pertinente para reportes obligatorios al
+      sector salud y para evaluaciones de transparencia en
+      establecimientos públicos.
+
 # ============================================================
 # DOMINIO: finanzas
 # ============================================================
@@ -968,3 +1277,734 @@ ia-gobernanza:
       por 193 Estados Miembros (noviembre 2021). Pertinente para
       contextos donde la dimensión ética/social tiene peso explícito
       (sector público, salud, educación, derechos humanos).
+
+# ============================================================
+# DOMINIO: marketing
+# ============================================================
+marketing:
+
+  - id: aaker-brand-equity-1991
+    titulo: Managing Brand Equity — Capitalizing on the Value of a Brand Name
+    autores: ["Aaker, D. A."]
+    año: 1991
+    edicion_vigente: "1991 (vigente como referencia conceptual)"
+    categoria: libro
+    dominios: [marketing, branding]
+    skills: [/mkt]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.simonandschuster.com/books/Managing-Brand-Equity/David-A-Aaker/9781451602630"
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "Gestión del valor de la marca"
+      editor_es: "Díaz de Santos"
+    confianza: alta
+    notas: |
+      Trabajo fundacional sobre valor de marca (brand equity). Aaker
+      define las 5 dimensiones: conciencia, calidad percibida,
+      lealtad, asociaciones, otros activos. Base de la mayoría de
+      modelos posteriores de valoración de marcas.
+
+  - id: ama-definition-marketing-2017
+    titulo: AMA Definition of Marketing
+    autores: ["American Marketing Association"]
+    año: 2017
+    edicion_vigente: "Definición aprobada por AMA en 2017"
+    categoria: norma
+    dominios: [marketing]
+    skills: [/mkt]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.ama.org/the-definition-of-marketing-what-is-marketing/"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Definición oficial de marketing por la AMA: "Actividad, conjunto
+      de instituciones y procesos para crear, comunicar, entregar e
+      intercambiar ofertas que tienen valor para clientes, socios y la
+      sociedad en general." Útil cuando se requiere terminología
+      profesional alineada con consenso del campo.
+
+  - id: christensen-innovators-dilemma-1997
+    titulo: The Innovator's Dilemma — When New Technologies Cause Great Firms to Fail
+    autores: ["Christensen, C. M."]
+    año: 1997
+    edicion_vigente: "1997 (vigente como base teórica)"
+    categoria: libro
+    dominios: [marketing, estrategia]
+    skills: [/mkt, /proy, /tec]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.harvardbusiness.org/the-innovators-dilemma-when-new-technologies-cause-great-firms-to-fail/"
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "El dilema del innovador"
+      editor_es: "Granica"
+    confianza: alta
+    notas: |
+      Teoría de disrupción tecnológica. Referencia obligatoria al
+      analizar entrada de competidores con propuestas de menor costo
+      en mercados consolidados.
+
+  - id: godin-permission-marketing-1999
+    titulo: Permission Marketing — Turning Strangers into Friends and Friends into Customers
+    autores: ["Godin, S."]
+    año: 1999
+    edicion_vigente: "1999 (concepto vigente; marketing digital lo adoptó como base)"
+    categoria: libro
+    dominios: [marketing, marketing-digital]
+    skills: [/mkt]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.simonandschuster.com/books/Permission-Marketing/Seth-Godin/9780684856360"
+    idiomas: [en, es]
+    confianza: alta
+    notas: |
+      Establece el paradigma de marketing basado en consentimiento del
+      usuario en lugar de interrupción. Base conceptual del inbound
+      marketing, email marketing opt-in y content marketing.
+
+  - id: kahneman-thinking-2011
+    titulo: Thinking, Fast and Slow
+    autores: ["Kahneman, D."]
+    año: 2011
+    edicion_vigente: "2011 (referencia central de marketing conductual)"
+    categoria: libro
+    dominios: [marketing, comportamiento-consumidor, behavioral-economics]
+    skills: [/mkt, /fin, /edu]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.fsgbooks.com/9780374533557/thinking-fast-and-slow/"
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "Pensar rápido, pensar despacio"
+      editor_es: "Debate (Penguin Random House)"
+    confianza: alta
+    notas: |
+      Síntesis de 4 décadas de investigación en heurísticas y sesgos
+      cognitivos. Aplicable transversalmente al diseño de propuestas
+      de valor, pricing, decisiones financieras del consumidor.
+
+  - id: kotler-keller-marketing-management-2022
+    titulo: Marketing Management
+    autores: ["Kotler, P.", "Keller, K. L.", "Chernev, A."]
+    año: 2022
+    edicion_vigente: "16th ed. (2022)"
+    categoria: libro
+    dominios: [marketing]
+    skills: [/mkt]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.pearson.com/en-us/subject-catalog/p/marketing-management/P200000005942"
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "Dirección de Marketing"
+      editor_es: "Pearson Educación"
+    confianza: alta
+    notas: |
+      Manual estándar mundial de marketing management. La 16ª edición
+      añade énfasis en marketing digital y métricas de performance.
+      [⚠ verificar si hay 17ª edición publicada]
+
+  - id: porter-competitive-strategy-1980
+    titulo: Competitive Strategy — Techniques for Analyzing Industries and Competitors
+    autores: ["Porter, M. E."]
+    año: 1980
+    edicion_vigente: "1980 (vigente como base teórica); reimpresiones de Free Press"
+    categoria: libro
+    dominios: [marketing, estrategia]
+    skills: [/mkt, /proy, /tec]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.simonandschuster.com/books/Competitive-Strategy/Michael-E-Porter/9780743260886"
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "Estrategia competitiva"
+      editor_es: "CECSA (México) / Pirámide (España)"
+    confianza: alta
+    notas: |
+      Origen de las 5 fuerzas competitivas. Referencia obligatoria
+      para análisis sectorial. Citar junto con Porter (1985,
+      "Competitive Advantage") cuando se trabaja la cadena de valor.
+
+  - id: ries-trout-positioning-2001
+    titulo: Positioning — The Battle for Your Mind
+    autores: ["Ries, A.", "Trout, J."]
+    año: 2001
+    edicion_vigente: "20th Anniversary Edition (2001); original 1981"
+    categoria: libro
+    dominios: [marketing, branding]
+    skills: [/mkt]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.mheducation.com/highered/product/positioning-the-battle-for-your-mind-ries-trout/M9780071373586.html"
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "Posicionamiento"
+      editor_es: "McGraw-Hill"
+    confianza: alta
+    notas: |
+      Concepto fundacional del posicionamiento de marca. Base de
+      cualquier estrategia de comunicación competitiva.
+
+# ============================================================
+# DOMINIO: ux-ui
+# ============================================================
+ux-ui:
+
+  - id: cooper-about-face-2014
+    titulo: About Face — The Essentials of Interaction Design
+    autores: ["Cooper, A.", "Reimann, R.", "Cronin, D.", "Noessel, C."]
+    año: 2014
+    edicion_vigente: "4th ed. (2014)"
+    categoria: libro
+    dominios: [ux-ui, diseño-interaccion]
+    skills: [/dis]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.wiley.com/en-us/About+Face%3A+The+Essentials+of+Interaction+Design%2C+4th+Edition-p-9781118766576"
+    idiomas: [en, es]
+    confianza: alta
+    notas: |
+      Referencia sobre diseño de interacción. Introduce los conceptos
+      de personas, escenarios y goal-directed design. Más extenso y
+      sistemático que Nielsen o Norman.
+
+  - id: ios-hig
+    titulo: Apple Human Interface Guidelines (iOS / macOS / Vision Pro / watchOS)
+    autores: ["Apple Inc."]
+    año: 2024
+    edicion_vigente: "vigente con actualizaciones por Apple en cada release de SO"
+    categoria: norma
+    dominios: [ux-ui]
+    skills: [/dis]
+    license: copyright
+    status: vigente
+    url_oficial: "https://developer.apple.com/design/human-interface-guidelines/"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Guía oficial de diseño para apps en plataformas Apple. Cita
+      obligatoria al diseñar para iOS/macOS. Apple actualiza con
+      cada WWDC.
+
+  - id: iso-9241-110-2020
+    titulo: ISO 9241-110:2020 — Ergonomics of human-system interaction — Part 110 — Interaction principles
+    autores: ["International Organization for Standardization"]
+    año: 2020
+    edicion_vigente: "ISO 9241-110:2020"
+    categoria: norma
+    dominios: [ux-ui, accesibilidad]
+    skills: [/dis, /seg]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.iso.org/standard/75258.html"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Estándar internacional de principios de interacción. Define 7
+      principios: adecuación al usuario, autodescriptividad,
+      conformidad con expectativas, capacidad de aprendizaje,
+      controlabilidad, robustez frente a errores, satisfacción del
+      usuario.
+
+  - id: krug-dont-make-me-think-2014
+    titulo: Don't Make Me Think, Revisited — A Common Sense Approach to Web and Mobile Usability
+    autores: ["Krug, S."]
+    año: 2014
+    edicion_vigente: "3rd ed. (2014)"
+    categoria: libro
+    dominios: [ux-ui, usabilidad]
+    skills: [/dis]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.pearson.com/en-us/subject-catalog/p/dont-make-me-think-revisited-a-common-sense-approach-to-web-usability-3rd-edition/P200000001049"
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "No me hagas pensar — actualizado"
+      editor_es: "Anaya Multimedia"
+    confianza: alta
+    notas: |
+      Lectura corta y pragmática sobre usabilidad web/mobile. Lectura
+      obligatoria de iniciación. Complementa Norman con foco en
+      ejecución, no teoría.
+
+  - id: material-design-3
+    titulo: Material Design 3 (Google Design System)
+    autores: ["Google"]
+    año: 2021
+    edicion_vigente: "Material Design 3 (introducido 2021; vigente con updates)"
+    categoria: norma
+    dominios: [ux-ui]
+    skills: [/dis]
+    license: creative_commons
+    status: vigente
+    url_oficial: "https://m3.material.design/"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Sistema de diseño de Google para apps en Android, web y otros
+      productos. Material 3 introduce dynamic color y mayor flexibilidad
+      vs Material 2. Cita obligatoria al diseñar para Android o usar
+      Material Web.
+
+  - id: nielsen-10-heuristics-1994
+    titulo: 10 Usability Heuristics for User Interface Design
+    autores: ["Nielsen, J."]
+    año: 1994
+    edicion_vigente: "1994 (refinadas 2020; vigentes)"
+    categoria: norma
+    dominios: [ux-ui, usabilidad]
+    skills: [/dis]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.nngroup.com/articles/ten-usability-heuristics/"
+    idiomas: [en, es]
+    confianza: alta
+    notas: |
+      Las 10 heurísticas más citadas en evaluaciones de usabilidad:
+      visibilidad del estado, match con el mundo real, control del
+      usuario, consistencia, prevención de errores, reconocimiento >
+      recuerdo, flexibilidad, estética minimalista, recuperación de
+      errores, ayuda y documentación. Refinadas 2020.
+
+  - id: norman-design-everyday-things-2013
+    titulo: The Design of Everyday Things — Revised and Expanded Edition
+    autores: ["Norman, D. A."]
+    año: 2013
+    edicion_vigente: "Revised & Expanded Edition (2013)"
+    categoria: libro
+    dominios: [ux-ui, diseño-centrado-usuario]
+    skills: [/dis]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.basicbooks.com/titles/don-norman/the-design-of-everyday-things/9780465050659/"
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "El diseño de las cosas cotidianas"
+      editor_es: "Nerea / Paidós (varias)"
+    confianza: alta
+    notas: |
+      Fundación del human-centered design. Introduce signifiers,
+      affordances, mapping, feedback. Lectura obligatoria de diseñador
+      de cualquier nivel.
+
+  - id: wcag-2-2-2023
+    titulo: Web Content Accessibility Guidelines (WCAG) 2.2
+    autores: ["W3C Web Accessibility Initiative (WAI)"]
+    año: 2023
+    edicion_vigente: "WCAG 2.2 (recommendation 5 de octubre de 2023)"
+    categoria: norma
+    dominios: [ux-ui, accesibilidad]
+    skills: [/dis, /seg]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.w3.org/TR/WCAG22/"
+    idiomas: [en, es]
+    confianza: alta
+    notas: |
+      Estándar mundial de accesibilidad web. WCAG 2.2 añade 9 criterios
+      a 2.1 (foco visible, autenticación accesible, ayuda consistente,
+      etc.). Niveles A, AA, AAA. Para cumplimiento legal en muchas
+      jurisdicciones (UE Accessibility Act, ADA US, etc.) el mínimo
+      operativo es AA.
+
+# ============================================================
+# DOMINIO: tecnologia-empresarial
+# ============================================================
+tecnologia-empresarial:
+
+  - id: brown-zachman-framework-2017
+    titulo: The Zachman Framework — An Enterprise Architecture Ontology
+    autores: ["Zachman, J. A."]
+    año: 2017
+    edicion_vigente: "Version 3 (vigente)"
+    categoria: norma
+    dominios: [tecnologia-empresarial, arquitectura-empresarial]
+    skills: [/tec]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.zachman.com/"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Ontología fundacional de arquitectura empresarial — matriz 6x6
+      (qué, cómo, dónde, quién, cuándo, por qué × niveles de
+      perspectiva). NO es metodología; es taxonomía. Complementa
+      TOGAF (que sí es metodología).
+
+  - id: davenport-process-innovation-1993
+    titulo: Process Innovation — Reengineering Work Through Information Technology
+    autores: ["Davenport, T. H."]
+    año: 1993
+    edicion_vigente: "1993 (referencia histórica vigente)"
+    categoria: libro
+    dominios: [tecnologia-empresarial, procesos]
+    skills: [/tec, /proy]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.harvardbusiness.org/book/process-innovation-reengineering-work-through-information-technology/"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Junto con Hammer (1993) establece el paradigma de reingeniería
+      de procesos habilitada por TI. Vigente como referencia
+      conceptual para iniciativas de transformación digital.
+
+  - id: hohpe-enterprise-integration-2003
+    titulo: Enterprise Integration Patterns — Designing, Building, and Deploying Messaging Solutions
+    autores: ["Hohpe, G.", "Woolf, B."]
+    año: 2003
+    edicion_vigente: "2003 (vigente; patrón canónico)"
+    categoria: libro
+    dominios: [tecnologia-empresarial, integracion]
+    skills: [/tec, /dev]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.enterpriseintegrationpatterns.com/"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Catálogo de 65 patrones para integración asíncrona basada en
+      mensajería. Vigente: los patrones se aplican igual a buses
+      modernos (Kafka, RabbitMQ, AWS SNS/SQS).
+
+  - id: newman-microservices-2021
+    titulo: Building Microservices — Designing Fine-Grained Systems
+    autores: ["Newman, S."]
+    año: 2021
+    edicion_vigente: "2nd ed. (2021)"
+    categoria: libro
+    dominios: [tecnologia-empresarial, microservicios]
+    skills: [/tec, /dev]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.oreilly.com/library/view/building-microservices-2nd/9781492034018/"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Manual operativo de arquitectura de microservicios. La 2ª edición
+      cubre service mesh, observabilidad moderna, sagas y patrones de
+      gobernanza de equipos.
+
+  - id: nist-sp-800-160v1r1-2022
+    titulo: NIST SP 800-160 Vol 1 Rev 1 — Engineering Trustworthy Secure Systems
+    autores: ["National Institute of Standards and Technology"]
+    año: 2022
+    edicion_vigente: "Vol 1 Rev 1 (noviembre 2022)"
+    categoria: norma
+    dominios: [tecnologia-empresarial, seguridad]
+    skills: [/tec, /seg]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://csrc.nist.gov/pubs/sp/800/160/v1/r1/final"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Marco de ingeniería de sistemas confiables y seguros. Aplica
+      principios de ingeniería de sistemas (ISO/IEC/IEEE 15288) con
+      foco en security and trust. Pertinente para arquitectura de
+      sistemas críticos.
+
+  - id: ross-it-savvy-2009
+    titulo: IT Savvy — What Top Executives Must Know to Go from Pain to Gain
+    autores: ["Ross, J. W.", "Weill, P."]
+    año: 2009
+    edicion_vigente: "2009 (vigente conceptualmente)"
+    categoria: libro
+    dominios: [tecnologia-empresarial, gobernanza-ti]
+    skills: [/tec]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.harvardbusiness.org/it-savvy-what-top-executives-must-know-to-go-from-pain-to-gain/"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Referencia sobre alineamiento entre TI y negocio para directivos.
+      Define los 4 modelos de operación según interdependencia y
+      estandarización. Complementa COBIT/ITIL desde la perspectiva de
+      estrategia, no operación.
+
+  - id: togaf-10-2022
+    titulo: TOGAF Standard, 10th Edition
+    autores: ["The Open Group"]
+    año: 2022
+    edicion_vigente: "TOGAF 10 (2022)"
+    categoria: norma
+    dominios: [tecnologia-empresarial, arquitectura-empresarial]
+    skills: [/tec, /proy]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.opengroup.org/togaf"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Marco más adoptado mundialmente para arquitectura empresarial.
+      Incluye ADM (Architecture Development Method), repositorio de
+      arquitectura y modelo de gobierno. Versión 10 es más modular
+      que TOGAF 9.2. Citar al diseñar funciones de Enterprise
+      Architecture.
+
+# ============================================================
+# DOMINIO: costos
+# ============================================================
+costos:
+
+  - id: cokins-performance-management-2009
+    titulo: Performance Management — Integrating Strategy Execution, Methodologies, Risk, and Analytics
+    autores: ["Cokins, G."]
+    año: 2009
+    edicion_vigente: "2009 (vigente para PM integrado)"
+    categoria: libro
+    dominios: [costos, performance-management]
+    skills: [/cost, /fin]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.wiley.com/en-us/Performance+Management%3A+Integrating+Strategy+Execution%2C+Methodologies%2C+Risk%2C+and+Analytics-p-9780470449981"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Integra costeo (ABC, ABM), balanced scorecard, gestión de riesgos
+      y analytics en un marco único de performance management. Útil
+      cuando costeo se evalúa como insumo para decisiones, no como
+      contabilidad pura.
+
+  - id: cooper-kaplan-abc-1991
+    titulo: The Design of Cost Management Systems — Text and Cases
+    autores: ["Cooper, R.", "Kaplan, R. S."]
+    año: 1999
+    edicion_vigente: "2nd ed. (1999)"
+    categoria: libro
+    dominios: [costos, contabilidad-administrativa]
+    skills: [/cost, /fin]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.pearson.com/en-us/subject-catalog/p/design-of-cost-management-systems-the/P200000005942"
+    idiomas: [en, es]
+    confianza: alta
+    notas: |
+      Definición operativa del Activity-Based Costing (ABC) por sus
+      autores originales. Referencia obligatoria para implementar ABC
+      en organizaciones complejas.
+
+  - id: horngren-cost-accounting-2021
+    titulo: Cost Accounting — A Managerial Emphasis
+    autores: ["Horngren, C. T.", "Datar, S. M.", "Rajan, M. V."]
+    año: 2021
+    edicion_vigente: "17th ed. (2021)"
+    categoria: libro
+    dominios: [costos, contabilidad-administrativa]
+    skills: [/cost, /fin, /aud]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.pearson.com/en-us/subject-catalog/p/cost-accounting/P200000005942"
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "Contabilidad de costos — Un enfoque gerencial"
+      editor_es: "Pearson Educación"
+    confianza: alta
+    notas: |
+      Manual estándar mundial de contabilidad de costos. La 17ª edición
+      añade temas sobre sustentabilidad, automatización y entorno
+      digital. [⚠ verificar si hay edición más reciente]
+
+  - id: imai-kaizen-1986
+    titulo: Kaizen — The Key to Japan's Competitive Success
+    autores: ["Imai, M."]
+    año: 1986
+    edicion_vigente: "1986 (vigente como base de mejora continua aplicada a costos)"
+    categoria: libro
+    dominios: [costos, lean]
+    skills: [/cost, /proy]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.mheducation.com/highered/product/kaizen-imai/M9780075543329.html"
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "Kaizen — La clave del éxito competitivo japonés"
+      editor_es: "Continental"
+    confianza: alta
+    notas: |
+      Origen del concepto kaizen aplicado a costos y procesos.
+      Base conceptual de la mejora continua de costos en
+      organizaciones lean.
+
+  - id: kaplan-norton-balanced-scorecard-1996
+    titulo: The Balanced Scorecard — Translating Strategy into Action
+    autores: ["Kaplan, R. S.", "Norton, D. P."]
+    año: 1996
+    edicion_vigente: "1996 (vigente como referencia base)"
+    categoria: libro
+    dominios: [costos, estrategia, performance-management]
+    skills: [/cost, /fin, /proy]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.harvardbusiness.org/the-balanced-scorecard-translating-strategy-into-action/"
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "Cuadro de mando integral"
+      editor_es: "Gestión 2000 / Harvard Deusto"
+    confianza: alta
+    notas: |
+      Origen del Balanced Scorecard como herramienta de gestión
+      estratégica. Las 4 perspectivas (financiera, cliente, procesos,
+      aprendizaje) son citadas universalmente. Complementa costeo
+      tradicional con perspectiva no financiera.
+
+  - id: monden-toyota-1998
+    titulo: Toyota Production System — An Integrated Approach to Just-In-Time
+    autores: ["Monden, Y."]
+    año: 1998
+    edicion_vigente: "3rd ed. (1998); 4th ed. (2012) disponible"
+    categoria: libro
+    dominios: [costos, lean, manufactura]
+    skills: [/cost, /proy]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.routledge.com/Toyota-Production-System-An-Integrated-Approach-to-Just-In-Time/Monden/p/book/9781439820971"
+    idiomas: [en, es]
+    confianza: alta
+    notas: |
+      Descripción canónica del TPS por uno de los académicos que lo
+      formalizó. Base del target costing y kaizen costing.
+      [⚠ verificar: 4ª ed. de 2012 puede ser preferible]
+
+  - id: shank-strategic-cost-mgmt-1993
+    titulo: Strategic Cost Management — The New Tool for Competitive Advantage
+    autores: ["Shank, J. K.", "Govindarajan, V."]
+    año: 1993
+    edicion_vigente: "1993 (vigente como marco conceptual)"
+    categoria: libro
+    dominios: [costos, estrategia]
+    skills: [/cost, /fin]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.simonandschuster.com/books/Strategic-Cost-Management/John-K-Shank/9780029155912"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Integra costeo con estrategia (Porter) y cadena de valor. Útil
+      cuando el análisis de costos debe servir decisiones competitivas,
+      no solo control interno.
+
+# ============================================================
+# DOMINIO: investigacion
+# ============================================================
+investigacion:
+
+  - id: creswell-research-design-2023
+    titulo: Research Design — Qualitative, Quantitative, and Mixed Methods Approaches
+    autores: ["Creswell, J. W.", "Creswell, J. D."]
+    año: 2023
+    edicion_vigente: "6th ed. (2023)"
+    categoria: libro
+    dominios: [investigacion, metodologia]
+    skills: [/inv, /edu]
+    license: copyright
+    status: vigente
+    url_oficial: "https://us.sagepub.com/en-us/nam/research-design/book270550"
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "Diseño de investigación"
+      editor_es: "SAGE (algunas ediciones traducidas)"
+    confianza: alta
+    notas: |
+      Referencia integradora de diseño de investigación cuali, cuanti
+      y mixto. Estándar en programas de posgrado de ciencias sociales
+      y administración.
+
+  - id: hernandez-sampieri-metodologia-2014
+    titulo: Metodología de la investigación
+    autores: ["Hernández Sampieri, R.", "Fernández Collado, C.", "Baptista Lucio, P."]
+    año: 2014
+    edicion_vigente: "6ª ed. (2014); 7ª ed. (2018) revisada"
+    categoria: libro
+    dominios: [investigacion, metodologia]
+    skills: [/inv, /edu]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.mheducation.com.mx/9786071512918-metodologia-de-la-investigacion-6ed"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Manual estándar de metodología de investigación en español
+      iberoamericano. Lectura obligatoria para tesis e investigación
+      aplicada en hispanohablantes.
+      [⚠ verificar: 7ª ed. (2018) es más reciente y revisada]
+
+  - id: kuhn-scientific-revolutions-1962
+    titulo: The Structure of Scientific Revolutions
+    autores: ["Kuhn, T. S."]
+    año: 1962
+    edicion_vigente: "1962 (referencia histórica); 4th anniversary ed. (2012)"
+    categoria: libro
+    dominios: [investigacion, filosofia-ciencia]
+    skills: [/inv]
+    license: copyright
+    status: vigente
+    url_oficial: "https://press.uchicago.edu/ucp/books/book/chicago/S/bo13179781.html"
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "La estructura de las revoluciones científicas"
+      editor_es: "Fondo de Cultura Económica"
+    confianza: alta
+    notas: |
+      Trabajo fundacional sobre paradigmas científicos. Necesario para
+      entender cuándo una investigación cuestiona supuestos vs cuándo
+      opera dentro de un paradigma establecido. Pertinente al evaluar
+      validez de hallazgos disruptivos.
+
+  - id: oecd-frascati-2015
+    titulo: Frascati Manual 2015 — Guidelines for Collecting and Reporting Data on Research and Experimental Development
+    autores: ["Organisation for Economic Co-operation and Development (OECD)"]
+    año: 2015
+    edicion_vigente: "2015 (vigente; estándar global de I+D)"
+    categoria: norma
+    dominios: [investigacion]
+    skills: [/inv, /proy]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.oecd.org/sti/inno/frascati-manual.htm"
+    idiomas: [en, es, fr, varios]
+    confianza: alta
+    notas: |
+      Estándar internacional para medir y reportar I+D. Base para
+      estímulos fiscales a investigación en muchos países (en México,
+      EFIDT/PROSOFT). Define I+D vs otras actividades de innovación.
+
+  - id: saunders-research-methods-2023
+    titulo: Research Methods for Business Students
+    autores: ["Saunders, M.", "Lewis, P.", "Thornhill, A."]
+    año: 2023
+    edicion_vigente: "9th ed. (2023)"
+    categoria: libro
+    dominios: [investigacion, administracion]
+    skills: [/inv]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.pearson.com/en-gb/subject-catalog/p/research-methods-for-business-students/P200000005942"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Manual estándar de metodología en investigación de negocios.
+      Introduce el "research onion" como modelo de capas (filosofía,
+      enfoque, estrategia, técnicas) para diseñar investigaciones
+      aplicadas.
+
+  - id: yin-case-study-2018
+    titulo: Case Study Research and Applications — Design and Methods
+    autores: ["Yin, R. K."]
+    año: 2018
+    edicion_vigente: "6th ed. (2018)"
+    categoria: libro
+    dominios: [investigacion, metodos-cualitativos]
+    skills: [/inv]
+    license: copyright
+    status: vigente
+    url_oficial: "https://us.sagepub.com/en-us/nam/case-study-research-and-applications/book250150"
+    idiomas: [en, es]
+    confianza: alta
+    notas: |
+      Referencia universal de investigación basada en estudios de caso.
+      Pertinente cuando la unidad de análisis es una organización, un
+      proyecto o un fenómeno acotado.

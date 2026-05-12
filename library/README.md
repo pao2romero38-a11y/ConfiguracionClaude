@@ -33,30 +33,34 @@ Documentos narrativos por dominio profesional con:
 - Advertencias sobre ediciones obsoletas
 - Cross-references a entradas del catálogo central
 
-Cada dominio crece independientemente. Hoy hay seis:
+Cada dominio crece independientemente. Hoy hay once:
 
 | Dominio | INDEX | Estado |
 |---|---|---|
 | Pedagogía y aprendizaje significativo | [`pedagogia/INDEX.md`](pedagogia/INDEX.md) | v1 — 8 entradas |
-| Regulación MX | [`regulacion-mx/INDEX.md`](regulacion-mx/INDEX.md) | v1 — 8 entradas |
+| Regulación MX (datos, fiscal, mercantil, laboral, salud) | [`regulacion-mx/INDEX.md`](regulacion-mx/INDEX.md) | v2 — 21 entradas |
 | Finanzas | [`finanzas/INDEX.md`](finanzas/INDEX.md) | v1 — 8 entradas |
 | Seguridad y cumplimiento | [`seguridad-cumplimiento/INDEX.md`](seguridad-cumplimiento/INDEX.md) | v1 — 13 entradas |
 | Auditoría | [`auditoria/INDEX.md`](auditoria/INDEX.md) | v1 — 6 entradas |
 | IA — Gobernanza, riesgo y ética | [`ia-gobernanza/INDEX.md`](ia-gobernanza/INDEX.md) | v1 — 6 entradas |
+| Marketing | [`marketing/INDEX.md`](marketing/INDEX.md) | v1 — 8 entradas |
+| UX / UI | [`ux-ui/INDEX.md`](ux-ui/INDEX.md) | v1 — 8 entradas |
+| Tecnología empresarial | [`tecnologia-empresarial/INDEX.md`](tecnologia-empresarial/INDEX.md) | v1 — 7 entradas |
+| Costos | [`costos/INDEX.md`](costos/INDEX.md) | v1 — 7 entradas |
+| Investigación | [`investigacion/INDEX.md`](investigacion/INDEX.md) | v1 — 6 entradas |
 
-**Total catalogado:** 49 entradas en 6 dominios.
+**Total catalogado:** ~98 entradas en 11 dominios.
 
-Próximos dominios candidatos (orden sugerido):
+Próximos candidatos (orden sugerido):
 
-- Marketing y comportamiento del consumidor (Kotler, Aaker, AMA standards)
-- Diseño UX/UI (Norman, Nielsen heuristics, WCAG, Material Design)
-- Tecnología empresarial (TOGAF, Zachman, arquitectura de microservicios)
-- Costos (Kaplan, ABC, target costing)
-- Investigación (Booth ya catalogado; sumar Creswell, Yin)
-- Marco fiscal MX (CFF, ISR, IVA, IEPS)
-- Marco mercantil MX (Código de Comercio, LGSM)
-- Marco laboral MX (LFT, IMSS, INFONAVIT)
-- Marco salud MX (Ley General de Salud, NOMs SSA3)
+- **Profundización por dominio existente**: añadir 5-10 entradas más
+  donde se note un hueco recurrente (ej. más NOMs en salud, más
+  marcos de IA aplicados a sectores).
+- **Sector financiero MX específico**: CNBV, CONDUSEF, Ley FinTech.
+- **Sector telecomunicaciones MX**: IFT, Ley Federal de Telecomunicaciones.
+- **Estándares de calidad**: ISO 9001:2015, modelos de excelencia (EFQM, Baldrige).
+- **Sustentabilidad / ESG**: GRI Standards, SASB, TCFD, ISSB.
+- **Traducción**: marcos de traducción profesional (ISO 17100, Newmark, Nida) — para `/tra`.
 
 ### Pieza D — Mirror local del usuario (`local/`)
 

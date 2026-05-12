@@ -134,13 +134,67 @@ de uso que la justifica y el skill que la consumirá.
 
 ---
 
-## Pendientes conocidos (huecos del dominio)
+---
 
-- **Marco fiscal**: Código Fiscal de la Federación, ISR, IVA — relevante para `/fin` y `/aud`. Aún no incluido.
-- **Mercantil**: Código de Comercio, Ley General de Sociedades Mercantiles — relevante para `/proy` y `/fin`. Aún no incluido.
-- **Laboral**: LFT, IMSS — relevante si se diseña capacitación corporativa. Aún no incluido.
-- **Salud**: Ley General de Salud, NOM-004-SSA3, NOM-024-SSA3 (expediente clínico electrónico) — pendiente.
+## Marco fiscal (nuevo en v2.9.0)
+
+| Norma | Catálogo | Cuándo citar |
+|---|---|---|
+| Código Fiscal de la Federación | [`cff-1981`](../CATALOG.yaml) | Cualquier evaluación tributaria — marco general |
+| Ley del Impuesto Sobre la Renta | [`lisr-2013`](../CATALOG.yaml) | Impuesto a la renta personas físicas / morales |
+| Ley del Impuesto al Valor Agregado | [`liva-1978`](../CATALOG.yaml) | IVA — tasa general 16%, frontera 8%, alimentos/medicinas 0% |
+| Ley del IEPS | [`liepys-1980`](../CATALOG.yaml) | Bebidas alcohólicas, tabaco, hidrocarburos, bebidas saborizadas |
+| Resolución Miscelánea Fiscal | [`rmf-anual`](../CATALOG.yaml) | Reglas operativas anuales del SAT — verificar última publicada |
+
+**Pendientes fiscales conocidos**: LFD (Ley Federal de Derechos), LIETU (derogada pero a veces citada históricamente), Ley Aduanera, Tratados internacionales para evitar doble tributación, Reglamentos de las leyes citadas.
+
+---
+
+## Marco mercantil (nuevo en v2.9.0)
+
+| Norma | Catálogo | Cuándo citar |
+|---|---|---|
+| Código de Comercio | [`codigo-comercio-1889`](../CATALOG.yaml) | Actos de comercio, contratos mercantiles, juicios mercantiles |
+| Ley General de Sociedades Mercantiles | [`lgsm-1934`](../CATALOG.yaml) | Constitución y operación de sociedades; SAS para startups |
+| Ley General de Títulos y Operaciones de Crédito | [`lgtoc-1932`](../CATALOG.yaml) | Letra, pagaré, cheque, fideicomisos, bonos |
+
+**Pendientes mercantiles**: Ley de Concursos Mercantiles, Ley del Mercado de Valores, Ley General de Organizaciones y Actividades Auxiliares del Crédito, Código de Comercio (reformas FinTech 2018), Ley FinTech (LRITF 2018).
+
+---
+
+## Marco laboral (nuevo en v2.9.0)
+
+| Norma | Catálogo | Cuándo citar |
+|---|---|---|
+| Ley Federal del Trabajo | [`lft-1970`](../CATALOG.yaml) | Cualquier relación laboral; reforma 2019 cambió justicia laboral |
+| Ley del Seguro Social | [`lss-1995`](../CATALOG.yaml) | Régimen IMSS; reforma 2020 modificó subcontratación |
+| Ley INFONAVIT | [`linfonavit-1972`](../CATALOG.yaml) | Aportaciones patronales para vivienda (5% del SBC) |
+| NOM-035-STPS-2018 | [`nom-035-stps-2018`](../CATALOG.yaml) | Factores de riesgo psicosocial; cumplimiento por tamaño de centro |
+
+**Pendientes laborales**: NOM-030-STPS (servicios de seguridad e higiene), NOM-019-STPS (comisiones de seguridad e higiene), reglas del SAT sobre nómina y CFDI 4.0, Ley del ISSSTE (sector público).
+
+---
+
+## Marco de salud (nuevo en v2.9.0)
+
+| Norma | Catálogo | Cuándo citar |
+|---|---|---|
+| Ley General de Salud | [`lgs-1984`](../CATALOG.yaml) | Marco federal — competencias, establecimientos, investigación clínica |
+| NOM-004-SSA3-2012 | [`nom-004-ssa3-2012`](../CATALOG.yaml) | **Expediente clínico** — obligatoria para todo establecimiento médico |
+| NOM-024-SSA3-2012 | [`nom-024-ssa3-2012`](../CATALOG.yaml) | **Sistemas de Información de Registro Electrónico para la Salud (SIRES)** |
+| NOM-035-SSA3-2012 | [`nom-035-ssa3-2012`](../CATALOG.yaml) | Integración del sistema de información en salud |
+
+**Cita combinada típica para diseñar EMR / sistemas hospitalarios en MX**: LFPDPPP + LGPDPPSO + LGS + NOM-004-SSA3 + NOM-024-SSA3 (los datos clínicos son datos personales sensibles bajo LFPDPPP).
+
+**Pendientes salud**: NOM-007-SSA2 (atención embarazo, parto, puerperio), NOM-046-SSA2 (violencia familiar y sexual), Ley General de los Derechos de Niñas, Niños y Adolescentes.
+
+---
+
+## Pendientes globales del dominio
+
 - **Sector específico (CNBV, CONDUSEF, CFE, COFECE)**: regulación sectorial. Se añade conforme aparezcan casos de uso.
+- **Tratados internacionales firmados por México**: T-MEC, OECD, OIT, etc.
+- **Reglamentos** de las leyes catalogadas (varios pendientes).
 
 PRs bienvenidos para llenar cualquiera de estos huecos (ver
 `CONTRIBUTING.md` y `library/README.md` §"Cómo contribuir entradas").

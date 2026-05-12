@@ -13,6 +13,151 @@ Cambios en preparación que aún no se han publicado en una versión.
 
 ---
 
+## [2.9.0] — 2026-05-12
+
+**Expansión del catálogo a 11 dominios — 5 nuevos dominios + 4
+sub-bloques en regulación MX.** Bump MENOR. Pasamos de 49 → ~101
+entradas en 6 → 11 dominios.
+
+Cierra los huecos identificados en v2.8.0 para los skills sin cobertura
+(`/mkt`, `/dis`) y añade dominios complementarios (tecnología
+empresarial, costos, investigación). Refuerza `regulacion-mx` con los
+4 marcos legales más solicitados después de datos personales.
+
+### Added — 5 nuevos dominios
+
+#### `library/marketing/INDEX.md` (8 entradas)
+
+- `kotler-keller-marketing-management-2022` — manual estándar mundial, 16ª ed.
+- `porter-competitive-strategy-1980` — 5 fuerzas competitivas
+- `aaker-brand-equity-1991` — 5 dimensiones del valor de marca
+- `ries-trout-positioning-2001` — posicionamiento de marca
+- `kahneman-thinking-2011` — heurísticas y sesgos del consumidor
+- `christensen-innovators-dilemma-1997` — disrupción tecnológica
+- `godin-permission-marketing-1999` — marketing digital opt-in
+- `ama-definition-marketing-2017` — definición oficial AMA
+
+#### `library/ux-ui/INDEX.md` (8 entradas)
+
+- `norman-design-everyday-things-2013` — human-centered design
+- `nielsen-10-heuristics-1994` — rúbrica universal de evaluación
+- `krug-dont-make-me-think-2014` — usabilidad pragmática
+- `cooper-about-face-2014` — interaction design sistemático
+- `wcag-2-2-2023` — accesibilidad W3C (estándar legal en muchas jurisdicciones)
+- `material-design-3` — sistema de diseño Google
+- `ios-hig` — Apple Human Interface Guidelines
+- `iso-9241-110-2020` — ergonomía sistemas-humano
+
+#### `library/tecnologia-empresarial/INDEX.md` (7 entradas)
+
+- `togaf-10-2022` — marco más adoptado de Enterprise Architecture
+- `brown-zachman-framework-2017` — ontología (taxonomía EA)
+- `ross-it-savvy-2009` — alineamiento TI-negocio para directivos
+- `davenport-process-innovation-1993` — reingeniería habilitada por TI
+- `newman-microservices-2021` — arquitectura microservicios
+- `hohpe-enterprise-integration-2003` — patrones de integración asíncrona
+- `nist-sp-800-160v1r1-2022` — engineering trustworthy secure systems
+
+#### `library/costos/INDEX.md` (7 entradas)
+
+- `horngren-cost-accounting-2021` — manual estándar mundial, 17ª ed.
+- `cooper-kaplan-abc-1991` — Activity-Based Costing por sus autores
+- `monden-toyota-1998` — Toyota Production System (target costing, kaizen)
+- `imai-kaizen-1986` — mejora continua aplicada
+- `shank-strategic-cost-mgmt-1993` — costos + estrategia
+- `kaplan-norton-balanced-scorecard-1996` — BSC con 4 perspectivas
+- `cokins-performance-management-2009` — integración costos + BSC + riesgos
+
+#### `library/investigacion/INDEX.md` (6 entradas)
+
+- `creswell-research-design-2023` — cuali/cuanti/mixto, 6ª ed.
+- `hernandez-sampieri-metodologia-2014` — estándar iberoamericano
+- `saunders-research-methods-2023` — investigación aplicada en negocios
+- `yin-case-study-2018` — estudios de caso, 6ª ed.
+- `kuhn-scientific-revolutions-1962` — paradigmas científicos
+- `oecd-frascati-2015` — definición y medición de I+D (estándar global)
+
+### Added — extensión de `regulacion-mx` con 4 sub-bloques
+
+#### Sub-bloque fiscal (5 entradas)
+
+- `cff-1981` — Código Fiscal de la Federación
+- `lisr-2013` — Ley del Impuesto Sobre la Renta
+- `liva-1978` — Ley del Impuesto al Valor Agregado
+- `liepys-1980` — Ley del IEPS
+- `rmf-anual` — Resolución Miscelánea Fiscal anual del SAT
+
+#### Sub-bloque mercantil (3 entradas)
+
+- `codigo-comercio-1889` — Código de Comercio
+- `lgsm-1934` — Ley General de Sociedades Mercantiles (incluye SAS)
+- `lgtoc-1932` — Ley General de Títulos y Operaciones de Crédito
+
+#### Sub-bloque laboral (4 entradas)
+
+- `lft-1970` — Ley Federal del Trabajo (con reforma 2019)
+- `lss-1995` — Ley del Seguro Social (con reforma 2020 de subcontratación)
+- `linfonavit-1972` — Ley INFONAVIT
+- `nom-035-stps-2018` — Factores de riesgo psicosocial en el trabajo
+
+#### Sub-bloque salud (4 entradas)
+
+- `lgs-1984` — Ley General de Salud
+- `nom-004-ssa3-2012` — Expediente clínico
+- `nom-024-ssa3-2012` — Sistemas de Registro Electrónico para la Salud (SIRES)
+- `nom-035-ssa3-2012` — Información en salud
+
+### Changed
+
+- **`library/CATALOG.yaml`** — extendido a ~101 entradas en 11 dominios.
+- **`library/README.md`** — tabla de dominios con 11 entradas; lista de
+  próximos candidatos refinada (profundización por dominio, sectores
+  específicos MX, sustentabilidad/ESG, traducción).
+- **`library/regulacion-mx/INDEX.md`** — añadidas 4 secciones para los
+  sub-bloques nuevos con tablas de cita rápida.
+
+### Cambios en numeración
+
+- `VERSION`: `2.8.0` → `2.9.0`.
+
+### Compatibilidad
+
+- 100 % backward-compatible con v2.8.0. Solo añade.
+
+### Cobertura skill ↔ biblioteca tras v2.9.0
+
+| Skill | Dominios con cobertura |
+|---|---|
+| `/edu` | pedagogia · investigacion |
+| `/inv` | investigacion · pedagogia (transversal) |
+| `/fin` | finanzas · regulacion-mx (fiscal/mercantil) |
+| `/proy` | finanzas (PMBOK) · regulacion-mx (mercantil) · marketing · tecnologia-empresarial |
+| `/cost` | costos · finanzas |
+| `/mkt` | **marketing** (nuevo) |
+| `/dis` | **ux-ui** (nuevo) |
+| `/tec` | **tecnologia-empresarial** (nuevo) · seguridad-cumplimiento |
+| `/seg` | seguridad-cumplimiento · regulacion-mx |
+| `/rsk` | seguridad-cumplimiento · regulacion-mx · ia-gobernanza |
+| `/ci` | seguridad-cumplimiento · regulacion-mx (todos los sub-bloques) |
+| `/aud` | auditoria · seguridad-cumplimiento · regulacion-mx |
+| `/ai`, `/ai-llm`, `/ai-ml` | ia-gobernanza |
+| **Sin cobertura aún** | `/tra` |
+
+Solo `/tra` queda sin cobertura específica; será atendido en una
+próxima iteración con marcos de traducción profesional (ISO 17100,
+Newmark, Nida, Venuti).
+
+### Próximas iteraciones (no incluidas)
+
+- Cobertura específica para `/tra` (marcos de traducción).
+- Profundización en dominios existentes (más NOMs, más estándares ESG).
+- Integración explícita en cada `SKILL.md`: campo `library:`
+  apuntando al INDEX del dominio.
+- Receta `/capacidad` §9 bis.3 para descarga automatizada de
+  documentos en dominio público desde URL oficial.
+
+---
+
 ## [2.8.0] — 2026-05-12
 
 **Expansión del catálogo a 4 dominios profesionales adicionales.**
