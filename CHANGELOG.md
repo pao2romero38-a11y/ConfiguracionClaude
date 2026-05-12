@@ -13,6 +13,106 @@ Cambios en preparación que aún no se han publicado en una versión.
 
 ---
 
+## [2.8.0] — 2026-05-12
+
+**Expansión del catálogo a 4 dominios profesionales adicionales.**
+Bump MENOR. Pasamos de 16 → 49 entradas en 2 → 6 dominios. Los 4
+nuevos cubren las disciplinas más solicitadas por los skills del repo.
+
+### Added
+
+#### `library/finanzas/INDEX.md` (8 entradas)
+
+- `nif-2024` — Normas de Información Financiera, CINIF, México
+- `cinif-marco-conceptual` — Marco conceptual de las NIF
+- `ifrs-2024` — International Financial Reporting Standards, IASB
+- `us-gaap-fasb-codification` — FASB Accounting Standards Codification
+- `pmbok-7-2021` — PMI Project Management Body of Knowledge, 7th ed
+- `brealey-myers-corporate-finance-2022` — Principles of Corporate Finance, 14th ed
+- `ross-westerfield-corporate-finance-2022` — Fundamentals of Corporate Finance, 13th ed
+- `damodaran-investment-valuation-2012` — Damodaran on valuación
+
+#### `library/seguridad-cumplimiento/INDEX.md` (13 entradas)
+
+- `iso-27001-2022` — SGSI certificable
+- `iso-27002-2022` — controles de seguridad (guía)
+- `iso-27005-2022` — gestión de riesgos de seguridad
+- `iso-31000-2018` — marco general de riesgos
+- `nist-csf-2-2024` — Cybersecurity Framework 2.0 (con función GOVERN)
+- `nist-sp-800-53r5` — controles de seguridad y privacidad
+- `nist-sp-800-30r1` — guía de evaluación de riesgos
+- `coso-ic-2013` — Internal Control — Integrated Framework
+- `coso-erm-2017` — Enterprise Risk Management
+- `cobit-2019` — gobernanza de TI
+- `itil-4-2019` — gestión de servicios de TI
+- `pci-dss-4-2022` — seguridad de datos de tarjetas
+- `gdpr-2016` — Reglamento General de Protección de Datos UE
+
+#### `library/auditoria/INDEX.md` (6 entradas)
+
+- `iia-standards-2024` — Global Internal Audit Standards (vigentes desde enero 2025)
+- `iia-ippf-2017` — IPPF anterior (superseded por iia-standards-2024)
+- `isa-iaasb-2024` — International Standards on Auditing
+- `ifac-handbook-2024` — compendio anual oficial
+- `issai-intosai-2022` — Auditoría gubernamental
+- `aicpa-code-of-conduct-2024` — Código ético CPA US
+
+#### `library/ia-gobernanza/INDEX.md` (6 entradas)
+
+- `eu-ai-act-2024` — Reglamento UE 2024/1689 con aplicación escalonada
+- `iso-42001-2023` — primera norma ISO certificable para AIMS
+- `iso-23894-2023` — gestión de riesgos en IA
+- `nist-ai-rmf-1-2023` — AI Risk Management Framework
+- `oecd-ai-principles-2024` — 5 principios de IA confiable
+- `unesco-ai-ethics-2021` — Recomendación global de ética en IA
+
+### Changed
+
+- **`library/CATALOG.yaml`** — extendido a 49 entradas en 6 dominios.
+- **`library/README.md`** — tabla de dominios actualizada (6 dominios
+  catalogados) y lista de próximos candidatos refinada (marketing,
+  UX/UI, costos, investigación, marco fiscal/mercantil/laboral/salud MX).
+
+### Cambios en numeración
+
+- `VERSION`: `2.7.0` → `2.8.0`.
+
+### Compatibilidad
+
+- 100 % backward-compatible con v2.7.0. La extensión del catálogo no
+  modifica ninguna entrada existente; solo añade.
+
+### Cobertura por skill (estado actual)
+
+| Skill | Dominios con cobertura en library/ |
+|---|---|
+| `/edu` | pedagogia |
+| `/fin` | finanzas |
+| `/proy` | finanzas (PMBOK) |
+| `/cost` | finanzas |
+| `/seg` | seguridad-cumplimiento, regulacion-mx |
+| `/rsk` | seguridad-cumplimiento, regulacion-mx, ia-gobernanza |
+| `/ci` | seguridad-cumplimiento, regulacion-mx |
+| `/aud` | auditoria, seguridad-cumplimiento, regulacion-mx |
+| `/tec` | seguridad-cumplimiento |
+| `/ai` | ia-gobernanza |
+| `/ai-llm` | ia-gobernanza (vía `/ai`) |
+| `/ai-ml` | ia-gobernanza (vía `/ai`) |
+
+Sin cobertura aún: `/mkt`, `/dis`, `/tra`, `/inv` directamente
+(este último consulta transversalmente).
+
+### Próximas iteraciones (no incluidas)
+
+- Marketing, UX/UI, costos como dominios completos.
+- Cobertura del marco fiscal y laboral mexicano dentro de regulacion-mx.
+- Integración explícita en cada `SKILL.md`: campo `library:` apuntando
+  al INDEX del dominio.
+- Receta `/capacidad` §9 bis.3 para descarga automatizada de
+  documentos en dominio público desde URL oficial.
+
+---
+
 ## [2.7.0] — 2026-05-12
 
 **Biblioteca de referencias confiables** — nueva sección `library/` del

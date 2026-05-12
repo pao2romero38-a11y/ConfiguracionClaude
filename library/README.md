@@ -33,19 +33,30 @@ Documentos narrativos por dominio profesional con:
 - Advertencias sobre ediciones obsoletas
 - Cross-references a entradas del catálogo central
 
-Cada dominio crece independientemente. Hoy hay dos:
+Cada dominio crece independientemente. Hoy hay seis:
 
 | Dominio | INDEX | Estado |
 |---|---|---|
-| Regulación MX | [`regulacion-mx/INDEX.md`](regulacion-mx/INDEX.md) | v1 — 8 entradas |
 | Pedagogía y aprendizaje significativo | [`pedagogia/INDEX.md`](pedagogia/INDEX.md) | v1 — 8 entradas |
+| Regulación MX | [`regulacion-mx/INDEX.md`](regulacion-mx/INDEX.md) | v1 — 8 entradas |
+| Finanzas | [`finanzas/INDEX.md`](finanzas/INDEX.md) | v1 — 8 entradas |
+| Seguridad y cumplimiento | [`seguridad-cumplimiento/INDEX.md`](seguridad-cumplimiento/INDEX.md) | v1 — 13 entradas |
+| Auditoría | [`auditoria/INDEX.md`](auditoria/INDEX.md) | v1 — 6 entradas |
+| IA — Gobernanza, riesgo y ética | [`ia-gobernanza/INDEX.md`](ia-gobernanza/INDEX.md) | v1 — 6 entradas |
+
+**Total catalogado:** 49 entradas en 6 dominios.
 
 Próximos dominios candidatos (orden sugerido):
 
-- Finanzas (NIF MX, IFRS, US GAAP, marcos PMI)
-- Seguridad / cumplimiento (ISO 27001, NIST CSF, COSO, ITIL 4)
-- Auditoría (IIA Global Internal Audit Standards, ISA)
-- Marcos de IA (NIST AI RMF, EU AI Act, ISO/IEC 42001)
+- Marketing y comportamiento del consumidor (Kotler, Aaker, AMA standards)
+- Diseño UX/UI (Norman, Nielsen heuristics, WCAG, Material Design)
+- Tecnología empresarial (TOGAF, Zachman, arquitectura de microservicios)
+- Costos (Kaplan, ABC, target costing)
+- Investigación (Booth ya catalogado; sumar Creswell, Yin)
+- Marco fiscal MX (CFF, ISR, IVA, IEPS)
+- Marco mercantil MX (Código de Comercio, LGSM)
+- Marco laboral MX (LFT, IMSS, INFONAVIT)
+- Marco salud MX (Ley General de Salud, NOMs SSA3)
 
 ### Pieza D — Mirror local del usuario (`local/`)
 
