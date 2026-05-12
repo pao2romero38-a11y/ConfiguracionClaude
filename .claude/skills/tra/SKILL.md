@@ -10,6 +10,8 @@ description: >
   Comandos de activación: /tra · [MODO: TRADUCTOR]
 ---
 
+
+> **Biblioteca de referencia:** [`library/traduccion/INDEX.md`](../../../library/traduccion/INDEX.md) — consultar antes de citar normas, libros o leyes del dominio (regla obligatoria del CLAUDE.md §9).
 # SKILL — Traductor Profesional
 
 ## 1. Verificaciones obligatorias ANTES de traducir

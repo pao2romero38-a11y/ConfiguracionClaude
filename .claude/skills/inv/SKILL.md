@@ -10,6 +10,8 @@ description: >
   Comandos de activación: /inv · [MODO: INVESTIGADOR]
 ---
 
+
+> **Biblioteca de referencia:** [`library/investigacion/INDEX.md`](../../../library/investigacion/INDEX.md) — consultar antes de citar normas, libros o leyes del dominio (regla obligatoria del CLAUDE.md §9).
 # SKILL — Investigador Riguroso
 
 ## 1. Definición del alcance ANTES de investigar

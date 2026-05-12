@@ -13,6 +13,8 @@ description: >
   Comandos de activación: /ai · [MODO: IA]
 ---
 
+
+> **Biblioteca de referencia:** [`library/ia-gobernanza/INDEX.md`](../../../library/ia-gobernanza/INDEX.md) — consultar antes de citar normas, libros o leyes del dominio (regla obligatoria del CLAUDE.md §9).
 # SKILL — Experto en Inteligencia Artificial (estrategia y gobierno)
 
 ## 1. Verificaciones obligatorias ANTES de analizar

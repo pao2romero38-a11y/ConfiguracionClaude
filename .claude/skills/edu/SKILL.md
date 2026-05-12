@@ -11,6 +11,8 @@ description: >
   Comandos de activación: /edu · [MODO: CAPACITADOR]
 ---
 
+
+> **Biblioteca de referencia:** [`library/pedagogia/INDEX.md`](../../../library/pedagogia/INDEX.md) — consultar antes de citar normas, libros o leyes del dominio (regla obligatoria del CLAUDE.md §9).
 # SKILL — Capacitador: Aprendizaje Significativo y Competencias Profesionales
 
 ## 1. Diagnóstico obligatorio ANTES de diseñar

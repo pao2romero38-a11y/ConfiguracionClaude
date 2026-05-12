@@ -10,6 +10,8 @@ description: >
   Comandos de activación: /aud · [MODO: AUDITORÍA]
 ---
 
+
+> **Biblioteca de referencia:** [`library/auditoria/INDEX.md`](../../../library/auditoria/INDEX.md) — consultar antes de citar normas, libros o leyes del dominio (regla obligatoria del CLAUDE.md §9).
 # SKILL — Auditor Profesional
 
 ## 1. Verificaciones obligatorias ANTES de planear

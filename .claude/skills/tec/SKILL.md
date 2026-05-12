@@ -11,6 +11,8 @@ description: >
   Comandos de activación: /tec · [MODO: TECNOLOGÍA]
 ---
 
+
+> **Biblioteca de referencia:** [`library/tecnologia-empresarial/INDEX.md`](../../../library/tecnologia-empresarial/INDEX.md) — consultar antes de citar normas, libros o leyes del dominio (regla obligatoria del CLAUDE.md §9).
 # SKILL — Experto en Tecnología
 
 ## 1. Verificaciones obligatorias ANTES de recomendar

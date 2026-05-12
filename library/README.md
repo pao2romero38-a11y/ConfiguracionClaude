@@ -33,12 +33,12 @@ Documentos narrativos por dominio profesional con:
 - Advertencias sobre ediciones obsoletas
 - Cross-references a entradas del catálogo central
 
-Cada dominio crece independientemente. Hoy hay once:
+Cada dominio crece independientemente. Hoy hay trece:
 
 | Dominio | INDEX | Estado |
 |---|---|---|
 | Pedagogía y aprendizaje significativo | [`pedagogia/INDEX.md`](pedagogia/INDEX.md) | v1 — 8 entradas |
-| Regulación MX (datos, fiscal, mercantil, laboral, salud) | [`regulacion-mx/INDEX.md`](regulacion-mx/INDEX.md) | v2 — 21 entradas |
+| Regulación MX (datos, fiscal, mercantil, laboral, salud, sectorial) | [`regulacion-mx/INDEX.md`](regulacion-mx/INDEX.md) | v3 — 28 entradas |
 | Finanzas | [`finanzas/INDEX.md`](finanzas/INDEX.md) | v1 — 8 entradas |
 | Seguridad y cumplimiento | [`seguridad-cumplimiento/INDEX.md`](seguridad-cumplimiento/INDEX.md) | v1 — 13 entradas |
 | Auditoría | [`auditoria/INDEX.md`](auditoria/INDEX.md) | v1 — 6 entradas |
@@ -48,19 +48,25 @@ Cada dominio crece independientemente. Hoy hay once:
 | Tecnología empresarial | [`tecnologia-empresarial/INDEX.md`](tecnologia-empresarial/INDEX.md) | v1 — 7 entradas |
 | Costos | [`costos/INDEX.md`](costos/INDEX.md) | v1 — 7 entradas |
 | Investigación | [`investigacion/INDEX.md`](investigacion/INDEX.md) | v1 — 6 entradas |
+| Traducción profesional | [`traduccion/INDEX.md`](traduccion/INDEX.md) | v1 — 7 entradas |
+| ESG y sustentabilidad | [`esg-sustentabilidad/INDEX.md`](esg-sustentabilidad/INDEX.md) | v1 — 7 entradas |
 
-**Total catalogado:** ~98 entradas en 11 dominios.
+**Total catalogado:** ~122 entradas en 13 dominios. **100 % de los
+skills profesionales** del repo tienen ahora cobertura de biblioteca
+(con `library:` apuntando al INDEX correspondiente en su SKILL.md).
 
-Próximos candidatos (orden sugerido):
+Próximos candidatos (cuando emerja necesidad concreta):
 
-- **Profundización por dominio existente**: añadir 5-10 entradas más
-  donde se note un hueco recurrente (ej. más NOMs en salud, más
-  marcos de IA aplicados a sectores).
-- **Sector financiero MX específico**: CNBV, CONDUSEF, Ley FinTech.
-- **Sector telecomunicaciones MX**: IFT, Ley Federal de Telecomunicaciones.
-- **Estándares de calidad**: ISO 9001:2015, modelos de excelencia (EFQM, Baldrige).
-- **Sustentabilidad / ESG**: GRI Standards, SASB, TCFD, ISSB.
-- **Traducción**: marcos de traducción profesional (ISO 17100, Newmark, Nida) — para `/tra`.
+- **Sector financiero MX detallado**: Ley FinTech, Disposiciones CNBV
+  específicas por temática (ciberseguridad, gobierno corporativo, PLD).
+- **Sector telecomunicaciones MX detallado**: Ley Federal de
+  Telecomunicaciones y Radiodifusión, ANexos técnicos del IFT.
+- **Estándares de calidad**: ISO 9001:2015, EFQM, Baldrige.
+- **Tratados internacionales**: T-MEC, OECD MRA, OIT C190.
+- **NOMs adicionales**: NOM-019-STPS, NOM-251-SSA1 (BPM alimentos),
+  etc.
+- **Sustentabilidad complementaria**: ISO 26000, ISO 45001, GHG Protocol,
+  EU CSRD/ESRS.
 
 ### Pieza D — Mirror local del usuario (`local/`)
 

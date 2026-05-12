@@ -400,6 +400,65 @@ Producida la serie "serie-mejora-continua" (7 episodios, ~38 min total,
 Tras instalar, registrar en `MEMORY.md` como `capacidad-tts-local-es`
 siguiendo la plantilla del §8 (Registro en memoria del usuario).
 
+### 9 bis.3 — Sincronización de biblioteca local con documentos en dominio público (cero costo)
+
+**Disparador:** el usuario quiere tener acceso offline a las leyes,
+normas y guías oficiales del catálogo `library/CATALOG.yaml` que están
+en dominio público (LFPDPPP, NIST CSF, NOMs SSA, OECD, UN SDGs, etc.).
+
+**Receta validada (mayo 2026):**
+
+```
+Nivel:        1 — Script helper (sin instalación adicional; usa stdlib)
+Wrapper:      .claude/scripts/descargar-publicos.py
+Dependencias: pyyaml (ya instalado por receta §8 — biblioteca-sync.py)
+
+Filtro:       Solo entradas con license == "public_domain" Y url_oficial
+              que apunta a recurso descargable directamente. NUNCA descarga
+              copyrighted (ISO, AICPA, libros de editores, NIF MX, etc.).
+
+Destino:      library/local/<id>.<ext>
+              · library/local/ está en .gitignore — copia personal del usuario
+              · No se sube al repo
+```
+
+**Tres modos del script:**
+
+```bash
+# 1) Listar qué se descargaría (default, no toca disco)
+python3 .claude/scripts/descargar-publicos.py --dry-run
+
+# 2) Descargar
+python3 .claude/scripts/descargar-publicos.py --download
+
+# 3) Reporte de cobertura local (qué hay en disco vs en catálogo)
+python3 .claude/scripts/descargar-publicos.py --report
+```
+
+**Cuándo aplica esta receta:**
+
+- ✓ Usuario quiere acceso offline a marcos legales mexicanos vigentes
+- ✓ Usuario consulta frecuentemente normas NIST / OECD / UN
+- ✓ Usuario trabaja en zonas con conectividad inestable
+- ✗ Para documentos copyrighted (ISO, libros, NIF) — adquirir
+  legalmente por separado y configurar mapeo manual en
+  `~/.config/biblioteca-local.yaml` (ver receta §8 — biblioteca-sync.py)
+
+**Validación de la receta (al corte mayo 2026):**
+
+- 46 entradas marcadas como descargables en el catálogo (de ~108 totales).
+- Concentradas en: regulacion-mx (todas las leyes federales + NOMs +
+  sectoriales), seguridad-cumplimiento (NIST CSF, NIST SP 800-30/53),
+  ia-gobernanza (NIST AI RMF, OECD, UNESCO, EU AI Act, UN SDGs).
+- Los sitios oficiales mexicanos (diputados.gob.mx, dof.gob.mx, sat.gob.mx)
+  responden a User-Agent estándar; los URLs de listado (sin .pdf en
+  el path) requieren navegación manual y se reportan como fallidos.
+
+**Memoria asociada:**
+
+Tras el primer `--download` exitoso, registrar en `MEMORY.md` como
+`capacidad-biblioteca-local` siguiendo la plantilla del §8.
+
 ### 9 bis.2 — Render de slides + composición video sincronizado con audio (cero costo)
 
 **Disparador:** el usuario tiene una serie de capacitación con audio

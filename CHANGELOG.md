@@ -13,6 +13,145 @@ Cambios en preparación que aún no se han publicado en una versión.
 
 ---
 
+## [2.10.0] — 2026-05-12
+
+**Cierre del ciclo de biblioteca — 100 % cobertura skill ↔ library
++ integración explícita en SKILL.md + tercera receta estándar de
+`/capacidad`.** Bump MENOR. Pasamos de 11 → 13 dominios y de ~101 →
+~122 entradas.
+
+Cuatro tracks completados en este commit:
+
+1. **Cobertura del último skill sin biblioteca** (`/tra`): nuevo
+   dominio `traduccion/` con 7 entradas (ISO 17100, ISO 20771,
+   Newmark, Nida & Taber, Venuti, Hurtado Albir, ATA Code of Ethics).
+2. **Integración explícita** en cada `SKILL.md`: 16 skills con campo
+   `Biblioteca de referencia` apuntando al INDEX del dominio
+   correspondiente. Operacionaliza la regla obligatoria del
+   `CLAUDE.md` §9 al hacer visible el pointer dentro del propio
+   skill.
+3. **Receta estándar `/capacidad` §9 bis.3**: descarga automatizada
+   de documentos en dominio público desde URL oficial al catálogo.
+   Wrapper `descargar-publicos.py` (3 modos: `--dry-run`, `--download`,
+   `--report`). 46 entradas elegibles al corte.
+4. **Profundización selectiva**: nuevo dominio `esg-sustentabilidad/`
+   (7 entradas: GRI, SASB, IFRS S1/S2, TCFD, ISO 14001, OECD MNE,
+   UN SDGs); extensión de `regulacion-mx/` con sub-bloque sectorial
+   (CNBV, CONDUSEF, IFT, COFEPRIS, COFECE) y NOMs adicionales de
+   salud (NOM-007-SSA2, NOM-046-SSA2).
+
+### Added
+
+#### Track 1 — `library/traduccion/INDEX.md` (7 entradas)
+
+- `iso-17100-2015` — Translation services (certificable)
+- `iso-20771-2020` — Legal translation (specific)
+- `newmark-textbook-translation-1988` — métodos semántico vs comunicativo
+- `nida-taber-translation-1982` — equivalencia dinámica vs formal
+- `venuti-translators-invisibility-2008` — domesticación vs extranjerización
+- `hurtado-albir-traductologia-2017` — manual estándar en español
+- `ata-code-of-ethics` — código ético ATA (US)
+
+#### Track 2 — Integración en 16 SKILL.md (× 2 copias: repo + activa)
+
+Skills actualizados con bloque `> **Biblioteca de referencia:**`:
+- `/edu` → `pedagogia`
+- `/inv` → `investigacion`
+- `/fin`, `/proy` → `finanzas`
+- `/mkt` → `marketing`
+- `/tec` → `tecnologia-empresarial`
+- `/seg`, `/rsk`, `/ci` → `seguridad-cumplimiento`
+- `/aud` → `auditoria`
+- `/dis` → `ux-ui`
+- `/cost` → `costos`
+- `/tra` → `traduccion` (recién creado en este commit)
+- `/ai`, `/ai-llm`, `/ai-ml` → `ia-gobernanza`
+
+#### Track 3 — Tercera receta `/capacidad` §9 bis.3
+
+- `.claude/scripts/descargar-publicos.py` (~180 líneas) — descarga
+  fuentes con `license: public_domain` + `url_oficial` válido a
+  `library/local/` (ignorado por git). 3 modos: `--dry-run`,
+  `--download`, `--report`.
+- Filtros duros: NUNCA descarga copyrighted; nunca redistribuye;
+  guarda solo en uso personal del usuario.
+- `.claude/skills/capacidad/SKILL.md` §9 bis.3 documenta la receta.
+
+#### Track 4 — `library/esg-sustentabilidad/INDEX.md` (7 entradas)
+
+- `gri-standards-2021` — más adoptado globalmente; doble materialidad
+- `sasb-standards-2018` — específicos por industria; ahora bajo ISSB
+- `issb-s1-s2-2023` — IFRS Sustainability Disclosure Standards
+- `tcfd-recommendations-2017` — superseded by IFRS S2 desde 2024
+- `iso-14001-2015` — SGA certificable
+- `oecd-multinationals-2023` — conducta empresarial responsable
+- `un-sdgs-2015` — 17 ODS agenda 2030
+
+#### Track 4 — extensión de `regulacion-mx/` (7 entradas adicionales)
+
+Sub-bloque sectorial:
+- `cnbv-disposiciones` — Comisión Nacional Bancaria y de Valores
+- `condusef-disposiciones` — protección al usuario financiero
+- `ift-lineamientos` — Instituto Federal de Telecomunicaciones
+- `cofepris-disposiciones` — Protección contra Riesgos Sanitarios
+- `cofece-disposiciones` — Competencia Económica
+
+NOMs salud adicionales:
+- `nom-007-ssa2-2016` — Embarazo, parto y puerperio
+- `nom-046-ssa2-2005` — Violencia familiar, sexual y contra las mujeres
+
+### Changed
+
+- **`library/CATALOG.yaml`** — ~122 entradas en 13 dominios.
+- **`library/README.md`** — tabla de 13 dominios; próximos candidatos
+  refinados a temas específicos (Ley FinTech, T-MEC, ISO 9001, etc.).
+- **`library/regulacion-mx/INDEX.md`** — secciones nuevas para sector
+  específico y NOMs salud adicionales.
+
+### Cambios en numeración
+
+- `VERSION`: `2.9.0` → `2.10.0`.
+
+### Compatibilidad
+
+- 100 % backward-compatible con v2.9.0. Solo añade.
+
+### Cobertura final skill ↔ biblioteca tras v2.10.0
+
+| Skill | Biblioteca | Estado |
+|---|---|---|
+| `/edu` | pedagogia | ✓ con bloque en SKILL.md |
+| `/inv` | investigacion | ✓ |
+| `/fin`, `/proy`, `/cost`, `/mkt`, `/tec`, `/dis` | dominio propio cada uno | ✓ |
+| `/seg`, `/rsk`, `/ci`, `/aud` | seguridad-cumplimiento + regulacion-mx + auditoria | ✓ |
+| `/ai`, `/ai-llm`, `/ai-ml` | ia-gobernanza | ✓ |
+| `/tra` | **traduccion** (nuevo) | ✓ |
+
+**Cobertura total**: 100 % de los 17 skills profesionales del repo
+tienen al menos un dominio de biblioteca asociado y referenciado
+explícitamente en su `SKILL.md`.
+
+### Decisiones técnicas
+
+- Slides PNG SÍ versionados, audio/video NO (decidido en v2.6.0;
+  mantenido).
+- Documentos copyrighted NUNCA en el repo; pointer a URL oficial
+  como fuente de verdad (decidido en v2.7.0; mantenido).
+- `library/local/` ignorado por git para copias personales del
+  usuario (decidido en v2.7.0; mantenido).
+- `library/CATALOG.yaml` permanece como única fuente de verdad
+  machine-readable; los INDEX son narrativa complementaria.
+
+### Próximas iteraciones (no incluidas)
+
+Las direcciones de crecimiento estructural están cubiertas. Las
+próximas adiciones serán **temáticas según demanda**: nuevas normas
+publicadas, sectores específicos que un PR cubra, traducciones
+adicionales, marcos de calidad (ISO 9001), tratados internacionales
+firmados por México.
+
+---
+
 ## [2.9.0] — 2026-05-12
 
 **Expansión del catálogo a 11 dominios — 5 nuevos dominios + 4

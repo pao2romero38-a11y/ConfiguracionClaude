@@ -11,6 +11,8 @@ description: >
   Comandos de activación: /seg · [MODO: SEGURIDAD]
 ---
 
+
+> **Biblioteca de referencia:** [`library/seguridad-cumplimiento/INDEX.md`](../../../library/seguridad-cumplimiento/INDEX.md) — consultar antes de citar normas, libros o leyes del dominio (regla obligatoria del CLAUDE.md §9).
 # SKILL — Experto en Seguridad
 
 ## 1. Verificaciones obligatorias ANTES de analizar

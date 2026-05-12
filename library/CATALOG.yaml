@@ -624,6 +624,139 @@ regulacion-mx:
       sector salud y para evaluaciones de transparencia en
       establecimientos públicos.
 
+  - id: nom-007-ssa2-2016
+    titulo: NOM-007-SSA2-2016 — Para la atención de la mujer durante el embarazo, parto y puerperio
+    autores: ["Secretaría de Salud (México)"]
+    año: 2016
+    edicion_vigente: "DOF 7 de abril de 2016"
+    categoria: norma
+    dominios: [regulacion-mx, salud]
+    skills: [/ci, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.dof.gob.mx/nota_detalle.php?codigo=5432289&fecha=07/04/2016"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Norma obligatoria para servicios de salud que atienden embarazo,
+      parto y puerperio. Pertinente al evaluar cumplimiento de
+      establecimientos de salud reproductiva.
+
+  - id: nom-046-ssa2-2005
+    titulo: NOM-046-SSA2-2005 — Violencia familiar, sexual y contra las mujeres
+    autores: ["Secretaría de Salud (México)"]
+    año: 2005
+    edicion_vigente: "DOF 16 de abril de 2009 (con modificaciones)"
+    categoria: norma
+    dominios: [regulacion-mx, salud]
+    skills: [/ci, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.dof.gob.mx/nota_detalle.php?codigo=5087256&fecha=16/04/2009"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Norma sobre atención médica a víctimas de violencia familiar,
+      sexual o de género. Obligatoria para todos los prestadores de
+      servicios de salud en México.
+
+  # === Sub-bloque SECTORIALES MX ===
+
+  - id: cnbv-disposiciones
+    titulo: Disposiciones de carácter general aplicables a instituciones de crédito (Circular Única de Bancos)
+    autores: ["Comisión Nacional Bancaria y de Valores (CNBV)"]
+    año: 2005
+    edicion_vigente: "Vigente con resoluciones modificatorias acumuladas"
+    categoria: regulacion
+    dominios: [regulacion-mx, financiero, sectorial]
+    skills: [/fin, /seg, /ci, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.cnbv.gob.mx/Normatividad/"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Marco regulatorio principal del sector bancario en México.
+      Incluye gestión integral de riesgos, prevención de lavado de
+      dinero, ciberseguridad bancaria (Anexo 76 desde 2020),
+      gobierno corporativo. Verificar resoluciones modificatorias
+      publicadas en DOF.
+
+  - id: condusef-disposiciones
+    titulo: Disposiciones de la Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros
+    autores: ["CONDUSEF"]
+    año: 2024
+    edicion_vigente: "vigente con resoluciones por temática"
+    categoria: regulacion
+    dominios: [regulacion-mx, financiero, sectorial, datos-personales]
+    skills: [/fin, /ci, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.condusef.gob.mx/"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Regulación sobre protección al usuario de servicios financieros:
+      transparencia de costos, atención de reclamaciones, cláusulas
+      abusivas, contratos de adhesión. Aplica a bancos, SOFOMs, casas
+      de bolsa, aseguradoras.
+
+  - id: ift-lineamientos
+    titulo: Lineamientos y disposiciones técnicas del Instituto Federal de Telecomunicaciones
+    autores: ["Instituto Federal de Telecomunicaciones (IFT)"]
+    año: 2024
+    edicion_vigente: "vigentes con publicaciones posteriores en DOF"
+    categoria: regulacion
+    dominios: [regulacion-mx, telecomunicaciones, sectorial]
+    skills: [/tec, /seg, /ci]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.ift.org.mx/"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Marco regulatorio del sector telecomunicaciones y radiodifusión.
+      Pertinente para operadores de telecomunicaciones, servicios de
+      OTT con presencia en MX, espectro radioeléctrico, neutralidad
+      de la red.
+
+  - id: cofepris-disposiciones
+    titulo: Disposiciones de la Comisión Federal para la Protección contra Riesgos Sanitarios
+    autores: ["COFEPRIS"]
+    año: 2024
+    edicion_vigente: "vigentes con publicaciones en DOF"
+    categoria: regulacion
+    dominios: [regulacion-mx, salud, sectorial]
+    skills: [/ci, /aud, /seg]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.gob.mx/cofepris"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Autoridad sanitaria mexicana. Regula medicamentos, dispositivos
+      médicos, alimentos, cosméticos, biotecnología. Pertinente para
+      empresas con productos en estos sectores.
+
+  - id: cofece-disposiciones
+    titulo: Disposiciones de la Comisión Federal de Competencia Económica
+    autores: ["COFECE"]
+    año: 2024
+    edicion_vigente: "vigentes con resoluciones acumuladas"
+    categoria: regulacion
+    dominios: [regulacion-mx, competencia, sectorial]
+    skills: [/ci, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.cofece.mx/"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Autoridad de competencia económica de México. Pertinente para
+      concentraciones (M&A), prácticas monopólicas, mercados
+      regulados. Notificaciones de concentración obligatorias sobre
+      umbrales monetarios definidos en la LFCE.
+
 # ============================================================
 # DOMINIO: finanzas
 # ============================================================
@@ -2008,3 +2141,279 @@ investigacion:
       Referencia universal de investigación basada en estudios de caso.
       Pertinente cuando la unidad de análisis es una organización, un
       proyecto o un fenómeno acotado.
+
+# ============================================================
+# DOMINIO: traduccion
+# ============================================================
+traduccion:
+
+  - id: ata-code-of-ethics
+    titulo: ATA Code of Ethics and Professional Practice
+    autores: ["American Translators Association (ATA)"]
+    año: 2010
+    edicion_vigente: "vigente con interpretaciones de la ATA"
+    categoria: norma
+    dominios: [traduccion, etica-profesional]
+    skills: [/tra]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.atanet.org/about-us/code-of-ethics/"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Código ético de traductores e intérpretes en EE.UU. Referencia
+      al evaluar conducta profesional o conflictos de interés en
+      proyectos de traducción/interpretación.
+
+  - id: hurtado-albir-traductologia-2017
+    titulo: Traducción y traductología — Introducción a la traductología
+    autores: ["Hurtado Albir, A."]
+    año: 2017
+    edicion_vigente: "9ª ed. (2017)"
+    categoria: libro
+    dominios: [traduccion]
+    skills: [/tra]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.catedra.com/libro.php?codigo_comercial=141127"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Manual estándar de traductología en español. Síntesis exhaustiva
+      de teorías y métodos. Lectura obligatoria para traductores
+      iberoamericanos profesionales.
+
+  - id: iso-17100-2015
+    titulo: ISO 17100:2015 — Translation services — Requirements for translation services
+    autores: ["International Organization for Standardization"]
+    año: 2015
+    edicion_vigente: "ISO 17100:2015 (con Amd 1:2017)"
+    categoria: norma
+    dominios: [traduccion]
+    skills: [/tra]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.iso.org/standard/59149.html"
+    idiomas: [en, es]
+    confianza: alta
+    notas: |
+      Norma certificable para proveedores de servicios de traducción.
+      Define competencias del traductor, revisor, gestor de proyecto,
+      y el flujo mínimo de calidad (traducción + revisión por persona
+      distinta). Cita obligatoria al evaluar proveedores profesionales.
+
+  - id: iso-20771-2020
+    titulo: ISO 20771:2020 — Legal translation — Requirements
+    autores: ["International Organization for Standardization"]
+    año: 2020
+    edicion_vigente: "ISO 20771:2020"
+    categoria: norma
+    dominios: [traduccion, juridico]
+    skills: [/tra]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.iso.org/standard/69032.html"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Requisitos específicos para traducción jurídica. Complementa
+      ISO 17100 con criterios adicionales: terminología jurídica,
+      sistemas jurídicos del país origen y destino, confidencialidad,
+      certificación cuando aplique.
+
+  - id: newmark-textbook-translation-1988
+    titulo: A Textbook of Translation
+    autores: ["Newmark, P."]
+    año: 1988
+    edicion_vigente: "1988 (vigente; varias reimpresiones)"
+    categoria: libro
+    dominios: [traduccion]
+    skills: [/tra]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.pearson.com/en-us/subject-catalog/p/textbook-of-translation-a/P200000005942"
+    idiomas: [en, es]
+    traduccion_es:
+      titulo_es: "Manual de traducción"
+      editor_es: "Cátedra"
+    confianza: alta
+    notas: |
+      Manual clásico de traducción. Introduce los métodos semántico
+      vs comunicativo y las 8 metodologías de traducción. Referencia
+      transversal en programas universitarios de traducción.
+
+  - id: nida-taber-translation-1982
+    titulo: The Theory and Practice of Translation
+    autores: ["Nida, E. A.", "Taber, C. R."]
+    año: 1982
+    edicion_vigente: "1982 (vigente como base teórica)"
+    categoria: libro
+    dominios: [traduccion]
+    skills: [/tra]
+    license: copyright
+    status: vigente
+    url_oficial: "https://brill.com/edcollbook/title/22697"
+    idiomas: [en, es]
+    confianza: alta
+    notas: |
+      Trabajo fundacional sobre equivalencia dinámica vs equivalencia
+      formal. Citado en el SKILL.md de /tra como base operativa del
+      enfoque del proyecto.
+
+  - id: venuti-translators-invisibility-2008
+    titulo: The Translator's Invisibility — A History of Translation
+    autores: ["Venuti, L."]
+    año: 2008
+    edicion_vigente: "2nd ed. (2008)"
+    categoria: libro
+    dominios: [traduccion]
+    skills: [/tra]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.routledge.com/The-Translators-Invisibility-A-History-of-Translation/Venuti/p/book/9780415394550"
+    idiomas: [en, es]
+    confianza: alta
+    notas: |
+      Tratamiento de la dualidad domesticación vs extranjerización.
+      Cita obligatoria al traducir textos donde la voz cultural del
+      autor original es central (literatura, ensayo).
+
+# ============================================================
+# DOMINIO: esg-sustentabilidad
+# ============================================================
+esg-sustentabilidad:
+
+  - id: gri-standards-2021
+    titulo: GRI Universal Standards 2021
+    autores: ["Global Reporting Initiative (GRI)"]
+    año: 2021
+    edicion_vigente: "GRI Universal Standards 2021 (efectivos 1 enero 2023)"
+    categoria: norma
+    dominios: [esg-sustentabilidad, reporteo]
+    skills: [/fin, /aud, /ci]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.globalreporting.org/standards/"
+    idiomas: [en, es, varios]
+    confianza: alta
+    notas: |
+      Estándar más adoptado mundialmente para reportes de
+      sustentabilidad. La versión 2021 refundó la estructura: GRI 1
+      (Foundations), GRI 2 (General Disclosures), GRI 3 (Material
+      Topics) + estándares temáticos. Reemplaza GRI Standards 2016.
+
+  - id: iso-14001-2015
+    titulo: ISO 14001:2015 — Environmental management systems — Requirements with guidance for use
+    autores: ["International Organization for Standardization"]
+    año: 2015
+    edicion_vigente: "ISO 14001:2015"
+    categoria: norma
+    dominios: [esg-sustentabilidad, ambiental]
+    skills: [/ci, /aud]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.iso.org/standard/60857.html"
+    idiomas: [en, es]
+    confianza: alta
+    notas: |
+      Norma certificable para Sistemas de Gestión Ambiental (SGA).
+      Compatible con ISO 9001 (calidad) e ISO 45001 (SST) vía High-
+      Level Structure (HLS). Frecuente en industrias con impacto
+      ambiental material.
+
+  - id: issb-s1-s2-2023
+    titulo: IFRS Sustainability Disclosure Standards — IFRS S1 and IFRS S2
+    autores: ["International Sustainability Standards Board (ISSB)"]
+    año: 2023
+    edicion_vigente: "IFRS S1 + IFRS S2 (junio 2023; efectivos enero 2024)"
+    categoria: norma
+    dominios: [esg-sustentabilidad, reporteo]
+    skills: [/fin, /aud]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Primeros estándares globales de divulgación de sustentabilidad
+      del ISSB (creado por IFRS Foundation 2021). IFRS S1 cubre
+      requisitos generales; IFRS S2 cubre divulgaciones climáticas
+      (alineado con TCFD). Adopción jurisdiccional creciente desde 2024.
+
+  - id: oecd-multinationals-2023
+    titulo: OECD Guidelines for Multinational Enterprises on Responsible Business Conduct
+    autores: ["Organisation for Economic Co-operation and Development (OECD)"]
+    año: 2023
+    edicion_vigente: "actualización 2023 (supersede 2011)"
+    categoria: norma
+    dominios: [esg-sustentabilidad, gobernanza]
+    skills: [/ci, /aud]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://mneguidelines.oecd.org/mneguidelines/"
+    idiomas: [en, es, fr, varios]
+    confianza: alta
+    notas: |
+      Recomendaciones de conducta empresarial responsable para
+      multinacionales. La actualización 2023 fortalece debida
+      diligencia (incl. cadena de valor digital, derechos humanos en
+      tecnología), cambio climático y lobbying responsable.
+
+  - id: sasb-standards-2018
+    titulo: SASB Standards (Industry-Specific Sustainability Standards)
+    autores: ["Sustainability Accounting Standards Board (SASB) / IFRS Foundation"]
+    año: 2018
+    edicion_vigente: "Industry Standards 2018 con updates anuales; ahora bajo ISSB"
+    categoria: norma
+    dominios: [esg-sustentabilidad, reporteo]
+    skills: [/fin, /aud]
+    license: copyright
+    status: vigente
+    url_oficial: "https://sasb.ifrs.org/standards/"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      77 estándares específicos por industria con indicadores ESG
+      financieramente materiales. Desde 2022 bajo IFRS Foundation
+      (parte del ecosistema ISSB). Complementa GRI con foco en
+      materialidad financiera vs materialidad doble de GRI.
+
+  - id: tcfd-recommendations-2017
+    titulo: Recommendations of the Task Force on Climate-related Financial Disclosures
+    autores: ["Task Force on Climate-related Financial Disclosures (TCFD)"]
+    año: 2017
+    edicion_vigente: "Recommendations 2017 (TCFD disuelto en 2023; integrado a ISSB)"
+    categoria: norma
+    dominios: [esg-sustentabilidad, riesgos-climaticos]
+    skills: [/fin, /rsk, /aud]
+    license: public_domain
+    status: superseded_by:issb-s1-s2-2023
+    url_oficial: "https://www.fsb-tcfd.org/recommendations/"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Recomendaciones fundacionales para divulgación climática
+      financiera: 4 pilares (Governance, Strategy, Risk Management,
+      Metrics & Targets) y 11 recomendaciones. El TCFD se disolvió
+      en 2023; sus principios fueron incorporados en IFRS S2.
+      Citar TCFD aún para contextos pre-2024 o jurisdicciones que
+      siguen usándolo como referencia (ej. Reino Unido obligatorio).
+
+  - id: un-sdgs-2015
+    titulo: Transforming Our World — The 2030 Agenda for Sustainable Development (Sustainable Development Goals)
+    autores: ["United Nations General Assembly"]
+    año: 2015
+    edicion_vigente: "Resolución A/RES/70/1 (vigente al 2030)"
+    categoria: norma
+    dominios: [esg-sustentabilidad]
+    skills: [/proy, /ci]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://sdgs.un.org/2030agenda"
+    idiomas: [en, es, fr, ar, ru, zh]
+    confianza: alta
+    notas: |
+      17 Objetivos de Desarrollo Sostenible adoptados por 193 Estados.
+      Marco común para alinear estrategias corporativas y públicas
+      con la agenda 2030. Frecuentemente citado en informes
+      corporativos de sustentabilidad y proyectos sociales.

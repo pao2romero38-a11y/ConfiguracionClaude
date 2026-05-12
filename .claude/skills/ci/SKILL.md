@@ -10,6 +10,8 @@ description: >
   Comandos de activación: /ci · [MODO: CONTROL INTERNO]
 ---
 
+
+> **Biblioteca de referencia:** [`library/seguridad-cumplimiento/INDEX.md`](../../../library/seguridad-cumplimiento/INDEX.md) — consultar antes de citar normas, libros o leyes del dominio (regla obligatoria del CLAUDE.md §9).
 # SKILL — Control Interno
 
 ## 1. Verificaciones obligatorias ANTES de analizar

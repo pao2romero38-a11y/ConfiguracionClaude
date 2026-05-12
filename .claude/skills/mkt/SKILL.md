@@ -10,6 +10,8 @@ description: >
   Comandos de activación: /mkt · [MODO: MARKETING]
 ---
 
+
+> **Biblioteca de referencia:** [`library/marketing/INDEX.md`](../../../library/marketing/INDEX.md) — consultar antes de citar normas, libros o leyes del dominio (regla obligatoria del CLAUDE.md §9).
 # SKILL — Experto en Marketing
 
 ## 1. Verificaciones obligatorias ANTES de estrategizar

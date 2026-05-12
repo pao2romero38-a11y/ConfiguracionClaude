@@ -10,6 +10,8 @@ description: >
   Comandos de activación: /cost · [MODO: COSTOS]
 ---
 
+
+> **Biblioteca de referencia:** [`library/costos/INDEX.md`](../../../library/costos/INDEX.md) — consultar antes de citar normas, libros o leyes del dominio (regla obligatoria del CLAUDE.md §9).
 # SKILL — Experto en Costos
 
 ## 1. Verificaciones obligatorias ANTES de costear

@@ -190,11 +190,41 @@ de uso que la justifica y el skill que la consumirá.
 
 ---
 
+---
+
+## Marco regulatorio sectorial (nuevo en v2.10.0)
+
+| Autoridad | Catálogo | Cuándo citar |
+|---|---|---|
+| Comisión Nacional Bancaria y de Valores | [`cnbv-disposiciones`](../CATALOG.yaml) | Sector bancario, casas de bolsa, SOFOMs, ciberseguridad bancaria |
+| Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros | [`condusef-disposiciones`](../CATALOG.yaml) | Atención al cliente financiero, transparencia, cláusulas abusivas |
+| Instituto Federal de Telecomunicaciones | [`ift-lineamientos`](../CATALOG.yaml) | Operadores de telecom, OTT, espectro, neutralidad de red |
+| Comisión Federal para la Protección contra Riesgos Sanitarios | [`cofepris-disposiciones`](../CATALOG.yaml) | Medicamentos, dispositivos médicos, alimentos, cosméticos |
+| Comisión Federal de Competencia Económica | [`cofece-disposiciones`](../CATALOG.yaml) | M&A, prácticas monopólicas, notificaciones de concentración |
+
+**Composición típica para una empresa regulada**: la regulación
+sectorial **complementa** (no reemplaza) los marcos generales del
+dominio. Ejemplo banco mexicano: LFPDPPP + LGS + CNBV Anexo 76
+(ciberseguridad bancaria) + CONDUSEF (atención al usuario).
+
+---
+
+## NOMs salud adicionales (nuevo en v2.10.0)
+
+| NOM | Catálogo | Cuándo citar |
+|---|---|---|
+| NOM-007-SSA2-2016 | [`nom-007-ssa2-2016`](../CATALOG.yaml) | Atención de embarazo, parto y puerperio |
+| NOM-046-SSA2-2005 | [`nom-046-ssa2-2005`](../CATALOG.yaml) | Violencia familiar, sexual y contra las mujeres — obligatoria a todo prestador de salud |
+
+---
+
 ## Pendientes globales del dominio
 
-- **Sector específico (CNBV, CONDUSEF, CFE, COFECE)**: regulación sectorial. Se añade conforme aparezcan casos de uso.
 - **Tratados internacionales firmados por México**: T-MEC, OECD, OIT, etc.
 - **Reglamentos** de las leyes catalogadas (varios pendientes).
+- **Más NOMs**: NOM-019-STPS (comisiones SH), NOM-030-STPS, NOM-251-SSA1 (BPM alimentos), etc.
+- **CRE** (Comisión Reguladora de Energía) — sector energético.
+- **SE** (Secretaría de Economía) — normas comerciales mexicanas (NMX).
 
 PRs bienvenidos para llenar cualquiera de estos huecos (ver
 `CONTRIBUTING.md` y `library/README.md` §"Cómo contribuir entradas").

@@ -10,6 +10,8 @@ description: >
   Comandos de activación: /dis · [MODO: DISEÑO]
 ---
 
+
+> **Biblioteca de referencia:** [`library/ux-ui/INDEX.md`](../../../library/ux-ui/INDEX.md) — consultar antes de citar normas, libros o leyes del dominio (regla obligatoria del CLAUDE.md §9).
 # SKILL — Diseñador Estratégico
 
 ## 1. Verificaciones obligatorias ANTES de diseñar

@@ -11,6 +11,8 @@ description: >
   Comandos de activación: /proy · [MODO: PROYECTOS]
 ---
 
+
+> **Biblioteca de referencia:** [`library/finanzas/INDEX.md`](../../../library/finanzas/INDEX.md) — consultar antes de citar normas, libros o leyes del dominio (regla obligatoria del CLAUDE.md §9).
 # SKILL — Evaluador de Proyectos
 
 ## 1. Verificaciones obligatorias ANTES de evaluar

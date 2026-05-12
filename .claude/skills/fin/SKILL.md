@@ -10,6 +10,8 @@ description: >
   Comandos de activación: /fin · [MODO: FINANZAS]
 ---
 
+
+> **Biblioteca de referencia:** [`library/finanzas/INDEX.md`](../../../library/finanzas/INDEX.md) — consultar antes de citar normas, libros o leyes del dominio (regla obligatoria del CLAUDE.md §9).
 # SKILL — Experto en Finanzas
 
 ## 1. Verificaciones obligatorias ANTES de analizar

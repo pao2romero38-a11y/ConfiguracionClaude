@@ -10,6 +10,8 @@ description: >
   Comandos de activación: /rsk · [MODO: RIESGOS]
 ---
 
+
+> **Biblioteca de referencia:** [`library/seguridad-cumplimiento/INDEX.md`](../../../library/seguridad-cumplimiento/INDEX.md) — consultar antes de citar normas, libros o leyes del dominio (regla obligatoria del CLAUDE.md §9).
 # SKILL — Evaluador de Riesgos
 
 ## 1. Verificaciones obligatorias ANTES de evaluar

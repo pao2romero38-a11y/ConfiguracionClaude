@@ -12,6 +12,8 @@ description: >
   Comandos de activación: /ai-ml · [MODO: ML]
 ---
 
+
+> **Biblioteca de referencia:** [`library/ia-gobernanza/INDEX.md`](../../../library/ia-gobernanza/INDEX.md) — consultar antes de citar normas, libros o leyes del dominio (regla obligatoria del CLAUDE.md §9).
 # SKILL — ML / MLOps
 
 ## 1. Verificaciones obligatorias ANTES de diseñar
