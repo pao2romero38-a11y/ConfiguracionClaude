@@ -1,0 +1,105 @@
+{
+  "episode": "episodio-3-modos-expertos",
+  "total_duration": 458,
+  "audio_duration_target": 450,
+  "has_conclusiones": true,
+  "slides": [
+    {
+      "num": 1,
+      "file": "slide-01.png",
+      "start": 0,
+      "end": 30,
+      "duration": 30,
+      "text": "Dejaste de hablarle al médico general"
+    },
+    {
+      "num": 2,
+      "file": "slide-02.png",
+      "start": 30,
+      "end": 90,
+      "duration": 60,
+      "text": "¿Te habló en US GAAP cuando trabajas con NIF?"
+    },
+    {
+      "num": 3,
+      "file": "slide-03.png",
+      "start": 90,
+      "end": 135,
+      "duration": 45,
+      "text": "Ejemplo de /fin"
+    },
+    {
+      "num": 4,
+      "file": "slide-04.png",
+      "start": 135,
+      "end": 180,
+      "duration": 45,
+      "text": "17 modos en 3 grupos"
+    },
+    {
+      "num": 5,
+      "file": "slide-05.png",
+      "start": 180,
+      "end": 240,
+      "duration": 60,
+      "text": "Sintaxis /lider +apoyo +apoyo"
+    },
+    {
+      "num": 6,
+      "file": "slide-06.png",
+      "start": 240,
+      "end": 285,
+      "duration": 45,
+      "text": "Médico general vs equipo de especialistas"
+    },
+    {
+      "num": 7,
+      "file": "slide-07.png",
+      "start": 285,
+      "end": 300,
+      "duration": 15,
+      "text": "Caso M&A: contexto"
+    },
+    {
+      "num": 8,
+      "file": "slide-08.png",
+      "start": 300,
+      "end": 320,
+      "duration": 20,
+      "text": "Respuesta sin modo"
+    },
+    {
+      "num": 9,
+      "file": "slide-09.png",
+      "start": 320,
+      "end": 360,
+      "duration": 40,
+      "text": "Respuesta con /proy +fin +rsk"
+    },
+    {
+      "num": 10,
+      "file": "slide-10.png",
+      "start": 360,
+      "end": 420,
+      "duration": 60,
+      "text": "Actividad: diseñar tu modo"
+    },
+    {
+      "num": 11,
+      "file": "slide-11.png",
+      "start": 420,
+      "end": 450,
+      "duration": 30,
+      "text": "Próximo: /prompt"
+    },
+    {
+      "num": 12,
+      "file": "slide-12.png",
+      "start": 450,
+      "end": 458,
+      "duration": 8,
+      "text": "[Conclusiones]",
+      "is_conclusiones": true
+    }
+  ]
+}

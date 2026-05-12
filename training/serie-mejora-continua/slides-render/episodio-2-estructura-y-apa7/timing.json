@@ -1,0 +1,89 @@
+{
+  "episode": "episodio-2-estructura-y-apa7",
+  "total_duration": 368,
+  "audio_duration_target": 360,
+  "has_conclusiones": true,
+  "slides": [
+    {
+      "num": 1,
+      "file": "slide-01.png",
+      "start": 0,
+      "end": 30,
+      "duration": 30,
+      "text": "Una respuesta correcta puede no ser defendible"
+    },
+    {
+      "num": 2,
+      "file": "slide-02.png",
+      "start": 30,
+      "end": 75,
+      "duration": 45,
+      "text": "¿Paper vs blog sobre el mismo tema?"
+    },
+    {
+      "num": 3,
+      "file": "slide-03.png",
+      "start": 75,
+      "end": 150,
+      "duration": 75,
+      "text": "Los 5 niveles general → particular"
+    },
+    {
+      "num": 4,
+      "file": "slide-04.png",
+      "start": 150,
+      "end": 195,
+      "duration": 45,
+      "text": "Reglas APA 7 mínimas"
+    },
+    {
+      "num": 5,
+      "file": "slide-05.png",
+      "start": 195,
+      "end": 210,
+      "duration": 15,
+      "text": "Caso: gerente de auditoría"
+    },
+    {
+      "num": 6,
+      "file": "slide-06.png",
+      "start": 210,
+      "end": 230,
+      "duration": 20,
+      "text": "Respuesta sin estructura"
+    },
+    {
+      "num": 7,
+      "file": "slide-07.png",
+      "start": 230,
+      "end": 270,
+      "duration": 40,
+      "text": "Respuesta con estructura + APA 7"
+    },
+    {
+      "num": 8,
+      "file": "slide-08.png",
+      "start": 270,
+      "end": 330,
+      "duration": 60,
+      "text": "Actividad: 3 pasos"
+    },
+    {
+      "num": 9,
+      "file": "slide-09.png",
+      "start": 330,
+      "end": 360,
+      "duration": 30,
+      "text": "Próximo: modos expertos"
+    },
+    {
+      "num": 10,
+      "file": "slide-10.png",
+      "start": 360,
+      "end": 368,
+      "duration": 8,
+      "text": "[Conclusiones]",
+      "is_conclusiones": true
+    }
+  ]
+}

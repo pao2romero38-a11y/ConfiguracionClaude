@@ -419,9 +419,10 @@ Nos vemos en el episodio uno.
 | 4 | Asistente día 1 vs día 5 | Ilustración minimalista | 2:45 — 3:30 |
 | 5 | "Tarea: antecedentes del sector retail MX" | Contexto del caso | 3:30 — 3:50 |
 | 6 | Respuesta por defecto | Texto del párrafo genérico | 3:50 — 4:15 |
-| 7 | Respuesta configurada (`/fin +inv`) | Texto del párrafo con datos + fuentes | 4:15 — 4:45 |
-| 8 | Actividad: 4 pasos del reto | Lista numerada | 4:45 — 5:30 |
-| 9 | "Próximo episodio: protocolo de 4 pasos" | Cierre con título Ep 1 | 5:30 — 6:00 |
+| 7 | Respuesta configurada (`/fin +inv`) | Texto del párrafo con datos + fuentes | 4:15 — 4:35 |
+| 8 | Comparativa lado a lado: misma pregunta, distinta respuesta | Dos columnas side-by-side con resaltado de diferencias | 4:35 — 4:50 |
+| 9 | Actividad: 4 pasos del reto | Lista numerada | 4:50 — 5:30 |
+| 10 | "Próximo episodio: protocolo de 4 pasos" | Cierre con título Ep 1 | 5:30 — 6:00 |
 
 ---
 

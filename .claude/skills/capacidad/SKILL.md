@@ -400,6 +400,93 @@ Producida la serie "serie-mejora-continua" (7 episodios, ~38 min total,
 Tras instalar, registrar en `MEMORY.md` como `capacidad-tts-local-es`
 siguiendo la plantilla del §8 (Registro en memoria del usuario).
 
+### 9 bis.2 — Render de slides + composición video sincronizado con audio (cero costo)
+
+**Disparador:** el usuario tiene una serie de capacitación con audio
+narrado producido y quiere generar el video final con slides
+sincronizados al audio. La sincronización slide ↔ audio es obligatoria.
+
+**Receta validada (mayo 2026):**
+
+```
+Nivel:              2 — CLI local
+Motor de slides:    marp-cli 4.4.0  (npm install -g @marp-team/marp-cli)
+Composición video:  ffmpeg (ya instalado por la receta §9 bis.1)
+Dependencias adic:  Google Chrome o Chromium (Marp lo usa para render)
+                    Node.js + npm (verificar disponibilidad antes)
+
+Wrappers:           .claude/scripts/slides.py     (render PNG por slide)
+                    .claude/scripts/componer.py   (audio + slides → mp4)
+
+Parámetros estándar (en componer.py):
+  WIDTH                 = 1280
+  HEIGHT                = 720
+  FPS                   = 30
+  TOLERANCE_HARD        = 0.30  (audio vs declarado)
+
+Sincronización:
+  Todos los slides de contenido se ESCALAN PROPORCIONALMENTE para que
+  la suma de sus duraciones iguale exactamente la duración real del audio.
+  El slide de Conclusiones (opcional) se añade DESPUÉS del audio con
+  duración fija de 8 segundos.
+```
+
+**Diseño visual de slides** (editorial cream + acento cálido, embebido en
+`slides.py`):
+
+- Fondo: gradiente cream `#f7f3ed → #ede4d3`
+- Texto principal: serif `Georgia` para títulos, sans para cuerpo
+- Acento: `#c8553d` (terracota cálido)
+- Cita de remate `[ÉNFASIS]`: italic en serif con borde izquierdo terracota
+- Número de slide: esquina inferior derecha, solo el número (sin "Nº" ni total)
+- Nombre del episodio: esquina superior izquierda, solo el título
+- Slide de conclusiones: mismo tema con borde superior terracota +
+  bullets numerados en círculos
+- Comparativa lado a lado: dos paneles con colores diferenciados
+
+**Pipeline completo para producir un video desde el markdown del episodio:**
+
+```bash
+# 1) Audio (receta §9 bis.1)
+python3 .claude/scripts/narrar.py training/<serie>/<episodio>.md
+
+# 2) Slides (esta receta)
+python3 .claude/scripts/slides.py training/<serie>/<episodio>.md
+
+# 3) Composición video
+python3 .claude/scripts/componer.py training/<serie>/<episodio>.md
+```
+
+Produce:
+
+- `training/<serie>/audio/<episodio>-completo.wav`
+- `training/<serie>/slides-render/<episodio>/slide-NN.png` + `timing.json`
+- `training/<serie>/video/<episodio>.mp4` (~5-6 MB por episodio de 5-6 min)
+
+**Sincronización obligatoria:**
+
+El composer valida que la diferencia entre audio real y duración
+declarada de slides no supere `TOLERANCE_HARD` (30 %). Por encima,
+error explícito: corregir las duraciones del markdown. Por debajo, el
+escalado proporcional absorbe la diferencia sin que el usuario lo note.
+
+**Cuándo aplica esta receta:**
+
+- ✓ macOS / Linux con Node.js + npm + Google Chrome (o Chromium)
+- ✓ Episodios con tabla `# === ESTRUCTURA DE SLIDES ===` y duraciones declaradas
+- ✓ Tema cream editorial encaja con capacitación profesional
+- ✗ Si se requiere video con avatares humanos → Nivel 4 (HeyGen/Synthesia)
+- ✗ Si se requiere animaciones complejas (no slides estáticos) → otro tooling
+
+**Validación de la receta:**
+
+Producidos los 7 videos de la serie "serie-mejora-continua":
+
+- 74 slides totales · ~3.3 MB
+- 7 videos mp4 · ~37 MB · ~38 min total
+- Sincronización slide ↔ audio con escalado proporcional (factor 0.77–0.96 según episodio)
+- Tiempo de setup completo: ~5 min (npm install marp-cli)
+
 ---
 
 ## 10. Restricciones no negociables

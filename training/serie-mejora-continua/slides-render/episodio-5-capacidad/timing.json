@@ -1,0 +1,97 @@
+{
+  "episode": "episodio-5-capacidad",
+  "total_duration": 413,
+  "audio_duration_target": 405,
+  "has_conclusiones": true,
+  "slides": [
+    {
+      "num": 1,
+      "file": "slide-01.png",
+      "start": 0,
+      "end": 30,
+      "duration": 30,
+      "text": "Lo que Claude NO puede hacer... aún"
+    },
+    {
+      "num": 2,
+      "file": "slide-02.png",
+      "start": 30,
+      "end": 75,
+      "duration": 45,
+      "text": "¿Qué te gustaría poder pedirle a Claude?"
+    },
+    {
+      "num": 3,
+      "file": "slide-03.png",
+      "start": 75,
+      "end": 150,
+      "duration": 75,
+      "text": "Los 4 niveles en columnas"
+    },
+    {
+      "num": 4,
+      "file": "slide-04.png",
+      "start": 150,
+      "end": 180,
+      "duration": 30,
+      "text": "Los 4 ejes de evaluación"
+    },
+    {
+      "num": 5,
+      "file": "slide-05.png",
+      "start": 180,
+      "end": 225,
+      "duration": 45,
+      "text": "Smartphone con apps siendo añadidas"
+    },
+    {
+      "num": 6,
+      "file": "slide-06.png",
+      "start": 225,
+      "end": 240,
+      "duration": 15,
+      "text": "Este video se hizo así"
+    },
+    {
+      "num": 7,
+      "file": "slide-07.png",
+      "start": 240,
+      "end": 285,
+      "duration": 45,
+      "text": "Las 4 opciones evaluadas (meta)"
+    },
+    {
+      "num": 8,
+      "file": "slide-08.png",
+      "start": 285,
+      "end": 315,
+      "duration": 30,
+      "text": "Opción seleccionada + resultado"
+    },
+    {
+      "num": 9,
+      "file": "slide-09.png",
+      "start": 315,
+      "end": 375,
+      "duration": 60,
+      "text": "Actividad: 4 pasos"
+    },
+    {
+      "num": 10,
+      "file": "slide-10.png",
+      "start": 375,
+      "end": 405,
+      "duration": 30,
+      "text": "Próximo: meta-proceso"
+    },
+    {
+      "num": 11,
+      "file": "slide-11.png",
+      "start": 405,
+      "end": 413,
+      "duration": 8,
+      "text": "[Conclusiones]",
+      "is_conclusiones": true
+    }
+  ]
+}

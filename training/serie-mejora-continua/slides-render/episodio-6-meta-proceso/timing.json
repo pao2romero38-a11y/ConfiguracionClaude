@@ -1,0 +1,81 @@
+{
+  "episode": "episodio-6-meta-proceso",
+  "total_duration": 368,
+  "audio_duration_target": 360,
+  "has_conclusiones": true,
+  "slides": [
+    {
+      "num": 1,
+      "file": "slide-01.png",
+      "start": 0,
+      "end": 30,
+      "duration": 30,
+      "text": "No vas a aprender una técnica más"
+    },
+    {
+      "num": 2,
+      "file": "slide-02.png",
+      "start": 30,
+      "end": 75,
+      "duration": 45,
+      "text": "¿Cómo llegaste a esta configuración?"
+    },
+    {
+      "num": 3,
+      "file": "slide-03.png",
+      "start": 75,
+      "end": 135,
+      "duration": 60,
+      "text": "Los 5 logros de la serie"
+    },
+    {
+      "num": 4,
+      "file": "slide-04.png",
+      "start": 135,
+      "end": 195,
+      "duration": 60,
+      "text": "Las 5 fases del ciclo en círculo"
+    },
+    {
+      "num": 5,
+      "file": "slide-05.png",
+      "start": 195,
+      "end": 225,
+      "duration": 30,
+      "text": "Gimnasio donde diseñas tus ejercicios"
+    },
+    {
+      "num": 6,
+      "file": "slide-06.png",
+      "start": 225,
+      "end": 270,
+      "duration": 45,
+      "text": "Esta serie fue diseñada con este mismo proceso"
+    },
+    {
+      "num": 7,
+      "file": "slide-07.png",
+      "start": 270,
+      "end": 330,
+      "duration": 60,
+      "text": "Reto: tu siguiente mejora en 5 pasos"
+    },
+    {
+      "num": 8,
+      "file": "slide-08.png",
+      "start": 330,
+      "end": 360,
+      "duration": 30,
+      "text": "No hay episodio 7. Lo que sigue lo escribes tú."
+    },
+    {
+      "num": 9,
+      "file": "slide-09.png",
+      "start": 360,
+      "end": 368,
+      "duration": 8,
+      "text": "[Conclusiones]",
+      "is_conclusiones": true
+    }
+  ]
+}

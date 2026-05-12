@@ -13,6 +13,77 @@ Cambios en preparación que aún no se han publicado en una versión.
 
 ---
 
+## [2.6.0] — 2026-05-12
+
+**Segunda receta estándar — render de slides + composición de video
+sincronizado con audio.** Bump MENOR (funcionalidad nueva compatible
+con v2.5.0). Cierra el ciclo de producción de material de capacitación:
+markdown → audio + slides + video listo para publicar.
+
+### Added
+
+- **Skill `/capacidad` §9 bis.2 — render de slides + composición video
+  con sincronización obligatoria**:
+  - Motor de slides: `marp-cli` (npm install -g @marp-team/marp-cli).
+  - Composición: ffmpeg con escalado proporcional para slide ↔ audio.
+  - Diseño editorial cream + acento terracota, número de slide en
+    esquina inferior derecha (solo el número), título del episodio en
+    esquina superior izquierda.
+  - Slide de conclusiones opcional al final con bullets numerados
+    (cero render si el episodio no tiene entrada en el dict de
+    conclusiones).
+  - Comparativa lado a lado para slides con dos paneles.
+  - Tolerancia hard 30 % entre audio real y duraciones declaradas;
+    escalado proporcional absorbe diferencias menores transparentemente.
+
+- **`.claude/scripts/slides.py`** (~320 líneas): wrapper que parsea la
+  sección `# === ESTRUCTURA DE SLIDES ===` de cada episodio, asocia
+  los `[ÉNFASIS]` del bloque de narración correspondiente como
+  subtítulo de remate, y renderiza un PNG por slide más un `timing.json`.
+
+- **`.claude/scripts/componer.py`** (~180 líneas): wrapper que combina
+  audio (de `narrar.py`) + slides PNG (de `slides.py`) + timing en un
+  mp4 final 1280×720 @ 30 fps con sincronización proporcional.
+
+- **`training/serie-mejora-continua/slides-render/`**: 74 slides PNG
+  versionados (~3.3 MB total) cubriendo los 7 episodios de la serie.
+  Los videos finales NO se versionan (~37 MB combinados), se regeneran
+  con `componer.py` a partir de los slides + audio.
+
+- **`training/serie-mejora-continua/episodio-0-por-que-configurar.md`**:
+  añadido el slide 8 (comparativa lado a lado) entre las respuestas
+  por defecto y configurada del caso del analista junior de
+  consultoría financiera. Renumerados slides 9-10.
+
+### Changed
+
+- `CONCLUSIONES_POR_EPISODIO` en `slides.py` ahora es estrictamente
+  condicional: episodios sin entrada (o con bullets vacíos) NO reciben
+  slide de conclusiones.
+
+### Cambios en numeración
+
+- `VERSION`: `2.5.0` → `2.6.0`.
+
+### Compatibilidad
+
+- 100 % backward-compatible con v2.5.0. Las recetas estándar
+  acumuladas en `/capacidad` §9 bis crecen sin afectar capacidades
+  ya investigadas.
+
+### Pipeline de producción completo (verificado)
+
+```bash
+python3 .claude/scripts/narrar.py    <ep>.md   # audio narrado
+python3 .claude/scripts/slides.py    <ep>.md   # slides PNG
+python3 .claude/scripts/componer.py  <ep>.md   # video mp4 sincronizado
+```
+
+Tiempo total estimado para una serie de 7 episodios de 5-6 min:
+~30-45 min de cómputo. Costo recurrente: cero.
+
+---
+
 ## [2.5.0] — 2026-05-12
 
 **Receta estándar de TTS + materiales de capacitación versionados.**

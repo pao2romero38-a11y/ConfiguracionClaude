@@ -20,11 +20,16 @@
 *.log
 .tmp/
 
-# Training — material producido se regenera con .claude/scripts/narrar.py
-# y herramientas de render (pandoc, ffmpeg). No versionar binarios pesados.
+# Training — material binario producido se regenera con scripts del repo.
+# Audio: ~97 MB por serie, regenerable con narrar.py — no versionar.
 training/**/audio/
 training/**/*.wav
 training/**/*.mp3
+# Video: ~37 MB por serie, regenerable con componer.py — no versionar.
+training/**/video/
 training/**/*.mp4
-training/**/slides-render/
+# Slides PNG: ligeros (~3 MB por serie) y útiles como referencia visual
+# del estado del repo en cada release — SÍ versionar.
+# Solo excluir archivos auxiliares dentro de slides-render/:
+training/**/slides-render/**/_input.md
 training/**/*.pdf
