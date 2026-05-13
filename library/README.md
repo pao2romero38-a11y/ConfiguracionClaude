@@ -33,27 +33,33 @@ Documentos narrativos por dominio profesional con:
 - Advertencias sobre ediciones obsoletas
 - Cross-references a entradas del catálogo central
 
-Cada dominio crece independientemente. Hoy hay trece:
+Cada dominio crece independientemente. Hoy hay quince:
 
 | Dominio | INDEX | Estado |
 |---|---|---|
+| Audiología | [`audiologia/INDEX.md`](audiologia/INDEX.md) | v1 — 23 entradas |
+| Auditoría | [`auditoria/INDEX.md`](auditoria/INDEX.md) | v1 — 6 entradas |
+| Costos | [`costos/INDEX.md`](costos/INDEX.md) | v1 — 7 entradas |
+| ESG y sustentabilidad | [`esg-sustentabilidad/INDEX.md`](esg-sustentabilidad/INDEX.md) | v1 — 7 entradas |
+| Finanzas | [`finanzas/INDEX.md`](finanzas/INDEX.md) | v1 — 8 entradas |
+| IA — Gobernanza, riesgo y ética | [`ia-gobernanza/INDEX.md`](ia-gobernanza/INDEX.md) | v1 — 6 entradas |
+| Investigación | [`investigacion/INDEX.md`](investigacion/INDEX.md) | v1 — 6 entradas |
+| Marketing | [`marketing/INDEX.md`](marketing/INDEX.md) | v1 — 8 entradas |
+| Medicina | [`medicina/INDEX.md`](medicina/INDEX.md) | v1 — 18 entradas |
 | Pedagogía y aprendizaje significativo | [`pedagogia/INDEX.md`](pedagogia/INDEX.md) | v1 — 8 entradas |
 | Regulación MX (datos, fiscal, mercantil, laboral, salud, sectorial) | [`regulacion-mx/INDEX.md`](regulacion-mx/INDEX.md) | v3 — 28 entradas |
-| Finanzas | [`finanzas/INDEX.md`](finanzas/INDEX.md) | v1 — 8 entradas |
 | Seguridad y cumplimiento | [`seguridad-cumplimiento/INDEX.md`](seguridad-cumplimiento/INDEX.md) | v1 — 13 entradas |
-| Auditoría | [`auditoria/INDEX.md`](auditoria/INDEX.md) | v1 — 6 entradas |
-| IA — Gobernanza, riesgo y ética | [`ia-gobernanza/INDEX.md`](ia-gobernanza/INDEX.md) | v1 — 6 entradas |
-| Marketing | [`marketing/INDEX.md`](marketing/INDEX.md) | v1 — 8 entradas |
-| UX / UI | [`ux-ui/INDEX.md`](ux-ui/INDEX.md) | v1 — 8 entradas |
 | Tecnología empresarial | [`tecnologia-empresarial/INDEX.md`](tecnologia-empresarial/INDEX.md) | v1 — 7 entradas |
-| Costos | [`costos/INDEX.md`](costos/INDEX.md) | v1 — 7 entradas |
-| Investigación | [`investigacion/INDEX.md`](investigacion/INDEX.md) | v1 — 6 entradas |
 | Traducción profesional | [`traduccion/INDEX.md`](traduccion/INDEX.md) | v1 — 7 entradas |
-| ESG y sustentabilidad | [`esg-sustentabilidad/INDEX.md`](esg-sustentabilidad/INDEX.md) | v1 — 7 entradas |
+| UX / UI | [`ux-ui/INDEX.md`](ux-ui/INDEX.md) | v1 — 8 entradas |
 
-**Total catalogado:** ~122 entradas en 13 dominios. **100 % de los
-skills profesionales** del repo tienen ahora cobertura de biblioteca
+**Total catalogado:** ~163 entradas en 15 dominios. **100 % de los
+skills profesionales** del repo tienen cobertura de biblioteca
 (con `library:` apuntando al INDEX correspondiente en su SKILL.md).
+La incorporación de la familia Medicina (padre `/medicina` +
+sub-especialidad `/audiologia`) amplía la cobertura al dominio clínico,
+incluyendo el marco legal mexicano (NOM-004-SSA3-2012, LFPDPPP, LGS)
+y los protocolos diagnósticos completos de la Bárány Society.
 
 Próximos candidatos (cuando emerja necesidad concreta):
 
@@ -161,9 +167,39 @@ de aceptación.
     editor_es: ...
     isbn_es: ...
   confianza: alta|media|baja              # juicio del curador
+  nivel_evidencia: GRADE-A|GRADE-B|GRADE-C|GRADE-D|consenso|normativo|referencia
+                                          # opcional; usar en dominios clínicos
   notas: |
     Texto libre con advertencias relevantes.
 ```
+
+### Campo `nivel_evidencia` — uso en dominios clínicos
+
+Campo opcional introducido por el dominio `medicina`/`audiologia`. Permite que
+los skills declaren el nivel de certeza de cada recomendación al citar una
+fuente, siguiendo el sistema **GRADE** (Grading of Recommendations Assessment,
+Development and Evaluation — Guyatt et al., 2011):
+
+| Valor | Significado |
+|---|---|
+| `GRADE-A` | Evidencia alta: revisión sistemática de ECA con resultados consistentes |
+| `GRADE-B` | Evidencia moderada: ECA individual, cohortes bien diseñadas, o meta-análisis con limitaciones |
+| `GRADE-C` | Evidencia baja: estudios observacionales, series de casos |
+| `GRADE-D` | Evidencia muy baja: opinión de experto, reporte de caso |
+| `consenso` | Consenso formal de expertos con proceso explícito (ej. Bárány Society, AAO-HNS CPG) |
+| `normativo` | Marco legal/regulatorio — no aplica jerarquía de evidencia clínica |
+| `referencia` | Texto de referencia estándar (libro de texto) — no aplica jerarquía GRADE |
+
+**Regla operativa para skills médicos:** cuando una recomendación deriva de una
+fuente con `nivel_evidencia`, el skill debe declarar el nivel al citar:
+`[GRADE-B]` o `[consenso]`. Si la fuente no tiene el campo, usar `[⚠ nivel
+no evaluado]`. Esto implementa el Paso 1 del protocolo de 4 pasos (verificación
+de hechos) en el contexto clínico donde la jerarquía de evidencia es relevante.
+
+**Referencia:** Guyatt, G. H., Oxman, A. D., Vist, G., Kunz, R., Brozek, J.,
+Alonso-Coello, P., … Schünemann, H. J. (2011). GRADE guidelines: 1. Introduction
+— GRADE evidence profiles and summary of findings tables. *Journal of Clinical
+Epidemiology, 64*(4), 383–394. https://doi.org/10.1016/j.jclinepi.2010.04.026
 
 ---
 

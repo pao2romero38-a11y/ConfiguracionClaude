@@ -1,6 +1,6 @@
 # Skills de Claude Code — Índice completo
 
-Este directorio contiene los **39 skills** que extienden el comportamiento definido
+Este directorio contiene los **41 skills** que extienden el comportamiento definido
 en `CLAUDE.md`. Cada skill activa comportamientos especializados para su dominio.
 
 Distribución:
@@ -10,6 +10,7 @@ Distribución:
 - **Dominio profesional** (13): finanzas, marketing, tec, proy, seg, rsk, ci,
   aud, dis, cost, tra, edu, inv.
 - **Inteligencia Artificial** (3): `/ai`, `/ai-llm`, `/ai-ml`.
+- **Medicina** (2): `/medicina` (padre) · `/audiologia` — Audiología, Foniatría, Otoneurología, Patología del lenguaje.
 
 ## Cómo activar un skill
 
@@ -126,7 +127,7 @@ Heredados del `CLAUDE.md` — no se repiten en cada skill pero siempre aplican:
 
 ---
 
-*Skills — 39 skills (10 familia dev-* + 10 ciclo de vida + 3 multi-agente + 13 dominio + 3 IA)*
+*Skills — 41 skills (10 familia dev-* + 10 ciclo de vida + 3 multi-agente + 13 dominio + 3 IA + 2 medicina)*
 *Más 4 agentes especializados en `.claude/agents/`: be-reviewer, ui-reviewer, code-reviewer, message-bus*
 *Proyecto: ConfiguracionClaude · Configuración base de Claude Code*
 *Versión vigente en VERSION en la raíz del repo*

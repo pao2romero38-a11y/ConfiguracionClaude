@@ -124,7 +124,6 @@ pedagogia:
     skills: [/edu]
     license: copyright
     status: vigente
-    url_oficial: ""
     idiomas: [en, es]
     confianza: alta
     notas: |
@@ -259,6 +258,7 @@ regulacion-mx:
     url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf"
     idiomas: [es]
     confianza: alta
+    nivel_evidencia: normativo
     notas: |
       Ley aplicable a particulares (empresas privadas). Para sujetos
       obligados (entidades públicas) ver LGPDPPSO. Complementada por
@@ -579,6 +579,7 @@ regulacion-mx:
     url_oficial: "https://www.dof.gob.mx/nota_detalle.php?codigo=5272787&fecha=15/10/2012"
     idiomas: [es]
     confianza: alta
+
     notas: |
       Norma obligatoria para todo establecimiento de atención médica
       en México. Define contenidos mínimos del expediente clínico,
@@ -2417,3 +2418,774 @@ esg-sustentabilidad:
       Marco común para alinear estrategias corporativas y públicas
       con la agenda 2030. Frecuentemente citado en informes
       corporativos de sustentabilidad y proyectos sociales.
+
+
+
+# ============================================================
+# DOMINIO: medicina
+# ============================================================
+medicina:
+
+  - id: arenas-dermatologia
+    titulo: "Dermatología: Atlas diagnóstico y tratamiento"
+    autores: ["Arenas, R."]
+    año: 2019
+    edicion_vigente: "7ª ed. (2019)"
+    categoria: libro
+    dominios: [medicina]
+    skills: [/medicina]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.mhhe.com"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Referencia de dermatología clínica de autor mexicano. Atlas visual con
+      criterios diagnósticos y tratamiento. Relevante en medicina para
+      síndromes con manifestaciones cutáneas y auditivas (Waardenburg, Usher).
+
+  - id: brocklehurst-geriatrics-8
+    titulo: "Brocklehurst's Textbook of Geriatric Medicine and Gerontology"
+    autores: ["Fillit, H. M.", "Rockwood, K.", "Young, J. B."]
+    año: 2017
+    edicion_vigente: "8th ed. (2017)"
+    categoria: libro
+    dominios: [medicina]
+    skills: [/medicina]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.elsevier.com/books/brocklehursts-textbook-of-geriatric-medicine-and-gerontology/fillit/978-0-7020-6185-1"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Referencia estándar de geriatría y gerontología. Cubre síndromes geriátricos,
+      fragilidad, presbiacusia y presbivestibulopatía en el contexto del envejecimiento.
+
+  - id: cto-manual-9
+    titulo: "Manual CTO de Medicina y Cirugía"
+    autores: ["CTO Editorial"]
+    año: 2014
+    edicion_vigente: "9ª ed. (2014)"
+    categoria: libro
+    dominios: [medicina]
+    skills: [/medicina]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.grupocto.es"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Serie de repaso para el examen MIR (España) y ENARM (México). Cubre más de
+      20 especialidades médicas. Útil como mapa conceptual rápido multidisciplinario.
+      No sustituye los textos de especialidad para profundidad clínica.
+
+  - id: cto-oftalmo-10
+    titulo: "Manual CTO de Oftalmología"
+    autores: ["CTO Editorial"]
+    año: 2017
+    edicion_vigente: "10ª ed. (2017)"
+    categoria: libro
+    dominios: [medicina]
+    skills: [/medicina]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.grupocto.es"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Módulo de oftalmología de la serie CTO para repaso MIR/ENARM.
+      Cubre urgencias oftalmológicas, glaucoma, retina y patología de
+      polo anterior/posterior.
+
+  - id: dx-tto-orl-cabeza-cuello
+    titulo: "Diagnóstico y Tratamiento en Otorrinolaringología: Cirugía de Cabeza y Cuello"
+    autores: ["Paparella, M. M.", "Shumrick, D. A.", "Gluckman, J. L.", "Meyerhoff, W. L."]
+    año: 2002
+    edicion_vigente: "4ª ed."
+    categoria: libro
+    dominios: [medicina, audiologia]
+    skills: [/medicina, /audiologia]
+    license: copyright
+    status: vigente
+    url_oficial: "" # libro sin URL pública oficial; disponible en editoriales académicas españolas
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Referencia clásica de ORL en español. Cubre audiología, otoneurología,
+      foniatría y cirugía de cabeza y cuello. Texto de consulta estándar en
+      residencias de audiología y ORL en México.
+
+  - id: entiendo-ecg
+    titulo: "Entiendo el ECG"
+    autores: ["García Civera, R.", "Ruiz Granell, R.", "Morell Cabedo, S."]
+    año: 2010
+    edicion_vigente: "3ª ed. [⚠ verificar edición exacta del ejemplar]"
+    categoria: libro
+    dominios: [medicina]
+    skills: [/medicina]
+    license: copyright
+    status: vigente
+    url_oficial: "" # libro sin URL pública oficial verificable
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Introducción práctica a la interpretación del electrocardiograma.
+      Referencia de cabecera para el médico general y residente.
+
+  - id: intro-pediatria-7
+    titulo: "Introducción a la Pediatría"
+    autores: ["Muñoz Calvo, F. de P."]
+    año: 2013
+    edicion_vigente: "7ª ed."
+    categoria: libro
+    dominios: [medicina]
+    skills: [/medicina]
+    license: copyright
+    status: vigente
+    url_oficial: "" # libro sin URL pública oficial verificable
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Texto introductorio de pediatría en español. Útil para conceptos básicos
+      pediátricos que contextualizan la hipoacusia infantil y los trastornos del
+      desarrollo del lenguaje.
+
+  - id: ley-general-salud-confidencialidad
+    titulo: "Ley General de Salud — Título Tercero, Capítulo IV: Derechos de los Pacientes y Secreto Profesional"
+    autores: ["Congreso de los Estados Unidos Mexicanos"]
+    año: 2024
+    edicion_vigente: "Vigente con reformas al 01-04-2024"
+    categoria: regulacion
+    dominios: [medicina, audiologia]
+    skills: [/medicina, /audiologia]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGS.pdf"
+    idiomas: [es]
+    confianza: alta
+    nivel_evidencia: normativo
+    notas: |
+      Art. 51 bis y concordantes: secreto profesional médico, confidencialidad
+      de la información diagnóstica y derecho del paciente de acceder a su
+      expediente clínico. Obligatoria en toda práctica médica en México
+      (servicios públicos y privados).
+
+  - id: lfpdppp-2010
+    titulo: "Ley Federal de Protección de Datos Personales en Posesión de los Particulares"
+    autores: ["Congreso de los Estados Unidos Mexicanos"]
+    año: 2010
+    edicion_vigente: "2010 — vigente; ver reformas en DOF"
+    categoria: regulacion
+    dominios: [medicina, audiologia]
+    skills: [/medicina, /audiologia]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf"
+    idiomas: [es]
+    confianza: alta
+
+    notas: |
+      Aplica a consultorios privados, clínicas y cualquier profesional que
+      trate datos de pacientes. Los datos de salud son datos personales sensibles
+      (nivel máximo de protección). Derechos ARCO del paciente. Supervisada
+      por el INAI. Obligatoria para práctica privada en México.
+
+  - id: manual-mip-2
+    titulo: "Manual del Médico Interno de Pregrado"
+    autores: ["Hernández Jiménez, A.", "Sotelo Cruz, N."]
+    año: 2012
+    edicion_vigente: "2ª ed."
+    categoria: libro
+    dominios: [medicina]
+    skills: [/medicina]
+    license: copyright
+    status: vigente
+    url_oficial: "" # libro sin URL pública oficial verificable
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Referencia práctica de medicina interna para el MIP mexicano. Protocolos
+      de atención básica, urgencias y procedimientos comunes.
+
+  - id: manual-residente-geriatria
+    titulo: "Manual del Residente en Geriatría"
+    autores: ["Sociedad Española de Geriatría y Gerontología"]
+    año: 2011
+    edicion_vigente: "1ª ed. (2011)"
+    categoria: libro
+    dominios: [medicina]
+    skills: [/medicina]
+    license: copyright
+    status: vigente
+    url_oficial: "" # libro sin URL pública oficial verificable
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Guía práctica de geriatría clínica en español. Relevante para presbiacusia,
+      presbivestibulopatía y manejo del paciente anciano con hipoacusia.
+
+  - id: nelson-pediatrics-21
+    titulo: "Nelson Textbook of Pediatrics"
+    autores: ["Kliegman, R. M.", "St. Geme, J. W."]
+    año: 2020
+    edicion_vigente: "21st ed. (2020)"
+    categoria: libro
+    dominios: [medicina, audiologia]
+    skills: [/medicina, /audiologia]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.elsevier.com/books/nelson-textbook-of-pediatrics/kliegman/978-0-323-52950-1"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Referencia estándar internacional de pediatría. Capítulos relevantes para
+      audiología: hipoacusia hereditaria sindrómica y no sindrómica, síndromes
+      con afección auditiva (Waardenburg, Usher, Pendred, CHARGE, Treacher Collins),
+      neuropatía auditiva, otitis media, hipoacusia congénita y adquirida.
+
+  - id: nom-004-ssa3-2012
+    titulo: "NOM-004-SSA3-2012: Del Expediente Clínico"
+    autores: ["Secretaría de Salud de México"]
+    año: 2012
+    edicion_vigente: "2012 — vigente"
+    categoria: norma
+    dominios: [medicina, audiologia]
+    skills: [/medicina, /audiologia]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://dof.gob.mx/nota_detalle_popup.php?codigo=5272787"
+    idiomas: [es]
+    confianza: alta
+    nivel_evidencia: normativo
+    notas: |
+      Obligatoria para todos los establecimientos de salud (públicos, sociales y
+      privados). Define requisitos de creación, integración, uso, confidencialidad
+      y archivo del expediente clínico. Incluye secciones sobre responsabilidad
+      profesional y manejo de datos sensibles del paciente.
+
+  - id: ocular-emergency
+    titulo: "Ocular Emergencies"
+    autores: ["Shingleton, B. J.", "Hersh, P. S.", "Kenyon, K. R."]
+    año: 1992
+    edicion_vigente: "1ª ed. (1992) [⚠ verificar si existe edición más reciente]"
+    categoria: libro
+    dominios: [medicina]
+    skills: [/medicina]
+    license: copyright
+    status: vigente
+    url_oficial: "" # libro descatalogado; sin URL pública oficial
+    idiomas: [en]
+    confianza: media
+    notas: |
+      Referencia de urgencias oftalmológicas. Dada la antigüedad, verificar
+      criterios actualizados antes de citar en práctica clínica contemporánea.
+
+  - id: pediatria-martinez-8
+    titulo: "Martínez y Martínez: Salud y Enfermedad del Niño y del Adolescente"
+    autores: ["Martínez Martínez, R."]
+    año: 2013
+    edicion_vigente: "8ª ed. (2013)"
+    categoria: libro
+    dominios: [medicina]
+    skills: [/medicina]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.manualmoderno.com"
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Referencia pediátrica clásica para México y Latinoamérica. Criterios
+      diagnósticos y manejo en el contexto del sistema de salud mexicano.
+
+  - id: pocket-surgery-2
+    titulo: "Pocket Surgery"
+    autores: ["Hawn, M. T.", "McHenry, C. R.", "Stain, S. C."]
+    año: 2014
+    edicion_vigente: "2nd ed. (2014)"
+    categoria: libro
+    dominios: [medicina]
+    skills: [/medicina]
+    license: copyright
+    status: vigente
+    url_oficial: "" # libro sin URL pública oficial verificable
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Referencia rápida de bolsillo para cirugía. Cubre indicaciones,
+      técnicas quirúrgicas básicas y manejo perioperatorio.
+
+  - id: schwartz-principios-10
+    titulo: "Schwartz: Principios de Cirugía"
+    autores: ["Brunicardi, F. C.", "Andersen, D. K.", "Billiar, T. R.", "Dunn, D. L.", "Hunter, J. G.", "Matthews, J. B.", "Pollock, R. E."]
+    año: 2015
+    edicion_vigente: "10ª ed. en español (2015)"
+    categoria: libro
+    dominios: [medicina]
+    skills: [/medicina]
+    license: copyright
+    status: vigente
+    url_oficial: "" # libro sin URL pública oficial; versión EN: schwartz-principles-11
+    idiomas: [es]
+    confianza: alta
+    notas: |
+      Versión en español de la 10ª edición de Schwartz's Principles of Surgery.
+      Preferir schwartz-principles-11 (EN) para evidencia actualizada; usar esta
+      edición para citar en español.
+
+  - id: schwartz-principles-11
+    titulo: "Schwartz's Principles of Surgery"
+    autores: ["Brunicardi, F. C.", "Andersen, D. K.", "Billiar, T. R.", "Dunn, D. L.", "Kao, L. S.", "Hunter, J. G.", "Matthews, J. B.", "Pollock, R. E."]
+    año: 2019
+    edicion_vigente: "11th ed. (2019)"
+    categoria: libro
+    dominios: [medicina]
+    skills: [/medicina]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.mhprofessional.com"
+    idiomas: [en]
+    confianza: alta
+    notas: |
+      Referencia estándar de cirugía general. Relevante para cirugía de cabeza
+      y cuello, manejo quirúrgico de tumores parotídeos, parálisis facial y
+      acceso a la base del cráneo.
+
+
+# ============================================================
+# DOMINIO: audiologia
+# ============================================================
+audiologia:
+
+  - id: aao-hns-arhl-2024
+    titulo: "Clinical Practice Guideline: Age-Related Hearing Loss"
+    autores: ["American Academy of Otolaryngology-Head and Neck Surgery Foundation"]
+    año: 2024
+    edicion_vigente: "2024 — vigente"
+    categoria: guia
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.entnet.org/quality-practice/quality-products/clinical-practice-guidelines/cpg-age-related-hearing-loss/"
+    idiomas: [en]
+    confianza: alta
+    nivel_evidencia: GRADE-B
+    notas: |
+      Guía de práctica clínica más reciente de la AAO-HNS para hipoacusia
+      asociada al envejecimiento (presbiacusia). Endosada por AAA, ANS, AOS
+      y American Geriatrics Society. Publicada abril 2024.
+
+  - id: aao-hns-sudden-hearing-loss-2019
+    titulo: "Clinical Practice Guideline: Sudden Hearing Loss (Update)"
+    autores: ["Chandrasekhar, S. S.", "Tsai Do, B. S.", "Schwartz, S. R.", "Bontempo, L. J.", "Faucett, E. A.", "Finestone, S. A.", "Hollingsworth, D. B.", "Kerber, K. A.", "Kessler, M. A.", "Raol, N.", "Schellhammer, K. F.", "Seidman, M. D.", "Vaelenc-Whitfield, B."]
+    año: 2019
+    edicion_vigente: "2019 (update) — vigente"
+    categoria: guia
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: copyright
+    status: vigente
+    doi: 10.1177/0194599819859885
+    idiomas: [en]
+    confianza: alta
+    nivel_evidencia: GRADE-B
+    notas: |
+      Guía actualizada AAO-HNS para hipoacusia súbita idiopática sensorioneural.
+      Urgencia médica — protocolo de inicio de corticosteroides en primeras 72 h.
+      Citar obligatoriamente en casos de hipoacusia súbita unilateral.
+
+  - id: asha-aural-rehab-adults-2022
+    titulo: "Clinical Practice Guideline on Aural Rehabilitation for Adults With Hearing Loss"
+    autores: ["American Speech-Language-Hearing Association"]
+    año: 2022
+    edicion_vigente: "2022 — vigente"
+    categoria: guia
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: copyright
+    status: vigente
+    doi: 10.1044/2022_AJA-21-00252
+    idiomas: [en]
+    confianza: alta
+    nivel_evidencia: GRADE-B
+    notas: |
+      Guía clínica basada en revisión sistemática y meta-análisis de 85 estudios
+      (1978-2021). Cubre rehabilitación aural para adultos con hipoacusia.
+      Publicada en American Journal of Audiology (2022).
+
+  - id: atlas-pruebas-vestibulares
+    titulo: "Atlas de Pruebas Vestibulares"
+    autores: ["Pérez Fernández, N."]
+    año: 2002
+    edicion_vigente: "1ª ed. [⚠ verificar ISBN/editorial]"
+    categoria: libro
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: copyright
+    status: vigente
+    url_oficial: "" # libro sin URL pública oficial verificable
+    idiomas: [es]
+    confianza: alta
+    nivel_evidencia: referencia
+    notas: |
+      Atlas clínico de pruebas de función vestibular. Referencia visual para
+      interpretación de nistagmo, pruebas calóricas y posicionales.
+
+  - id: baloh-honrubia-vestibular-4ed
+    titulo: "Baloh and Honrubia's Clinical Neurophysiology of the Vestibular System"
+    autores: ["Baloh, R. W.", "Honrubia, V.", "Kerber, K. A."]
+    año: 2010
+    edicion_vigente: "4th ed. (2010)"
+    categoria: libro
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: copyright
+    status: vigente
+    url_oficial: "https://global.oup.com/academic/product/baloh-and-honrubias-clinical-neurophysiology-of-the-vestibular-system-fourth-edition-9780195387834"
+    idiomas: [en]
+    confianza: alta
+    nivel_evidencia: referencia
+    notas: |
+      Texto estándar de neurofisiología vestibular clínica. Cubre anatomía,
+      fisiología, evaluación del paciente con mareo y diagnóstico de trastornos
+      neurotológicos comunes. Contemporary Neurology Series vol. 77.
+
+  - id: barany-bilateral-vestibulopathy-2017
+    titulo: "Bilateral Vestibulopathy: Diagnostic Criteria — Consensus Document of the Bárány Society"
+    autores: ["Strupp, M.", "Kim, J. S.", "Murofushi, T.", "Straumann, D.", "Jen, J. C.", "Rosengren, S. M.", "Della Santina, C. C.", "Kingma, H."]
+    año: 2017
+    edicion_vigente: "2017 — vigente (erratum 2023)"
+    categoria: articulo
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: copyright
+    status: vigente
+    doi: 10.3233/VES-170619
+    idiomas: [en]
+    confianza: alta
+    nivel_evidencia: consenso
+    notas: |
+      Criterios diagnósticos oficiales de la Bárány Society para vestibulopatía
+      bilateral. Incluye vestibulopatía bilateral crónica y aguda. Erratum
+      publicado en 2023 (DOI 10.3233/VES-229002) — verificar versión vigente.
+
+  - id: barany-bppv-2015
+    titulo: "Benign Paroxysmal Positional Vertigo: Diagnostic Criteria"
+    autores: ["Von Brevern, M.", "Bertholon, P.", "Brandt, T.", "Fife, T.", "Imai, T.", "Nuti, D.", "Newman-Toker, D."]
+    año: 2015
+    edicion_vigente: "2015 — vigente"
+    categoria: articulo
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: copyright
+    status: vigente
+    doi: 10.3233/VES-150553
+    idiomas: [en]
+    confianza: alta
+    nivel_evidencia: consenso
+    notas: |
+      Criterios diagnósticos oficiales del VPPB emitidos por la Bárány Society.
+      Estándar internacional para VPPB de canal posterior, horizontal y anterior.
+      Citar obligatoriamente cuando se diagnostica o excluye VPPB.
+
+  - id: barany-meniere-2015
+    titulo: "Diagnostic Criteria for Ménière's Disease"
+    autores: ["Lopez-Escamez, J. A.", "Carey, J.", "Chung, W. H.", "Goebel, J. A.", "Magnusson, M.", "Mandalà, M.", "Newman-Toker, D. E.", "Strupp, M.", "Suzuki, M.", "Trabalzini, F.", "Bisdorff, A."]
+    año: 2015
+    edicion_vigente: "2015 — vigente"
+    categoria: articulo
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: copyright
+    status: vigente
+    doi: 10.3233/VES-150549
+    idiomas: [en]
+    confianza: alta
+    nivel_evidencia: consenso
+    notas: |
+      Criterios diagnósticos oficiales de la Enfermedad de Ménière de la Bárány
+      Society. Define Ménière definitivo y probable. Reemplaza criterios AAO-HNS 1995.
+
+  - id: barany-pppd-2017
+    titulo: "Diagnostic Criteria for Persistent Postural-Perceptual Dizziness (PPPD)"
+    autores: ["Staab, J. P.", "Eckhardt-Henn, A.", "Horii, A.", "Jacob, R.", "Strupp, M.", "Brandt, T.", "Bronstein, A."]
+    año: 2017
+    edicion_vigente: "2017 — vigente"
+    categoria: articulo
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: copyright
+    status: vigente
+    doi: 10.3233/VES-170622
+    idiomas: [en]
+    confianza: alta
+    nivel_evidencia: consenso
+    notas: |
+      Criterios diagnósticos de la Bárány Society para Mareo Postural
+      Perceptual Persistente (MPPP/PPPD). Trastorno funcional vestibular
+      crónico. Citar al manejar mareo crónico sin causa orgánica activa.
+
+  - id: barany-presbyvestibulopathy-2019
+    titulo: "Presbyvestibulopathy: Diagnostic Criteria — Consensus Document of the Bárány Society"
+    autores: ["Agrawal, Y.", "Van de Berg, R.", "Wuyts, F.", "Walther, L.", "Magnusson, M.", "Oh, E.", "Sharpe, M.", "Strupp, M."]
+    año: 2019
+    edicion_vigente: "2019 — vigente"
+    categoria: articulo
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: copyright
+    status: vigente
+    doi: 10.3233/VES-190672
+    idiomas: [en]
+    confianza: alta
+    nivel_evidencia: consenso
+    notas: |
+      Criterios diagnósticos de la Bárány Society para presbivestibulopatía
+      (vestibulopatía del envejecimiento). Complementa los criterios de
+      vestibulopatía bilateral en el paciente geriátrico.
+
+  - id: barany-scds-2021
+    titulo: "Superior Semicircular Canal Dehiscence Syndrome: Diagnostic Criteria — Bárány Society"
+    autores: ["Ward, B. K.", "van de Berg, R.", "van Rompaey, V.", "Bisdorff, A.", "Hullar, T. E.", "Welgampola, M. S.", "Carey, J. P."]
+    año: 2021
+    edicion_vigente: "2021 — vigente"
+    categoria: articulo
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: copyright
+    status: vigente
+    doi: 10.3233/VES-200004
+    idiomas: [en]
+    confianza: alta
+    nivel_evidencia: consenso
+    notas: |
+      Criterios diagnósticos de la Bárány Society para Síndrome de Dehiscencia
+      del Canal Semicircular Superior (SCDS). Presenta fenómenos de Tullio y
+      autofonia. Confirmación por TC de hueso temporal de alta resolución.
+
+  - id: barany-vestibular-migraine-2022
+    titulo: "Vestibular Migraine: Diagnostic Criteria — Update of the Joint Consensus Document"
+    autores: ["Lempert, T.", "Olesen, J.", "Furman, J.", "Waterston, J.", "Seemungal, B.", "Carey, J.", "Bisdorff, A.", "Versino, M.", "Evers, S.", "Newman-Toker, D."]
+    año: 2022
+    edicion_vigente: "2022 (actualización) — vigente; supersedes 2012 version"
+    categoria: articulo
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: copyright
+    status: vigente
+    doi: 10.3233/VES-201644
+    idiomas: [en]
+    confianza: alta
+    nivel_evidencia: consenso
+    notas: |
+      Criterios diagnósticos actualizados de migraña vestibular (Bárány Society +
+      International Headache Society). Actualización de los criterios originales
+      de 2012. Usar esta versión 2022 sobre la 2012 para diagnóstico vigente.
+
+  - id: bsa-hearing-children-2020
+    titulo: "Clinical Guidance Document: Assessment of Hearing in Infants and Young Children"
+    autores: ["British Society of Audiology"]
+    año: 2020
+    edicion_vigente: "January 2020"
+    categoria: guia
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.thebsa.org.uk"
+    idiomas: [en]
+    confianza: alta
+    nivel_evidencia: consenso
+    notas: |
+      Guía clínica de la Sociedad Británica de Audiología para evaluación
+      auditiva de lactantes y niños pequeños. Protocolos de tamiz, diagnóstico
+      y seguimiento. Referencia para el tamiz auditivo neonatal universal.
+
+  - id: cenetec-gpc-hipoacusia-neurosensorial
+    titulo: "Guía de Práctica Clínica: Diagnóstico y Tratamiento de la Hipoacusia Neurosensorial"
+    autores: ["Instituto Mexicano del Seguro Social", "CENETEC"]
+    año: 2010
+    edicion_vigente: "2010 — IMSS-396-10 [⚠ verificar actualizaciones en CENETEC]"
+    categoria: guia
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.facmed.unam.mx/sg/css/GPC/SIDSS-GPC/gpc/docs/IMSS-396-10-ER.pdf"
+    idiomas: [es]
+    confianza: alta
+    nivel_evidencia: GRADE-C
+    notas: |
+      Guía de práctica clínica del sistema nacional de salud mexicano (IMSS).
+      Criterios diagnósticos y algoritmos de manejo para hipoacusia
+      neurosensorial en el contexto del sistema de salud mexicano.
+
+  - id: cenetec-gpc-hipoacusia-subita
+    titulo: "Guía de Práctica Clínica: Hipoacusia Neurosensorial Súbita Idiopática"
+    autores: ["Secretaría de Salud de México", "CENETEC"]
+    año: 2008
+    edicion_vigente: "2008 — SSA-055-08 [⚠ verificar actualizaciones en CENETEC]"
+    categoria: guia
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.facmed.unam.mx/sg/css/GPC/SIDSS-GPC/gpc/docs/SSA-055-08-ER.pdf"
+    idiomas: [es]
+    confianza: alta
+    nivel_evidencia: GRADE-C
+    notas: |
+      Guía mexicana para hipoacusia súbita. Complementar con AAO-HNS 2019
+      (aao-hns-sudden-hearing-loss-2019) para criterios internacionales vigentes.
+      Priorizar en contexto IMSS/ISSSTE.
+
+  - id: cenetec-gpc-tamiz-neonatal
+    titulo: "Guía de Práctica Clínica: Detección de Hipoacusia en el Recién Nacido"
+    autores: ["Secretaría de Salud de México", "CENETEC"]
+    año: 2008
+    edicion_vigente: "2008 [⚠ verificar actualizaciones en catálogo CENETEC]"
+    categoria: guia
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.gob.mx/cms/uploads/attachment/file/235938/DETECCION_DE_HIPOACUSIA_EN_EL_RN.pdf"
+    idiomas: [es]
+    confianza: alta
+    nivel_evidencia: GRADE-C
+    notas: |
+      Guía nacional para tamiz auditivo neonatal en México. Complementar con
+      JCIH 2019 (jcih-2019-position-statement) para criterios internacionales.
+      Usar en contexto de primer y segundo nivel de atención en México.
+
+  - id: cenetec-gpc-vppb
+    titulo: "Guía de Práctica Clínica: Vértigo Postural Paroxístico Benigno"
+    autores: ["Instituto Mexicano del Seguro Social", "CENETEC"]
+    año: 2010
+    edicion_vigente: "2010 — IMSS-410-10 [⚠ verificar actualizaciones en CENETEC]"
+    categoria: guia
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: public_domain
+    status: vigente
+    url_oficial: "https://www.facmed.unam.mx/sg/css/GPC/SIDSS-GPC/gpc/docs/IMSS-410-10-ER.pdf"
+    idiomas: [es]
+    confianza: alta
+    nivel_evidencia: GRADE-C
+    notas: |
+      Guía de práctica clínica mexicana para VPPB. Complementar con
+      barany-bppv-2015 para criterios diagnósticos internacionales vigentes.
+      Usar en contexto IMSS; los criterios Bárány son el estándar diagnóstico.
+
+  - id: ci-comparison-chart
+    titulo: "Cochlear Implant Comparison Chart"
+    autores: ["Cochlear Implant HELP"]
+    año: 2023
+    edicion_vigente: "v12.4c [⚠ verificar versión más reciente en cochlearimplanthelp.com]"
+    categoria: articulo
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: copyright
+    status: vigente
+    url_oficial: "https://cochlearimplanthelp.com"
+    idiomas: [en]
+    confianza: media
+    nivel_evidencia: referencia
+    notas: |
+      Tabla comparativa de dispositivos de IC por fabricante (Cochlear, MED-EL,
+      Advanced Bionics, Oticon). Confianza media — verificar versión actualizada
+      antes de citar en consulta real. No es una publicación académica formal.
+
+  - id: ci-practice-guidelines
+    titulo: "Cochlear Implant Practice Guidelines"
+    autores: ["American Academy of Audiology"]
+    año: 2023
+    edicion_vigente: "vigente — verificar fecha exacta en audiology.org"
+    categoria: guia
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: copyright
+    status: vigente
+    url_oficial: "https://www.audiology.org"
+    idiomas: [en]
+    confianza: alta
+    nivel_evidencia: consenso
+    notas: |
+      Guías de la AAA para selección de candidatos a IC, programación,
+      habilitación y seguimiento. Criterios audiométricos: hipoacusia bilateral
+      severa-profunda con beneficio limitado de auxiliares auditivos.
+
+  - id: inr-guia-meniere-2020
+    titulo: "Guía Clínica: Enfermedad de Ménière"
+    autores: ["Instituto Nacional de Rehabilitación Luis Guillermo Ibarra Ibarra"]
+    año: 2020
+    edicion_vigente: "2020 — vigente para práctica en INR"
+    categoria: guia
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: public_domain
+    status: vigente
+    url_oficial: "" # guía institucional INR — acceso presencial o interno; sin URL pública
+    idiomas: [es]
+    confianza: alta
+    nivel_evidencia: GRADE-D
+    notas: |
+      Guía institucional del INR para diagnóstico y tratamiento de la Enfermedad
+      de Ménière. Algoritmos adaptados al contexto del sistema de salud mexicano.
+      Complementar con barany-meniere-2015 para criterios internacionales.
+
+  - id: inr-guia-presbivestibulopatia-2020
+    titulo: "Guía Clínica: Presbivestibulopatía"
+    autores: ["Instituto Nacional de Rehabilitación Luis Guillermo Ibarra Ibarra"]
+    año: 2020
+    edicion_vigente: "2020 — vigente para práctica en INR"
+    categoria: guia
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: public_domain
+    status: vigente
+    url_oficial: "" # guía institucional INR — acceso presencial o interno; sin URL pública
+    idiomas: [es]
+    confianza: alta
+    nivel_evidencia: GRADE-D
+    notas: |
+      Guía institucional del INR para presbivestibulopatía. Complementar con
+      barany-presbyvestibulopathy-2019 para criterios internacionales vigentes.
+
+  - id: jcih-2019-position-statement
+    titulo: "Year 2019 Position Statement: Principles and Guidelines for Early Hearing Detection and Intervention"
+    autores: ["Joint Committee on Infant Hearing"]
+    año: 2019
+    edicion_vigente: "2019 — vigente"
+    categoria: guia
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: public_domain
+    status: vigente
+    doi: 10.15142/fptk-b748
+    idiomas: [en]
+    confianza: alta
+    nivel_evidencia: consenso
+    notas: |
+      Posición oficial del JCIH para detección temprana e intervención de
+      hipoacusia infantil. Estándar internacional para tamiz auditivo neonatal
+      universal. Journal of Early Hearing Detection and Intervention, 4(2), 1-44.
+
+  - id: katz-handbook-clinical-audiology-7ed
+    titulo: "Handbook of Clinical Audiology"
+    autores: ["Katz, J.", "Chasin, M.", "English, K. M.", "Hood, L. J.", "Tillery, K. L."]
+    año: 2015
+    edicion_vigente: "7th ed. (2015)"
+    categoria: libro
+    dominios: [audiologia]
+    skills: [/audiologia]
+    license: copyright
+    status: vigente
+    url_oficial: "https://shop.lww.com/Handbook-of-Clinical-Audiology/p/9781451191639"
+    idiomas: [en]
+    confianza: alta
+    nivel_evidencia: referencia
+    notas: |
+      Texto de referencia estándar en audiología clínica. Doody's Core Title 2022.
+      992 páginas, 6 capítulos nuevos en la 7ª ed. Cubre evaluación audiológica,
+      rehabilitación, amplificación y poblaciones especiales.

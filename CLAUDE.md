@@ -243,6 +243,8 @@ Si no se especifica modo, opera en modo neutro (sección 3).
 | `/ai` | Experto en IA — estrategia y gobierno | Casos de uso, ROI, vendor selection, marcos regulatorios |
 | `/ai-llm` | Aplicaciones de LLMs | Prompt engineering, RAG, agentes, evaluación |
 | `/ai-ml` | ML / MLOps | Ciclo de vida del modelo, drift, monitoring, retraining |
+| `/medicina` | Médico Clínico | Razonamiento clínico general, diagnóstico diferencial, terapéutica |
+| `/audiologia` | Audiólogo Clínico | Audiología, Foniatría, Otoneurología, Patología del lenguaje (hijo de `/medicina`) |
 
 ---
 
@@ -879,7 +881,7 @@ modos_disponibles: 17
   expertos: [finanzas, marketing, tecnología, proyectos, seguridad,
              riesgos, control_interno, auditoría, diseño, costos, traductor]
   ia: [ai, ai-llm, ai-ml]
-skills_total: 39
+skills_total: 41
   familia_dev: 10  # dev, dev-api, dev-clean, dev-db, dev-docker, dev-git,
                    # dev-meta, dev-modes, dev-multiagent, dev-test
   ciclo_vida:  10  # init-proyecto, stack-pick, install-from-stack,
@@ -889,6 +891,7 @@ skills_total: 39
   multiagente:  3  # status, handoff, inbox
   dominio:     13
   ia:           3
+  medicina:     2  # medicina (padre), audiologia
 agentes:        4  # be-reviewer, ui-reviewer, code-reviewer, message-bus
 metodo_desarrollo:
   fases: 5            # CLAUDE.md §4 ter.1
@@ -925,6 +928,7 @@ Modos disponibles:
   Core:        /dev · /edu · /inv
   Expertos:    /fin · /mkt · /tec · /proy · /seg · /rsk · /ci · /aud · /dis · /cost · /tra
   IA:          /ai · /ai-llm · /ai-ml
+  Medicina:    /medicina · /audiologia
 
 Familia /dev:  /dev-api · /dev-clean · /dev-db · /dev-docker · /dev-git
                /dev-meta · /dev-modes · /dev-multiagent · /dev-test

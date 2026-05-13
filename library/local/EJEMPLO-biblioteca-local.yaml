@@ -1,0 +1,27 @@
+# ============================================================
+# EJEMPLO — biblioteca-local.yaml
+# ============================================================
+# Este archivo NO se versiona (ver .gitignore).
+# Cada usuario lo crea en su equipo en: ~/.config/biblioteca-local.yaml
+#
+# Propósito: mapear IDs del CATALOG.yaml a rutas locales de archivos.
+# Lo consume: .claude/scripts/biblioteca-sync.py
+#
+# Formato:
+#   <catalog_id>: <ruta-absoluta-al-archivo>
+#
+# Ejemplo (ajustar rutas a tu sistema):
+# ============================================================
+
+# --- Medicina general ---
+# nelson-pediatrics-21:         /Users/tu-usuario/Libros/Nelson21.pdf
+# schwartz-principles-11:       /Users/tu-usuario/Libros/Schwartz11.pdf
+# brocklehurst-geriatrics-8:    /Users/tu-usuario/Libros/Brocklehurst8.pdf
+
+# --- Audiología ---
+# atlas-pruebas-vestibulares:   /Users/tu-usuario/Residencia/Atlas_Perez_Fernandez.pdf
+# inr-guia-meniere-2020:        /Users/tu-usuario/Residencia/Guias/INR_Meniere_2020.pdf
+# barany-bppv-2015:             /Users/tu-usuario/Residencia/Guias/Barany_BPPV_2015.pdf
+
+# --- Finanzas ---
+# damodaran-investment-valuation-2012: /Users/tu-usuario/Libros/Damodaran2012.pdf

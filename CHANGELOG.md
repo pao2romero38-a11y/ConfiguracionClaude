@@ -9,7 +9,51 @@ y este proyecto adhiere a [Semantic Versioning 2.0.0](https://semver.org/lang/es
 
 ## [Unreleased]
 
-Cambios en preparación que aún no se han publicado en una versión.
+### Added
+
+**Skills — dominio Medicina (familia padre + hijo)**
+
+- **`.claude/skills/medicina/SKILL.md`** — skill padre `/medicina`. Cubre razonamiento
+  clínico general, diagnóstico diferencial, terapéutica y marco legal de confidencialidad
+  en México (NOM-004-SSA3-2012, LFPDPPP, LGS art. 51 bis). Protocolo de 4 pasos
+  reforzado explícitamente para entorno clínico. Advertencia de no-asesoría obligatoria.
+
+- **`.claude/skills/audiologia/SKILL.md`** — skill hijo `/audiologia` (`parent: medicina`).
+  Cubre los cuatro subdominios de la residencia de Audiología y Otoneurología:
+  Audiología clínica, Foniatría, Otoneurología y Patología del lenguaje. Incluye
+  protocolos diagnósticos completos de la Bárány Society (VPPB, Ménière, vestibulopatía
+  bilateral, migraña vestibular 2022, MPPP, SCDS, presbivestibulopatía), guías CENETEC
+  México y AAO-HNS. Verificación de confidencialidad en §1. Referencias §7 en orden
+  APA 7 más reciente → más antigua.
+
+**Biblioteca — dominios nuevos**
+
+- **`library/medicina/INDEX.md`** — 18 entradas: textos de referencia clínica general
+  (Nelson 21e, Schwartz 11e/10e, Brocklehurst 8e, Arenas Dermatología, CTO-9,
+  Manual MIP 2e, ORL cabeza y cuello) + marco legal MX (NOM-004-SSA3-2012,
+  LFPDPPP, LGS confidencialidad).
+
+- **`library/audiologia/INDEX.md`** — 23 entradas: Bárány Society completo (7 protocolos),
+  guías INR 2020, AAO-HNS 2024/2019, ASHA 2022, BSA 2020, CENETEC MX (4 GPC),
+  JCIH 2019, Katz Handbook 7e, Baloh-Honrubia 4e, Atlas vestibular, CI guidelines.
+
+- **`library/local/EJEMPLO-biblioteca-local.yaml`** — plantilla per-usuario para mapear
+  IDs del catálogo a rutas locales. Consume `.claude/scripts/biblioteca-sync.py`.
+
+**Catálogo**
+
+- **`library/CATALOG.yaml`** — 41 entradas nuevas (18 medicina + 23 audiología);
+  secciones `medicina:` y `audiologia:` en orden alfabético por id; `license:` en
+  valores del schema; artículos con DOI usan campo `doi:` en lugar de `url_oficial`;
+  sin campos `fuente_local`; sin BOM.
+
+**Configuración**
+
+- **`CLAUDE.md §4`** — modos `/medicina` y `/audiologia` en la tabla de modos.
+- **`CLAUDE.md §10`** — `skills_total` 39 → 41; categoría `medicina: 2`.
+- **`CLAUDE.md §11`** — familia `Medicina` en resumen de inicio de sesión.
+- **`.claude/skills/README.md`** — conteo 39 → 41; desglose `medicina (2)`.
+- **`library/README.md`** — 13 → 15 dominios; ~122 → ~163 entradas; tabla actualizada.
 
 ---
 
