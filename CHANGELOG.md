@@ -9,6 +9,23 @@ y este proyecto adhiere a [Semantic Versioning 2.0.0](https://semver.org/lang/es
 
 ## [Unreleased]
 
+Cambios en preparación que aún no se han publicado en una versión.
+
+---
+
+## [2.11.0] — 2026-05-13
+
+**Dominio Medicina — primera contribución externa al repo.** Bump
+MENOR. Pasamos de 39 → 41 skills y de 13 → 15 dominios de biblioteca
+(+41 entradas catalogadas). Aporte estructural al método: nuevo campo
+`nivel_evidencia` en el schema del catálogo con sistema GRADE para
+dominios clínicos. PR #2 — mergeado vía squash (`d81c79f`).
+
+Contribuidora: @pao2romero38-a11y (residencia de Audiología y
+Otoneurología). Cuatro iteraciones de revisión documentadas en el
+PR antes de la aprobación; el resultado final eleva el listón para
+contribuciones externas futuras.
+
 ### Added
 
 **Skills — dominio Medicina (familia padre + hijo)**
