@@ -554,10 +554,12 @@ contexto cargado en cada sesión.
 | `/ai` | Experto en IA — estrategia y gobierno | `.claude/skills/ai/` |
 | `/ai-llm` | Aplicaciones de LLMs | `.claude/skills/ai-llm/` |
 | `/ai-ml` | ML / MLOps | `.claude/skills/ai-ml/` |
+| `/medicina` | Médico Clínico (padre) | `.claude/skills/medicina/` |
+| `/audiologia` | Audiólogo Clínico (hijo de `/medicina`) | `.claude/skills/audiologia/` |
 | `/prompt` | Refinador de prompts (meta-skill, modo entrenamiento) | `.claude/skills/prompt/` |
 | `/capacidad` | Gestor de capacidades — investiga, instala y registra herramientas faltantes | `.claude/skills/capacidad/` |
 
-**Total:** 41 skills (10 de la familia `dev-*` + 13 de dominio + 3 de IA + 13 de ciclo de vida de proyecto y operación multi-agente + 2 meta-skills).
+**Total:** 43 skills (10 de la familia `dev-*` + 10 de ciclo de vida de proyecto + 3 de operación multi-agente + 13 de dominio + 3 de IA + 2 de medicina + 2 meta-skills).
 
 **Sub-grupos de la familia `dev-*` y vecinos**:
 - **Núcleo**: `/dev`, `/dev-api`, `/dev-clean`, `/dev-db`, `/dev-docker`, `/dev-git`, `/dev-meta`, `/dev-modes`, `/dev-multiagent`, `/dev-test` (10).
@@ -881,7 +883,7 @@ modos_disponibles: 17
   expertos: [finanzas, marketing, tecnología, proyectos, seguridad,
              riesgos, control_interno, auditoría, diseño, costos, traductor]
   ia: [ai, ai-llm, ai-ml]
-skills_total: 41
+skills_total: 43
   familia_dev: 10  # dev, dev-api, dev-clean, dev-db, dev-docker, dev-git,
                    # dev-meta, dev-modes, dev-multiagent, dev-test
   ciclo_vida:  10  # init-proyecto, stack-pick, install-from-stack,
@@ -892,6 +894,7 @@ skills_total: 41
   dominio:     13
   ia:           3
   medicina:     2  # medicina (padre), audiologia
+  meta:         2  # prompt, capacidad
 agentes:        4  # be-reviewer, ui-reviewer, code-reviewer, message-bus
 metodo_desarrollo:
   fases: 5            # CLAUDE.md §4 ter.1
@@ -1009,6 +1012,6 @@ Para ver niveles de metadata: /niveles
 
 ---
 
-*CLAUDE.md — 17 modos de operación · 41 skills · 4 agentes · 5 fases · 9 niveles metadata · 6 DBMS · Citación APA 7ª edición*
+*CLAUDE.md — 17 modos de operación · 43 skills · 4 agentes · 5 fases · 9 niveles metadata · 6 DBMS · Citación APA 7ª edición*
 *Proyecto: ConfiguracionClaude · Configuración base de Claude Code*
 *Versión gobernada por el archivo VERSION en la raíz del repo*

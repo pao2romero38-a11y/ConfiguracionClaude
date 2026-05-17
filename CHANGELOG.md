@@ -13,6 +13,70 @@ Cambios en preparación que aún no se han publicado en una versión.
 
 ---
 
+## [2.11.1] — 2026-05-16
+
+**Reconciliación del conteo de skills (corrección de manifiesto, sin
+cambio funcional).** Bump **PATCH**. Los skills `/medicina`, `/audiologia`,
+`/prompt` y `/capacidad` ya existían y operaban; este cambio solo corrige
+los conteos y tablas-índice que PR #2 (v2.11.0) dejó con esquemas de
+acumulación divergentes. No se agrega, renombra ni elimina ningún skill;
+no cambia comportamiento, modos, composición ni APA 7.
+
+**Verdad de base (auditada):** `find .claude/skills -name SKILL.md` = **43**
+directorios de skill. Desglose canónico unificado en todo el repo:
+
+```
+43 = 10 familia dev-*  + 10 ciclo de vida  + 3 multi-agente
+   + 13 dominio        + 3 IA              + 2 medicina       + 2 meta-skills
+```
+
+**Drift corregido (origen: PR #2 actualizó §4/§10/§11 parcialmente):**
+
+- §5 contaba meta-skills pero **excluía** `/medicina` y `/audiologia`
+  (faltaban las dos filas en la tabla-índice y en el «Total: 41»).
+- §10 (`skills_total`) y `.claude/skills/README.md` contaban medicina
+  pero **excluían** las 2 meta-skills.
+- `README.md` (raíz) seguía en **39** (estado pre-PR #2): faltaban las
+  familias Medicina y Meta-skills en la tabla y el conteo.
+
+### Changed
+
+- **`CLAUDE.md §5`** — +2 filas (`/medicina`, `/audiologia`) en la
+  tabla-índice; `Total: 41 → 43` con desglose canónico de 7 términos.
+- **`CLAUDE.md §10`** — `skills_total: 41 → 43`; nueva categoría
+  `meta: 2  # prompt, capacidad` (el desglose ahora suma 43).
+- **`CLAUDE.md` (pie)** — `41 → 43 skills`.
+- **`.claude/skills/README.md`** — header `41 → 43`; Distribución +línea
+  Meta-skills; Directorio +secciones «Medicina (2)» y «Meta-skills (2)»
+  (antes ausentes); pie `41 → 43` con desglose canónico.
+- **`README.md` (raíz)** — tabla +filas Medicina y Meta-skills;
+  `Total: 39 → 43`; árbol `39 → 43 skills especializados`.
+- **`VERSION`** — `2.11.0 → 2.11.1`.
+
+### Notas
+
+- Clasificación SemVer: **PATCH** (GOVERNANCE §3, «Correcciones sin
+  cambio funcional»). Primer PATCH del repo; los skills no cambian.
+- §5 «Sub-grupos de la familia `dev-*` y vecinos» se deja intacto: es
+  una vista parcial por diseño (no declara un total), no una ubicación
+  de drift.
+- **Fuera de alcance (observación, no corregido aquí):** el conteo de
+  *modos* sigue en «17 modos de operación» mientras §4 lista 19 filas
+  (incluye `/medicina` y `/audiologia`). Es un drift distinto, con una
+  decisión de diseño abierta (¿medicina es un «modo de operación» o una
+  familia aparte, como sugiere el banner §11?). Recomendado: issue/PR
+  separado para resolver esa definición sin mezclar concerns.
+- **Coordinación con PR #4** (`/commit`, → 2.12.0, abierto sobre `main`):
+  ambos PRs son independientes y tocan tokens de conteo distintos. El
+  que se mergee en segundo lugar requiere un rebase trivial del entero
+  y de `VERSION`:
+  - Si **2.11.1 mergea primero**: PR #4 rebasa, reconcilia `43 → 44`
+    (al sumar `/commit`) y `VERSION` pasa a `2.12.0`.
+  - Si **PR #4 mergea primero**: este PR rebasa sobre `main` con
+    `/commit` presente, reconcilia a **44** y `VERSION` a `2.12.1`.
+
+---
+
 ## [2.11.0] — 2026-05-13
 
 **Dominio Medicina — primera contribución externa al repo.** Bump

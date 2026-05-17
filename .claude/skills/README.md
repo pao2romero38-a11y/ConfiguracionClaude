@@ -1,6 +1,6 @@
 # Skills de Claude Code — Índice completo
 
-Este directorio contiene los **41 skills** que extienden el comportamiento definido
+Este directorio contiene los **43 skills** que extienden el comportamiento definido
 en `CLAUDE.md`. Cada skill activa comportamientos especializados para su dominio.
 
 Distribución:
@@ -11,6 +11,7 @@ Distribución:
   aud, dis, cost, tra, edu, inv.
 - **Inteligencia Artificial** (3): `/ai`, `/ai-llm`, `/ai-ml`.
 - **Medicina** (2): `/medicina` (padre) · `/audiologia` — Audiología, Foniatría, Otoneurología, Patología del lenguaje.
+- **Meta-skills** (2): `/prompt`, `/capacidad` — operan sobre el prompt o el conjunto de herramientas, no sobre un dominio.
 
 ## Cómo activar un skill
 
@@ -94,6 +95,20 @@ Lee .claude/skills/fin/SKILL.md y analiza este estado de resultados.
 | `/ai-llm` | `skills/ai-llm/` | Aplicaciones de LLMs — prompt engineering, RAG, agentes, evals |
 | `/ai-ml` | `skills/ai-ml/` | ML / MLOps — ciclo de vida del modelo, drift, monitoring, retraining |
 
+### Medicina (2)
+
+| Comando | Carpeta | Dominio |
+|---------|---------|---------|
+| `/medicina` | `skills/medicina/` | Médico Clínico — razonamiento clínico general, diagnóstico diferencial, terapéutica |
+| `/audiologia` | `skills/audiologia/` | Audiólogo Clínico (hijo de `/medicina`) — Audiología, Foniatría, Otoneurología, Patología del lenguaje |
+
+### Meta-skills (2)
+
+| Comando | Carpeta | Dominio |
+|---------|---------|---------|
+| `/prompt` | `skills/prompt/` | Refinador de prompts — detecta modo, refina y expone rúbrica visible |
+| `/capacidad` | `skills/capacidad/` | Gestor de capacidades — investiga, instala y registra herramientas faltantes |
+
 ---
 
 ## Estructura de cada SKILL.md
@@ -127,7 +142,7 @@ Heredados del `CLAUDE.md` — no se repiten en cada skill pero siempre aplican:
 
 ---
 
-*Skills — 41 skills (10 familia dev-* + 10 ciclo de vida + 3 multi-agente + 13 dominio + 3 IA + 2 medicina)*
+*Skills — 43 skills (10 familia dev-* + 10 ciclo de vida + 3 multi-agente + 13 dominio + 3 IA + 2 medicina + 2 meta-skills)*
 *Más 4 agentes especializados en `.claude/agents/`: be-reviewer, ui-reviewer, code-reviewer, message-bus*
 *Proyecto: ConfiguracionClaude · Configuración base de Claude Code*
 *Versión vigente en VERSION en la raíz del repo*
