@@ -32,7 +32,7 @@ ceremonia desproporcionada. En ese caso:
 ```
 
 Esto preserva la utilidad de la configuración para su propósito real:
-análisis especializado en cualquiera de los 17 dominios cubiertos, no
+análisis especializado en cualquiera de los 18 dominios cubiertos, no
 preguntas casuales que se resuelven mejor con un agente sin configurar.
 
 ---
@@ -243,8 +243,57 @@ Si no se especifica modo, opera en modo neutro (sección 3).
 | `/ai` | Experto en IA — estrategia y gobierno | Casos de uso, ROI, vendor selection, marcos regulatorios |
 | `/ai-llm` | Aplicaciones de LLMs | Prompt engineering, RAG, agentes, evaluación |
 | `/ai-ml` | ML / MLOps | Ciclo de vida del modelo, drift, monitoring, retraining |
-| `/medicina` | Médico Clínico | Razonamiento clínico general, diagnóstico diferencial, terapéutica |
-| `/audiologia` | Audiólogo Clínico | Audiología, Foniatría, Otoneurología, Patología del lenguaje (hijo de `/medicina`) |
+| `/medicina` | Médico Clínico | Razonamiento clínico general, diagnóstico diferencial, terapéutica · **tiene especializaciones** (ver §4.1) |
+
+**18 modos de operación.** Las **especializaciones** (p. ej. Audiología
+dentro de Medicina) **no** son modos: se documentan en §4.1.
+
+---
+
+## 4.1 MODOS CON ESPECIALIZACIONES
+
+Un **modo** es un dominio de operación de nivel superior (tabla §4). Un
+modo puede tener **especializaciones**: sub-dominios acotados que heredan
+el marco del modo padre y añaden criterios, referencias y formato propios
+del sub-dominio.
+
+```
+MODO (dominio de operación de nivel superior)
+  └── ESPECIALIZACIÓN (skill hijo, acotado al dominio del modo padre)
+```
+
+### Convención (obligatoria, estándar del repo)
+
+```
+□ Comando:      /<modo>-<especializacion>     p. ej. /medicina-audiologia
+□ Carpeta:      .claude/skills/<modo>-<especializacion>/SKILL.md
+□ Frontmatter:  name: <modo>-<especializacion>
+                parent: <modo>                ← obligatorio en toda especialización
+□ Activación:   directa por su comando; o composición  /<modo> +<especializacion>
+□ Alias retro:  si una especialización existía antes con slug suelto, se
+                conserva como alias documentado (no se rompe el contrato)
+```
+
+### Semántica de conteo
+
+```
+· Las especializaciones NO cuentan como "modos de operación"
+  (el conteo de modos = solo la tabla §4).
+· Las especializaciones SÍ cuentan como skills (.claude/skills/),
+  igual que cualquier otro skill con su SKILL.md.
+· §10 declara modos, especializaciones y skills por separado.
+```
+
+### Especializaciones — estado
+
+| Modo padre | Especialización (comando) | Estado |
+|---|---|---|
+| `/medicina` | `/medicina-audiologia` (alias retro: `/audiologia`) — Audiología, Foniatría, Otoneurología, Patología del lenguaje | **Activa** |
+| `/dis` | `/dis-ui`, `/dis-mobiliario`, `/dis-campanas-mkt`, `/dis-material-capacitacion` | Planificada |
+| `/aud` | `/aud-sistemas`, `/aud-registros-contables`, `/aud-proyectos` | Planificada |
+
+Las planificadas se crearán como `SKILL.md` propios cuando se trabaje
+cada sub-dominio (issue de seguimiento), siguiendo esta misma convención.
 
 ---
 
@@ -555,7 +604,7 @@ contexto cargado en cada sesión.
 | `/ai-llm` | Aplicaciones de LLMs | `.claude/skills/ai-llm/` |
 | `/ai-ml` | ML / MLOps | `.claude/skills/ai-ml/` |
 | `/medicina` | Médico Clínico (padre) | `.claude/skills/medicina/` |
-| `/audiologia` | Audiólogo Clínico (hijo de `/medicina`) | `.claude/skills/audiologia/` |
+| `/medicina-audiologia` | Audiólogo Clínico — especialización de `/medicina` (alias retro: `/audiologia`) | `.claude/skills/medicina-audiologia/` |
 | `/prompt` | Refinador de prompts (meta-skill, modo entrenamiento) | `.claude/skills/prompt/` |
 | `/capacidad` | Gestor de capacidades — investiga, instala y registra herramientas faltantes | `.claude/skills/capacidad/` |
 | `/commit` | Protocolo COMMIT de continuidad de contexto | `.claude/skills/commit/` |
@@ -874,18 +923,20 @@ Declaración obligatoria en la respuesta:
 
 ```yaml
 proyecto:       ConfiguracionClaude — Configuración base de Claude Code
-audiencia:      Profesionales en cualquiera de los 17 dominios cubiertos
+audiencia:      Profesionales en cualquiera de los 18 dominios cubiertos
 nivel_previo:   Experticia profesional en el dominio del modo activado
 objetivo:       Apoyar trabajo profesional especializado con un agente
                 Claude de comportamiento riguroso, verificable y predecible
 gobierno:       Ver GOVERNANCE.md en la raíz del repositorio
 versionado:     SemVer 2.0.0 — ver archivo VERSION
 estándar_citas: APA 7ª edición (American Psychological Association, 2020)
-modos_disponibles: 17
+modos_disponibles: 18
   core: [neutro, programador, capacitador, investigador]
   expertos: [finanzas, marketing, tecnología, proyectos, seguridad,
              riesgos, control_interno, auditoría, diseño, costos, traductor]
   ia: [ai, ai-llm, ai-ml]
+  medicina: [medicina]
+especializaciones: 1  # medicina-audiologia (parent: medicina) — ver §4.1
 skills_total: 44
   familia_dev: 10  # dev, dev-api, dev-clean, dev-db, dev-docker, dev-git,
                    # dev-meta, dev-modes, dev-multiagent, dev-test
@@ -896,7 +947,7 @@ skills_total: 44
   multiagente:  3  # status, handoff, inbox
   dominio:     13
   ia:           3
-  medicina:     2  # medicina (padre), audiologia
+  medicina:     2  # medicina (modo) + medicina-audiologia (especialización, §4.1)
   meta:         3  # prompt, capacidad, commit
 agentes:        4  # be-reviewer, ui-reviewer, code-reviewer, message-bus
 metodo_desarrollo:
@@ -934,7 +985,7 @@ Modos disponibles:
   Core:        /dev · /edu · /inv
   Expertos:    /fin · /mkt · /tec · /proy · /seg · /rsk · /ci · /aud · /dis · /cost · /tra
   IA:          /ai · /ai-llm · /ai-ml
-  Medicina:    /medicina · /audiologia
+  Medicina:    /medicina  (modo) · /medicina-audiologia  (especialización · alias /audiologia)
 
 Familia /dev:  /dev-api · /dev-clean · /dev-db · /dev-docker · /dev-git
                /dev-meta · /dev-modes · /dev-multiagent · /dev-test
@@ -1017,6 +1068,6 @@ Para ver niveles de metadata: /niveles
 
 ---
 
-*CLAUDE.md — 17 modos de operación · 44 skills · 4 agentes · 5 fases · 9 niveles metadata · 6 DBMS · Citación APA 7ª edición*
+*CLAUDE.md — 18 modos de operación · 1 especialización · 44 skills · 4 agentes · 5 fases · 9 niveles metadata · 6 DBMS · Citación APA 7ª edición*
 *Proyecto: ConfiguracionClaude · Configuración base de Claude Code*
 *Versión gobernada por el archivo VERSION en la raíz del repo*

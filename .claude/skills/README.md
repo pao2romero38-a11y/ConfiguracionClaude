@@ -10,7 +10,7 @@ Distribución:
 - **Dominio profesional** (13): finanzas, marketing, tec, proy, seg, rsk, ci,
   aud, dis, cost, tra, edu, inv.
 - **Inteligencia Artificial** (3): `/ai`, `/ai-llm`, `/ai-ml`.
-- **Medicina** (2): `/medicina` (padre) · `/audiologia` — Audiología, Foniatría, Otoneurología, Patología del lenguaje.
+- **Medicina** (2): `/medicina` (modo) · `/medicina-audiologia` (especialización · alias retro `/audiologia`) — Audiología, Foniatría, Otoneurología, Patología del lenguaje. Ver taxonomía Modo→Especialización en CLAUDE.md §4.1.
 - **Meta-skills** (3): `/prompt`, `/capacidad`, `/commit` — operan sobre el prompt, el conjunto de herramientas o la continuidad de contexto, no sobre un dominio.
 
 ## Cómo activar un skill
@@ -100,7 +100,7 @@ Lee .claude/skills/fin/SKILL.md y analiza este estado de resultados.
 | Comando | Carpeta | Dominio |
 |---------|---------|---------|
 | `/medicina` | `skills/medicina/` | Médico Clínico — razonamiento clínico general, diagnóstico diferencial, terapéutica |
-| `/audiologia` | `skills/audiologia/` | Audiólogo Clínico (hijo de `/medicina`) — Audiología, Foniatría, Otoneurología, Patología del lenguaje |
+| `/medicina-audiologia` | `skills/medicina-audiologia/` | Audiólogo Clínico — **especialización** de `/medicina` (alias retro: `/audiologia`) — Audiología, Foniatría, Otoneurología, Patología del lenguaje |
 
 ### Meta-skills (3)
 

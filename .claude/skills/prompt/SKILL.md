@@ -6,7 +6,7 @@ description: >
   /prompt crear sistema de X). NO activar automáticamente cuando el usuario
   solo pida "ayuda" o "mejora" sin invocar el comando, ni cuando ya está
   trabajando dentro de otro modo. La skill toma el prompt crudo, detecta el
-  modo apropiado entre los 17 modos de operación, lo refina añadiendo
+  modo apropiado entre los 18 modos de operación, lo refina añadiendo
   contexto, restricciones, formato esperado y referencias a memoria técnica
   relevante, expone una rúbrica visible de las dimensiones cubiertas, y
   ofrece ejecutar el refinado de inmediato sin que el usuario tenga que
@@ -22,7 +22,7 @@ description: >
 
 Refinar prompts crudos del usuario para alinearlos con:
 
-- El modo apropiado entre los 17 modos de operación o composición líder + apoyo (§4 / §4 bis del CLAUDE.md)
+- El modo apropiado entre los 18 modos de operación o composición líder + apoyo (§4 / §4 bis del CLAUDE.md)
 - Las convenciones del proyecto activo (memoria técnica, branches, fases del método)
 - El protocolo de calidad del CLAUDE.md (presentación general → particular, citación APA 7)
 

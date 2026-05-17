@@ -11,7 +11,7 @@ predecible en su dominio de experticia.
 
 ## ¿Para quién es?
 
-Para profesionales que trabajan con Claude Code en alguno de estos 17 dominios:
+Para profesionales que trabajan con Claude Code en alguno de estos 18 dominios:
 
 | Familia | Modos disponibles |
 |---|---|
@@ -20,7 +20,7 @@ Para profesionales que trabajan con Claude Code en alguno de estos 17 dominios:
 | **Operación multi-agente** | `/status` `/handoff` `/inbox` |
 | **Análisis y dominio** | `/edu` `/inv` `/fin` `/mkt` `/tec` `/proy` `/seg` `/rsk` `/ci` `/aud` `/dis` `/cost` `/tra` |
 | **Inteligencia Artificial** | `/ai` `/ai-llm` `/ai-ml` |
-| **Medicina** | `/medicina` `/audiologia` |
+| **Medicina** | `/medicina` · esp. `/medicina-audiologia` (alias `/audiologia`) |
 | **Meta-skills** | `/prompt` `/capacidad` `/commit` |
 
 Total: **44 skills** (10 familia `/dev` + 10 ciclo de vida + 3 multi-agente +

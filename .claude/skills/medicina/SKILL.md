@@ -7,7 +7,7 @@ description: >
   farmacología clínica; interpretación de laboratorio o gabinete de uso general;
   ética médica; medicina interna, pediatría, geriatría, dermatología, cirugía
   general u otras disciplinas no cubiertas por un skill hijo específico.
-  Modo padre de: /audiologia.
+  Modo padre de la especialización: /medicina-audiologia (alias retro: /audiologia).
   Comandos de activación: /medicina · [MODO: MEDICINA]
 ---
 
@@ -16,8 +16,10 @@ description: >
 
 # SKILL — Medicina Clínica
 
-Modo padre del dominio médico. Para subdominios especializados usar:
-`/audiologia` (Audiología · Foniatría · Otoneurología · Patología del lenguaje).
+Modo padre del dominio médico. Tiene **especializaciones** (taxonomía
+Modo → Especialización, CLAUDE.md §4.1). Especialización activa:
+`/medicina-audiologia` — alias retro `/audiologia` — (Audiología · Foniatría ·
+Otoneurología · Patología del lenguaje).
 
 ---
 

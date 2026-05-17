@@ -13,6 +13,74 @@ Cambios en preparación que aún no se han publicado en una versión.
 
 ---
 
+## [2.13.0] — 2026-05-16
+
+**Taxonomía Modo → Especialización (estándar permanente).** Bump
+**MENOR** *(con alias retro — sin alias sería MAYOR; ver Notas para
+confirmación del mantenedor)*. Se formaliza que un **modo** de operación
+puede tener **especializaciones**: sub-dominios acotados que heredan el
+marco del modo padre. Se resuelve además el *drift* de conteo de modos
+heredado (PR #2): Medicina es el **modo 18**; Audiología deja de
+presentarse como modo par y pasa a ser **especialización** de Medicina.
+
+Decisión de diseño del mantenedor: convención de comando **prefijo del
+padre** `/<modo>-<especializacion>` (consistente con la familia
+`dev-*`); `parent:` en frontmatter obligatorio. Ejemplos del patrón
+declarados para trabajo futuro: Diseño (`/dis-ui`, `/dis-mobiliario`,
+`/dis-campanas-mkt`, `/dis-material-capacitacion`) y Auditoría
+(`/aud-sistemas`, `/aud-registros-contables`, `/aud-proyectos`).
+
+### Added
+
+- **`CLAUDE.md §4.1` — Modos con especializaciones** (sección nueva):
+  define la taxonomía Modo→Especialización, la convención de comando y
+  carpeta, el requisito `parent:`, la semántica de conteo
+  (especialización = skill, **no** modo) y la tabla de estado
+  (Audiología activa; Diseño y Auditoría planificadas).
+
+### Changed
+
+- **Rename de especialización** — `/audiologia` → `/medicina-audiologia`
+  (alias retro `/audiologia` **conservado y documentado** → contrato no
+  se rompe). `git mv .claude/skills/audiologia` →
+  `.claude/skills/medicina-audiologia/`; frontmatter `name:` y
+  `description` actualizados; `parent: medicina` se mantiene.
+- **Conteo de modos** `17 → 18` (Medicina es el modo 18; corrección del
+  *undercount* heredado de PR #2). **Skills siguen en 44** (renombrar no
+  cambia el conteo de skills; `medicina: 2` sigue siendo medicina +
+  medicina-audiologia).
+- **`CLAUDE.md`** — §4 (tabla: Medicina como modo con especializaciones,
+  se retira la fila par `/audiologia`); §4.1 nueva; §5 índice
+  (`/medicina-audiologia` + ruta); §10 (`modos_disponibles: 18`,
+  `medicina: [medicina]`, `especializaciones: 1`); §11 banner;
+  §1.1/§10 `17 → 18 dominios`; pie `18 modos · 1 especialización`.
+- **`.claude/skills/medicina/SKILL.md`** y
+  **`.claude/skills/medicina-audiologia/SKILL.md`** — frontmatter y
+  cuerpo: comando canónico + alias + referencia a §4.1.
+- **`.claude/skills/README.md`** — Distribución y Directorio: Medicina
+  con modo + especialización (comando/ruta nuevos).
+- **`README.md`** (raíz) — `17 → 18 dominios`; fila Medicina con
+  especialización.
+- **`.claude/skills/prompt/SKILL.md`** — `17 → 18 modos de operación`
+  (×2; es contrato vivo, no narrativa).
+- **`VERSION`** — `2.12.0 → 2.13.0`.
+
+### Notas
+
+- **SemVer — requiere confirmación del mantenedor.** Se clasifica
+  **MENOR** porque el alias retro `/audiologia` preserva el contrato y
+  ningún modo se elimina (el `17→18` es corrección de un *undercount*,
+  no remoción). **Sin** el alias, el rename de un comando existente
+  sería **MAYOR** (GOVERNANCE §3: «renombrado de un modo existente» +
+  «modificación de reglas globales del CLAUDE.md raíz»). El alias se
+  incluyó precisamente para mantenerlo MENOR.
+- **Fuera de alcance (issue de seguimiento):** crear los `SKILL.md` de
+  las especializaciones planificadas de `/dis` y `/aud`. Tokens "17" en
+  `training/` y `slides.py` no se tocan (narrativa fechada, no el
+  contrato vivo).
+
+---
+
 ## [2.12.0] — 2026-05-16
 
 **Protocolo COMMIT de continuidad de contexto.** Bump **MENOR**. Nuevo

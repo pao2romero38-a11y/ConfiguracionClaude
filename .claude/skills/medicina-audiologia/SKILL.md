@@ -1,5 +1,5 @@
 ---
-name: audiologia
+name: medicina-audiologia
 parent: medicina
 description: >
   Activar cuando el usuario pida: evaluación audiológica o interpretación de estudios
@@ -10,16 +10,21 @@ description: >
   parálisis cordal, rehabilitación vocal, carcinoma laríngeo); patología del lenguaje
   y comunicación (afasias, trastornos mixtos, disfagia); tamiz auditivo neonatal;
   adaptación de auxiliares auditivos o indicaciones de implante coclear.
-  Comandos de activación: /audiologia · [MODO: AUDIOLOGÍA]
+  Comandos de activación: /medicina-audiologia (alias retro: /audiologia) · [MODO: AUDIOLOGÍA]
 ---
 
 > **Biblioteca de referencia:** [`library/audiologia/INDEX.md`](../../../library/audiologia/INDEX.md)
 > y [`library/medicina/INDEX.md`](../../../library/medicina/INDEX.md) —
 > consultar antes de citar guías, normas o libros del dominio (regla obligatoria del CLAUDE.md §9).
 >
-> **Modo padre:** `/medicina` — para patología médica general no audiológica, activar `/medicina`.
-> El campo `parent: medicina` en el frontmatter es documentación de jerarquía, no una
-> directiva de carga automática. Para tener ambos activos usar la composición: `/medicina +audiologia`.
+> **Comando canónico:** `/medicina-audiologia` — alias retro: `/audiologia` (sigue válido).
+> Esta es una **especialización** del modo `/medicina` (ver CLAUDE.md §4.1, taxonomía
+> Modo → Especialización). El campo `parent: medicina` en el frontmatter es
+> documentación de jerarquía, no una directiva de carga automática.
+>
+> **Modo padre:** `/medicina` — para patología médica general no audiológica, activar
+> `/medicina`. Para tener ambos activos usar la composición: `/medicina +audiologia`
+> (el modificador de apoyo acepta el alias corto).
 
 # SKILL — Audiólogo Clínico
 
