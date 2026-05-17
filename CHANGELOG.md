@@ -13,6 +13,72 @@ Cambios en preparación que aún no se han publicado en una versión.
 
 ---
 
+## [2.12.0] — 2026-05-16
+
+**Protocolo COMMIT de continuidad de contexto.** Bump **MENOR**. Nuevo
+meta-skill `/commit` (43 → 44 skills) con *footprint* mínimo: cuerpo de
+carga perezosa por `description` + una sola línea de ancla
+siempre-cargada en §9. Mitiga la pérdida de criterios ganados en sesión
+ante la compactación de contexto. Aditivo: no altera modos, skills
+existentes, composición de modos ni el estándar APA 7.
+
+Práctica validada empíricamente en el proyecto AuditorMetadata (espejo
+de la del Sistema de Almacenes): snapshot versionado
+`docs/commits/COMMIT-V{n}.md` por proyecto + dos reglas (máxima:
+recuperación tras compactación; oro: checkpoint por cadencia, no por
+predicción). Decisión de diseño rectora — **no inlinar** el cuerpo del
+protocolo en el global, para evitar *bloat* acumulativo por sesión y por
+proyecto. Rebasado sobre la base canónica de v2.11.1 (43 skills): este
+PR lleva el conteo a **44** sobre el esquema ya unificado.
+
+### Added
+
+**Skill nuevo — meta-skill de continuidad**
+
+- **`.claude/skills/commit/SKILL.md`** — meta-skill `/commit`
+  (`name: protocolo-commit-continuidad`). Gestiona el snapshot versionado
+  `docs/commits/COMMIT-V{n}.md` por proyecto: regla máxima (reconstruir
+  contexto tras compactación antes de actuar), regla de oro (checkpoint
+  incondicional en cada hito/decisión) y frontera explícita
+  auto-memoria / COMMIT / git. Carga perezosa; costo always-on ≈ 0.
+  Referencias APA 7: SemVer 2.0.0 (2013), ISO/IEC/IEEE 12207:2017.
+
+### Changed
+
+**Configuración — ancla siempre-cargada y conteos (43 → 44)**
+
+- **`CLAUDE.md §9`** — +1 línea de ancla (único costo always-on): tras
+  compactación de contexto, leer el COMMIT más reciente del proyecto
+  antes de responder (remite al skill `/commit`).
+- **`CLAUDE.md §5`** — fila `/commit` en el índice; `Total: 43 → 44`;
+  meta-skills `2 → 3` (Total y sub-grupo).
+- **`CLAUDE.md §10`** — `skills_total: 43 → 44`; `meta: 2 → 3`
+  (`prompt, capacidad, commit`); el desglose YAML sigue sumando exacto.
+- **`CLAUDE.md §11`** — `/commit` en la línea Meta-skills del banner.
+- **`CLAUDE.md §12`** — fila `/commit` en Comandos rápidos (Meta-skills).
+- **`CLAUDE.md` (pie)** — `43 → 44 skills`.
+- **`.claude/skills/README.md`** — header `43 → 44`; Distribución y
+  sección Directorio «Meta-skills» `2 → 3` (+fila `/commit`); pie
+  `43 → 44`.
+- **`README.md` (raíz)** — fila Meta-skills +`/commit`; `Total: 43 → 44`;
+  árbol `43 → 44 skills especializados`.
+- **`VERSION`** — `2.11.1 → 2.12.0`.
+
+### Notas
+
+- Aditivo / no rompe contrato → SemVer MENOR (GOVERNANCE §3:
+  «Nuevo skill agregado»). `/commit` **no** entra en §4 (tabla de
+  modos de operación), igual que `/prompt` y `/capacidad`.
+- Rebasado tras el merge de **PR #5** (`fix(docs)` → v2.11.1, que
+  unificó el esquema de conteo a 43). Ya **no** queda *drift*
+  pre-existente: las cinco ubicaciones de conteo comparten el mismo
+  desglose canónico de 7 términos, ahora con `3 meta-skills`.
+- Sigue **fuera de alcance** (observación de v2.11.1): el conteo de
+  *modos* «17 modos de operación» vs. 19 filas en §4 — decisión de
+  diseño abierta, issue/PR separado.
+
+---
+
 ## [2.11.1] — 2026-05-16
 
 **Reconciliación del conteo de skills (corrección de manifiesto, sin

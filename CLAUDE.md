@@ -558,14 +558,15 @@ contexto cargado en cada sesión.
 | `/audiologia` | Audiólogo Clínico (hijo de `/medicina`) | `.claude/skills/audiologia/` |
 | `/prompt` | Refinador de prompts (meta-skill, modo entrenamiento) | `.claude/skills/prompt/` |
 | `/capacidad` | Gestor de capacidades — investiga, instala y registra herramientas faltantes | `.claude/skills/capacidad/` |
+| `/commit` | Protocolo COMMIT de continuidad de contexto | `.claude/skills/commit/` |
 
-**Total:** 43 skills (10 de la familia `dev-*` + 10 de ciclo de vida de proyecto + 3 de operación multi-agente + 13 de dominio + 3 de IA + 2 de medicina + 2 meta-skills).
+**Total:** 44 skills (10 de la familia `dev-*` + 10 de ciclo de vida de proyecto + 3 de operación multi-agente + 13 de dominio + 3 de IA + 2 de medicina + 3 meta-skills).
 
 **Sub-grupos de la familia `dev-*` y vecinos**:
 - **Núcleo**: `/dev`, `/dev-api`, `/dev-clean`, `/dev-db`, `/dev-docker`, `/dev-git`, `/dev-meta`, `/dev-modes`, `/dev-multiagent`, `/dev-test` (10).
 - **Ciclo de vida del proyecto**: `/init-proyecto`, `/stack-pick`, `/install-from-stack`, `/back-scaffold-from-meta`, `/front-scaffold-from-meta`, `/meta-add-tabla`, `/meta-bump`, `/meta-validate`, `/diff-meta`, `/arq-derive` (10).
 - **Operación multi-agente**: `/status`, `/handoff`, `/inbox` (3).
-- **Meta-skills**: `/prompt`, `/capacidad` (2). Operan sobre el prompt del usuario o sobre el conjunto de herramientas disponibles, no sobre un dominio.
+- **Meta-skills**: `/prompt`, `/capacidad`, `/commit` (3). Operan sobre el prompt del usuario, sobre el conjunto de herramientas disponibles o sobre la continuidad de contexto, no sobre un dominio.
 
 ### Activación de un skill
 
@@ -863,6 +864,8 @@ Declaración obligatoria en la respuesta:
    primero library/CATALOG.yaml o el INDEX.md del dominio correspondiente
    para confirmar la versión vigente y la edición canónica. Si la fuente
    no está catalogada, proponer al usuario añadirla tras citarla
+✓  Tras compactación de contexto: antes de responder, leer el COMMIT más
+   reciente del proyecto si existe (docs/commits/) — ver skill /commit
 ```
 
 ---
@@ -883,7 +886,7 @@ modos_disponibles: 17
   expertos: [finanzas, marketing, tecnología, proyectos, seguridad,
              riesgos, control_interno, auditoría, diseño, costos, traductor]
   ia: [ai, ai-llm, ai-ml]
-skills_total: 43
+skills_total: 44
   familia_dev: 10  # dev, dev-api, dev-clean, dev-db, dev-docker, dev-git,
                    # dev-meta, dev-modes, dev-multiagent, dev-test
   ciclo_vida:  10  # init-proyecto, stack-pick, install-from-stack,
@@ -894,7 +897,7 @@ skills_total: 43
   dominio:     13
   ia:           3
   medicina:     2  # medicina (padre), audiologia
-  meta:         2  # prompt, capacidad
+  meta:         3  # prompt, capacidad, commit
 agentes:        4  # be-reviewer, ui-reviewer, code-reviewer, message-bus
 metodo_desarrollo:
   fases: 5            # CLAUDE.md §4 ter.1
@@ -945,6 +948,7 @@ Multi-agente:  /status · /handoff · /inbox
 
 Meta-skills:   /prompt     (refina prompts crudos antes de ejecutarlos)
                /capacidad  (investiga e instala herramientas faltantes)
+               /commit     (continuidad de contexto ante compactación)
 
 Agentes:       be-reviewer · ui-reviewer · code-reviewer · message-bus
 
@@ -999,6 +1003,7 @@ Para ver niveles de metadata: /niveles
 | **Meta-skills** ||
 | `/prompt` | Refinador de prompts: muestra refinado + rúbrica visible y ofrece ejecutarlo |
 | `/capacidad` | Gestor de capacidades: investiga, instala y registra herramientas faltantes |
+| `/commit` | Continuidad de contexto: snapshot versionado + reglas máxima/oro |
 | **Comandos del sistema** ||
 | `/config` | Mostrar configuración activa y modo actual |
 | `/modos` | Listar todos los modos disponibles con descripción |
@@ -1012,6 +1017,6 @@ Para ver niveles de metadata: /niveles
 
 ---
 
-*CLAUDE.md — 17 modos de operación · 43 skills · 4 agentes · 5 fases · 9 niveles metadata · 6 DBMS · Citación APA 7ª edición*
+*CLAUDE.md — 17 modos de operación · 44 skills · 4 agentes · 5 fases · 9 niveles metadata · 6 DBMS · Citación APA 7ª edición*
 *Proyecto: ConfiguracionClaude · Configuración base de Claude Code*
 *Versión gobernada por el archivo VERSION en la raíz del repo*

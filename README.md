@@ -21,10 +21,10 @@ Para profesionales que trabajan con Claude Code en alguno de estos 17 dominios:
 | **Análisis y dominio** | `/edu` `/inv` `/fin` `/mkt` `/tec` `/proy` `/seg` `/rsk` `/ci` `/aud` `/dis` `/cost` `/tra` |
 | **Inteligencia Artificial** | `/ai` `/ai-llm` `/ai-ml` |
 | **Medicina** | `/medicina` `/audiologia` |
-| **Meta-skills** | `/prompt` `/capacidad` |
+| **Meta-skills** | `/prompt` `/capacidad` `/commit` |
 
-Total: **43 skills** (10 familia `/dev` + 10 ciclo de vida + 3 multi-agente +
-13 dominio + 3 IA + 2 medicina + 2 meta-skills). Más **4 agentes especializados** en `.claude/agents/`:
+Total: **44 skills** (10 familia `/dev` + 10 ciclo de vida + 3 multi-agente +
+13 dominio + 3 IA + 2 medicina + 3 meta-skills). Más **4 agentes especializados** en `.claude/agents/`:
 `be-reviewer`, `ui-reviewer`, `code-reviewer`, `message-bus`. Cada skill carga
 un comportamiento experto verificable.
 
@@ -114,7 +114,7 @@ ConfiguracionClaude/
 ├── VERSION             ← versión vigente (formato SemVer)
 ├── CLAUDE.md           ← instrucciones de comportamiento globales
 ├── .claude/
-│   ├── skills/         ← 43 skills especializados
+│   ├── skills/         ← 44 skills especializados
 │   │   ├── README.md   ← índice de skills
 │   │   └── <modo>/SKILL.md ...
 │   ├── agents/         ← 4 agentes especializados (be/ui/code reviewers + message-bus)
